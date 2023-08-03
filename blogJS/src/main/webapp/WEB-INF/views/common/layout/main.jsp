@@ -62,98 +62,50 @@
 	</section>
 	<!--================ End About Us Area =================-->
 	
-	<!--================ Srart Brand Area =================-->
-	<section class="brand_area section_gap_bottom">
+<!--================ Start Features Area =================-->
+	<section class="features_area">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-lg-6">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo1.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo2.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo3.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo4.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo5.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo6.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo7.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo8.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="${contextPath }/resources/satner-master/img/brands/logo9.png" alt="">
-								</div>
-							</div>
-						</div>
+				<div class="col-lg-8 text-center">
+					<div class="main_title">
+						<h2>카테고리 </h2>
 					</div>
 				</div>
-				<div class="offset-lg-2 col-lg-4 col-md-6">
-					<div class="client-info">
-						<div class="d-flex mb-50">
-							<span class="lage">10</span>
-							<span class="smll">Years Experience Working</span>
-						</div>
-						<div class="call-now d-flex">
-							<div>
-								<span class="fa fa-phone"></span>
-							</div>
-							<div class="ml-15">
-								<p>call us now</p>
-								<h3>(+1)-800-555-6789</h3>
-							</div>
-						</div>
+			</div>
+			<div class="row feature_inner">
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+						<img src="${contextPath }/resources/satner-master/img/services/shapoo.png" alt="">
+						<h4>오늘의 공부</h4>
+						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+						<img src="${contextPath }/resources/satner-master/img/services/today.png" alt="">
+						<h4>소소한 일상</h4>
+						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+						<img src="${contextPath }/resources/satner-master/img/services/travel.png" alt="">
+						<h4>여행</h4>
+						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+						<img src="${contextPath }/resources/satner-master/img/services/keyword.png" alt="">
+						<h4>오늘의 핵심단어</h4>
+						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--================ End Brand Area =================-->
+	<!--================ End Features Area =================-->
+
 	
 	
 	
