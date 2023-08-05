@@ -10,6 +10,7 @@
 	
 	var validHumanId = false;
 	var validEmail = false;
+	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
 	
 	$().ready(function(){
 		
@@ -40,11 +41,11 @@
 				success : function(isOverlapped){
 					
 					if(isOverlapped == "NO"){
-						alert("사용할 수 있는 ID입니다.");
+						alert("사용 할 수 있는 ID입니다.");
 						validHumanId = true;
 					}
 					else{
-						alert("사용할 수 없는 ID입니다.");
+						alert("사용 할 수 없는 ID입니다.");
 						validHumanId = false;
 					}
 				}
@@ -68,7 +69,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row contact_form" action="${contextPath }/human/register" method="post" id="contactForm" novalidate="novalidate">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." required="required">

@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="${contextPath }/resources/satner-master/vendors/nice-select/css/nice-select.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="${contextPath }/resources/satner-master/css/style.css">
+	<script src="${contextPath }/resources/satner-master/js/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
 
 <!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="${contextPath }/resources/satner-master/js/jquery-3.2.1.min.js"></script>
+	
 	<script src="${contextPath }/resources/satner-master/js/popper.js"></script>
 	<script src="${contextPath }/resources/satner-master/js/bootstrap.min.js"></script>
 	<script src="${contextPath }/resources/satner-master/js/stellar.js"></script>
@@ -53,9 +54,6 @@
 	<script src="${contextPath }/resources/satner-master/vendors/owl-carousel/owl.carousel.min.js"></script>
 	<script src="${contextPath }/resources/satner-master/js/jquery.ajaxchimp.min.js"></script>
 	<script src="${contextPath }/resources/satner-master/js/mail-script.js"></script>
-	<!--gmaps Js-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="${contextPath }/resources/satner-master/js/gmaps.min.js"></script>
-	<script src="${contextPath }/resources/satner-master/js/theme.js"></script>
+	
 </body>
 </html>

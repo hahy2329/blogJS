@@ -31,7 +31,7 @@ public class HumanController {
 	
 	@GetMapping("/overlappedId")
 	public ResponseEntity<String> overlappedId(@RequestParam("humanId") String humanId) throws Exception{
-		System.out.println("요청성공!!!!");
+		
 		return new ResponseEntity<String>(humanService.checkDuplicatedId(humanId), HttpStatus.OK);
 	}
 	

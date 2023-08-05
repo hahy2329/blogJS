@@ -4,14 +4,14 @@
 	<mapper namespace="human">
 	
 	
-		<select id="checkOverlappedId" parameterType="String" resultType="HumanDTO">
+		<select id="checkOverlappedId" parameterType="String" resultType="String">
 			
 			SELECT
-				HUMANID
+				HUMAN_ID
 			FROM
 				HUMAN
 			WHERE
-				HUMANID = ${humanId}
+				HUMAN_ID = #{humanId}
 			
 		
 		</select>

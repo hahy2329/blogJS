@@ -16,15 +16,11 @@ public class HumanServiceImpl implements HumanService {
 	public String checkDuplicatedId(String humanId) throws Exception {
 		
 		
-		if(humanDAO.checkDuplicatedId(humanId)==null) {
+		if(humanDAO.checkDuplicatedId(humanId)==null) return "NO";
 			
-			return "NO";
-			
-		}
-		else {
-			
-			return "YES";
-		}
+		
+		else 			return "YES";
+		
 	}
 
 }
