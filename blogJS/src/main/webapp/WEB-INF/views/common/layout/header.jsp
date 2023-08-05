@@ -50,7 +50,10 @@
 								</ul>
 							</li>
 							</c:if>
-							<li class="nav-item"><a class="nav-link" href="contact.html">회원가입</a></li>
+							<c:if test="${sessionScope.humanId eq null }">
+								<li class="nav-item"><a class="nav-link" href="#">login</a></li>
+								<li class="nav-item"><a class="nav-link" href="${contextPath }/human/register">register</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>

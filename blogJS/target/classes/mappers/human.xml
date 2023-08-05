@@ -4,5 +4,18 @@
 	<mapper namespace="human">
 	
 	
+		<select id="checkOverlappedId" parameterType="String" resultType="HumanDTO">
+			
+			SELECT
+				HUMANID
+			FROM
+				HUMAN
+			WHERE
+				HUMANID = ${humanId}
+			
+		
+		</select>
+	
+	
 	
 	</mapper>
