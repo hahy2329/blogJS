@@ -11,6 +11,9 @@
 	var validHumanId = false;
 	var validEmail = false;
 	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+	var pattern1 = /[0-9]/; 
+	var pattern2 = /[a-zA-Z]/;
+	var pattern3 = /[~!@\#$%<>^&*]/
 	
 	$().ready(function(){
 		
@@ -49,13 +52,89 @@
 						validHumanId = false;
 					}
 				}
+			});
+		});
+		
+		$("#btnOverlappedEamil").click(function(){
+			
+			var email = $("#email").val();
+			
+			if(email == ''){
+				alert("이메일을 입력해주세요.");
+				return;
 				
+			}	
+			
+			$.ajax({
+				
+				type:"get",
+				url : "${contextPath}/human/overlappedEmail?email="+email,
+				success : function(data){
+					
+					if(data=="true"){
+						alert("사용 할 수 있는 이메일입니다.");
+						validEmail = true;
+					}
+					else{
+						alert("이미 사용중인 이메일입니다.");
+						validEmail = false;
+						
+					}
+				}
 			});
 			
+		});
+		$("form").submit(function(){
 			
+			if(validHumanId == false){
+				alert("아이디를 확인해주세요.");
+				return false;
+			}
+			
+			if(validEmail == false){
+				alert("이메일을 확인해주세요.");
+				return false;
+				
+			}
+			
+			if($("#passwd").val()==''){
+				alert("비밀번호를 입력해주세요.");
+				return false;
+			}
+			
+			if(validHumanId == true && validEmail == true){
+				if($("#passwd").val() == $("#confirmPasswd").val()){
+					if(!pattern1.test($("#passwd").val())||!pattern2.test($("#passwd").val())||!pattern3.test($("#passwd").val())||$("#passwd").val().length<8||$("#passwd").val().length>50){
+						
+						alert("영문+숫자+특수기호를 포함한 8자리 이상으로 구성하여야 합니다.");
+						return false;
+					}
+					else{
+						
+						$("[name='birthDt']").val($("#birthY").val() + "-" + $("#birthM").val()+"-" + $("#birthD").val());
+						return true;
+						alert("회원가입을 요청중 입니다.");
+					}
+					
+					
+					
+				}
+				
+				else{
+					
+					alert("비밀번호를 다시 확인해주세요.");
+					return false;
+					
+				}
+				
+				
+			}
 			
 			
 		});
+		
+		
+		
 	});
 
 
@@ -69,10 +148,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/human/register" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row contact_form" action="${contextPath }/human/register" method="post" enctype="multipart/form-data">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." required="required">
+                                <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." required="required">
                             <div class="reply-btn" align="right">
                                         <input type="button" id="btnOverlappedId" class="btn-reply text-uppercase" value="중복확인"> 
                             </div> <!-- 아이디 중복확인 -->
@@ -103,7 +182,7 @@
                                 
                             </div>
                             <div class="reply-btn" align="right">
-                                        <a href="#" id="btnOverlappedEamil" class="btn-reply text-uppercase">중복확인</a> 
+                                        <input type="button" id="btnOverlappedEamil" class="btn-reply text-uppercase" value="중복확인"> 
                             </div>
                             <div>
                             	<br>

@@ -7,6 +7,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/human/register.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="/human/login" extends="baseLayout">
+		<put-attribute name="title" value="로그인"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/human/login.jsp"></put-attribute>
+	</definition>
 	
 	
 	

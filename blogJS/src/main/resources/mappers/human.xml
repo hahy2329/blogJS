@@ -16,6 +16,55 @@
 		
 		</select>
 	
-	
-	
+		<select id="checkOverlappedEmail" parameterType="String" resultType="String">
+			SELECT 
+				EMAIL
+			FROM
+				HUMAN
+			WHERE
+				EMAIL = #{email}
+		</select>
+		
+		
+		<insert id="insertHuman" parameterType="HumanDTO">
+			
+			INSERT INTO HUMAN(HUMAN_ID, PASSWD, HUMAN_NM, BIRTH_DT, PROFILE, EMAIL, CONTENT)
+			VALUES(
+				#{humanId},
+				#{passwd},
+				#{humanNm},
+				#{birthDt},
+				#{profile},
+				#{email},
+				#{content}
+				
+			)
+			 
+		
+		
+		</insert>
+		
+		<select id="checkEncodePasswd" parameterType="String" resultType="String">
+			
+			SELECT
+				PASSWD
+			FROM 
+				HUMAN
+			WHERE
+				HUMAN_ID = #{humanId}
+		
+		</select>
+		
+		<select id="loginHuman" parameterType="HumanDTO" resultType="HumanDTO">
+			
+			SELECT
+				*
+			FROM 
+				HUMAN
+			WHERE
+				HUMAN_ID = #{humanId}
+		
+		
+		</select>
+		
 	</mapper>

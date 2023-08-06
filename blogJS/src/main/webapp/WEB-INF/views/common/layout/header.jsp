@@ -18,7 +18,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="${contextPath }/resources/satner-master/img/logo.png" alt=""></a>
+					<a class="navbar-brand logo_h" href="${contextPath }/"><img src="${contextPath }/resources/satner-master/img/logo.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -28,17 +28,16 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+							<li class="nav-item active"><a class="nav-link" href="${contextPath }/">Home</a></li>
 							<c:if test="${sessionScope.humanId ne null }">
-							<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+							<li class="nav-item"><a class="nav-link" href="about.html">나의 경력</a></li>
+							<li class="nav-item"><a class="nav-link" href="services.html">REST API서비스(연습)</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
+								 aria-expanded="false">포트폴리오 관리</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
+									<li class="nav-item"><a class="nav-link" href="elements.html">소재별 핵심포인트</a></li>
+									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">미지정</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">
@@ -51,9 +50,13 @@
 							</li>
 							</c:if>
 							<c:if test="${sessionScope.humanId eq null }">
-								<li class="nav-item"><a class="nav-link" href="#">login</a></li>
+								<li class="nav-item"><a class="nav-link" href="${contextPath }/human/login">login</a></li>
 								<li class="nav-item"><a class="nav-link" href="${contextPath }/human/register">register</a></li>
 							</c:if>
+								<c:if test="${sessionScope.humanId ne null }">
+									<li class="nav-item"><a class="nav-link">${sessionScope.humanId }님 로그인</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/human/logout">로그아웃</a></li>
+								</c:if>
 						</ul>
 					</div>
 				</div>
