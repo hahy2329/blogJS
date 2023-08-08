@@ -24,6 +24,9 @@
                             	<button type="submit" value="submit" class="primary_btn">
                                 	<span>로그인</span>
                             	</button>
+                            	<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=9291681c4b5f1c251ec456e619d7f1ed&redirect_uri=http://localhost:8080/blogJS/login">
+                            		<img src="${contextPath }/resources/satner-master/img/kakao_login.png">
+                            	</a>
                         	</div>
   						</div>
   					</form>

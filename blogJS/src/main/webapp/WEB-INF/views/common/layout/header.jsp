@@ -29,7 +29,7 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
 							<li class="nav-item active"><a class="nav-link" href="${contextPath }/">Home</a></li>
-							<c:if test="${sessionScope.humanId ne null }">
+							<c:if test="${sessionScope.humanId ne null or sessionSope.userId ne null }">
 							<li class="nav-item"><a class="nav-link" href="about.html">나의 경력</a></li>
 							<li class="nav-item"><a class="nav-link" href="services.html">REST API서비스(연습)</a></li>
 							<li class="nav-item submenu dropdown">
@@ -49,7 +49,7 @@
 								</ul>
 							</li>
 							</c:if>
-							<c:if test="${sessionScope.humanId eq null }">
+							<c:if test="${sessionScope.humanId eq null and sessionScope.userId eq null}">
 								<li class="nav-item"><a class="nav-link" href="${contextPath }/human/login">login</a></li>
 								<li class="nav-item"><a class="nav-link" href="${contextPath }/human/register">register</a></li>
 							</c:if>
@@ -57,6 +57,10 @@
 									<li class="nav-item"><a class="nav-link">${sessionScope.humanId }님 로그인</a></li>
 									<li class="nav-item"><a class="nav-link" href="${contextPath }/human/logout">로그아웃</a></li>
 								</c:if>
+								<c:if test="${sessionScope.userId ne null }">
+									<li class="nav-item"><a class="nav-link">${sessionScope.userId }님 로그인</a></li>
+									<li class="nav-item"><a class="nav-link" href="http://localhost:8080/logout">로그아웃</a></li>
+								</c:if>	
 						</ul>
 					</div>
 				</div>
