@@ -29,7 +29,7 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
 							<li class="nav-item active"><a class="nav-link" href="${contextPath }/">Home</a></li>
-							<c:if test="${sessionScope.humanId ne null or sessionSope.userId ne null }">
+							<c:if test="${sessionScope.humanId ne null or sessionScope.userId ne null }">
 							<li class="nav-item"><a class="nav-link" href="about.html">나의 경력</a></li>
 							<li class="nav-item"><a class="nav-link" href="services.html">REST API서비스(연습)</a></li>
 							<li class="nav-item submenu dropdown">
@@ -59,7 +59,7 @@
 								</c:if>
 								<c:if test="${sessionScope.userId ne null }">
 									<li class="nav-item"><a class="nav-link">${sessionScope.userId }님 로그인</a></li>
-									<li class="nav-item"><a class="nav-link" href="http://localhost:8080/logout">로그아웃</a></li>
+									<li class="nav-item"><a class="nav-link" href="http://localhost:8080/blogJS/logout">로그아웃</a></li>
 								</c:if>	
 						</ul>
 					</div>

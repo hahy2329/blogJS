@@ -29,15 +29,17 @@ public class KakaoController {
 		//2번 인증코드로 토큰 전달
 		HashMap<String, Object> userInfo = kakaoAPI.getUserInfo(accessToken);
 		System.out.println("login info :" + userInfo.toString());
+		System.out.println("nickname : " + userInfo.get("nickname"));
+		
 		
 		HttpSession session =  request.getSession();
 		
-		if(userInfo.get("email") != null) {
+		if(userInfo.get("nickname") != null) {
 			session.setAttribute("userId", userInfo.get("nickname"));
 			session.setAttribute("accessToken", accessToken);
 		}
 		
-		mv.addObject("userId", userInfo.get("email"));
+		mv.addObject("userId", userInfo.get("nickname"));
 		mv.setViewName("/main");
 		
 		return mv;
