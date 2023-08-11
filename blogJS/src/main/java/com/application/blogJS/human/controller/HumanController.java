@@ -172,4 +172,12 @@ public class HumanController {
 		
 	}
 	
+	@GetMapping("/checkDuplicatedPasswd")
+	public ResponseEntity<String> checkDuplicatedPasswd(@RequestParam("passwd") String passwd, @RequestParam("humanId") String humanId) throws Exception{
+		
+		return new ResponseEntity<String>(humanService.checkDuplicatedPasswd(passwd, humanId), HttpStatus.OK);
+		
+		
+	}
+	
 }

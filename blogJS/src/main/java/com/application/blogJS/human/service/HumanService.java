@@ -8,5 +8,5 @@ public interface HumanService {
 	public String checkDuplicatedEmail(String email) throws Exception;
 	public void addHuman(HumanDTO humanDTO) throws Exception;
 	public boolean loginCheck(HumanDTO humanDTO) throws Exception;
-	
+	public String checkDuplicatedPasswd(String passwd, String humanId) throws Exception;
 }

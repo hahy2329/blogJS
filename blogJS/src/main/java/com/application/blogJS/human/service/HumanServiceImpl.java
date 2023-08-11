@@ -59,4 +59,14 @@ public class HumanServiceImpl implements HumanService {
 		return isCheckId;
 	}
 
+	@Override
+	public String checkDuplicatedPasswd(String passwd, String humanId) throws Exception {
+		if(bCryptPasswordEncoder.matches(passwd, humanDAO.checkEncodePasswd(humanId))) {
+			return "duplicate";
+		}
+		else {
+			return "isNotDuplicate";
+		}
+	}
+
 }

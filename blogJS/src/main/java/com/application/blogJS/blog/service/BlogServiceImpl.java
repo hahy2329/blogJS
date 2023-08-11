@@ -24,4 +24,12 @@ public class BlogServiceImpl implements BlogService {
 		
 	}
 
+
+
+	@Override
+	public void insertBlog(BlogDTO blogDTO) throws Exception {
+		blogDAO.insertBlog(blogDTO);
+		
+	}
+
 }

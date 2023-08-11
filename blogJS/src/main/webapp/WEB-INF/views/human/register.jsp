@@ -113,7 +113,7 @@
 						
 						$("[name='birthDt']").val($("#birthY").val() + "-" + $("#birthM").val()+"-" + $("#birthD").val());
 						return true;
-						alert("회원가입을 요청중 입니다.");
+						
 					}
 					
 					

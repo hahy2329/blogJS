@@ -10,5 +10,25 @@
 		WHERE
 			SORT =#{"STUDY"}
 	</select>
+	
+	<insert id="insertBlog" parameterType="BlogDTO">
+		
+		INSERT INTO BLOG(HUMAN_ID, SUBJECT, CONTENT, SORT, PICTURE1, PICTURE2, PICTURE3)
+		VALUES(
+			
+			#{humanId},
+			#{subject},
+			#{content},
+			#{sort},
+			#{picture1},
+			#{picture2},
+			#{picture3}
+		
+		
+		)
+		
+	
+	
+	</insert>
 
 </mapper>

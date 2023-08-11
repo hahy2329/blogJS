@@ -18,6 +18,12 @@ public class BlogDAOImpl implements BlogDAO {
 	public List<BlogDTO> getBlogStudyList() throws Exception {
 		return sqlSession.selectList("blog.getBlogStudyList");
 	}
+
+	@Override
+	public void insertBlog(BlogDTO blogDTO) throws Exception {
+		sqlSession.insert("blog.insertBlog", blogDTO);
+		
+	}
 	
 	
 	

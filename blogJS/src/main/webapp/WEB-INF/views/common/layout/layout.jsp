@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="${contextPath }/resources/satner-master/vendors/nice-select/css/nice-select.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="${contextPath }/resources/satner-master/css/style.css">
+	<script src="${contextPath }/resources/ckeditor/ckeditor.js"></script>
 	<script src="${contextPath }/resources/satner-master/js/jquery-3.2.1.min.js"></script>
 </head>
 
