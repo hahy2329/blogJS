@@ -46,42 +46,58 @@ public class BlogController {
 	@PostMapping("/blogWrite")
 	public ResponseEntity<Object> blogWrite(MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
 		
+		BlogDTO blogDTO = new BlogDTO();
+	
 		Iterator<String> fileList = multipartRequest.getFileNames();
-		String fileName1="";
+		String fileName="";
 		String fileName2="";
 		String fileName3="";
 		
+		
 		while(fileList.hasNext()) {
+			for(int i =1; i<=3; i++) {
+				if(i == 1) {
+				MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName = fmt.format(new Date())+"_"+UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+						blogDTO.setPicture1(fileName);
 			
-			MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
-			if(!uploadFile.getOriginalFilename().isEmpty()) {
-				SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
-				for(int i = 1; i<=3; i++) {
-					if(i==1) {
-						fileName1 = fmt.format(new Date())+"_"+UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
-						uploadFile.transferTo(new File(FILE_REPO_PATH+fileName1));
 					}
-					if(i==2) {
+				}
+				
+				if(i ==2) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 						fileName2 = fmt.format(new Date())+"_"+UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
 						uploadFile.transferTo(new File(FILE_REPO_PATH+fileName2));
+						blogDTO.setPicture2(fileName2);
+			
 					}
-					if(i==3) {
+					
+				}
+				
+				if(i==3) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 						fileName3 = fmt.format(new Date())+"_"+UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
 						uploadFile.transferTo(new File(FILE_REPO_PATH+fileName3));
-						
+						blogDTO.setPicture3(fileName3);
+			
 					}
+					
+					
 				}
 			}
 		}
 		
-		BlogDTO blogDTO = new BlogDTO();
 		blogDTO.setHumanId(multipartRequest.getParameter("humanId"));
 		blogDTO.setSubject(multipartRequest.getParameter("subject"));
 		blogDTO.setContent(multipartRequest.getParameter("content"));
 		blogDTO.setSort(multipartRequest.getParameter("sort"));
-		blogDTO.setPicture1(multipartRequest.getParameter(fileName1));
-		blogDTO.setPicture2(multipartRequest.getParameter(fileName2));
-		blogDTO.setPicture3(multipartRequest.getParameter(fileName3));
 		
 		blogService.insertBlog(blogDTO);
 		
