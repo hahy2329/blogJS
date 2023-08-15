@@ -15,96 +15,55 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 posts-list">
+                	<c:forEach var="blogDTO" items="${blogStudyDetail }">
                     <div class="single-post row">
-                        <div class="col-lg-12">
-                            <div class="feature-img">
-                                <img class="img-fluid" src="img/blog/feature-img1.jpg" alt="">
-                            </div>									
-                        </div>
+                       <c:if test="${blogDTO.picture1 ne null }">
+	                        <div class="col-lg-12">
+	                            <div class="feature-img">
+	                                <img class="img-fluid" src="${contextPath }/blog/blogStudyPicture1?picture1=${blogDTO.picture1}" width="750" height="350" alt="메인사진">
+	                            </div>									
+	                        </div>
+	                     </c:if>
                         <div class="col-lg-3  col-md-3">
                             <div class="blog_info text-right">
                                 <div class="post_tag">
-                                    <a href="#">Food,</a>
-                                    <a class="active" href="#">Technology,</a>
-                                    <a href="#">Politics,</a>
-                                    <a href="#">Lifestyle</a>
+                                    <a href="#">${blogDTO.sort }</a>
                                 </div>
                                 <ul class="blog_meta list">
-                                    <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
-                                    <li><a href="#">12 Dec, 2017<i class="lnr lnr-calendar-full"></i></a></li>
-                                    <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
-                                    <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
+                                    <li><a href="#">${blogDTO.humanId }<i class="lnr lnr-user"></i></a></li>
+                                    <li><a href="#"><fmt:formatDate value="${blogDTO.enrollDT }" pattern="yyyy-MM-dd"/><i class="lnr lnr-calendar-full"></i></a></li>
+                                    <li><a href="#">${blogDTO.readCnt }<i class="lnr lnr-eye"></i></a></li>
+                                    <li><a href="#">우선 보류!(댓글 db생성 예정)<i class="lnr lnr-bubble"></i></a></li>
                                 </ul>
                                 <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="https://ko-kr.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="http://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://github.com/"><i class="fa fa-github"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9 blog_details">
-                            <h2>Astronomy Binoculars A Great Alternative</h2>
+                            <h2>${blogDTO.subject }</h2>
                             <p class="excert">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
-                            </p>
-                            <p>
-                                Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
-                            </p>
-                            <p>
-                                Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
+                                ${blogDTO.content }
                             </p>
                         </div>
                         <div class="col-lg-12">
-                            <div class="quotes">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training.										
-                            </div>
                             <div class="row">
-                                <div class="col-6">
-                                    <img class="img-fluid" src="img/blog/post-img1.jpg" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <img class="img-fluid" src="img/blog/post-img2.jpg" alt="">
-                                </div>	
-                                <div class="col-lg-12 mt-25">
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower.
-                                    </p>
-                                    <p>
-                                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower.
-                                    </p>											
-                                </div>									
+                            	<c:if test="${blogDTO.picture2 ne null }">
+	                                <div class="col-6">
+	                                    <img class="img-fluid" src="${contextPath }/blog/blogStudyPicture2?picture2=${blogDTO.picture2}" width="360" height="350" alt="서브사진">
+	                                </div>
+	                             </c:if>
+	                            <c:if test="${blogDTO.picture3 ne null }">
+                                	<div class="col-6">
+                                    	<img class="img-fluid" src="${contextPath }/blog/blogStudyPicture3?picture3=${blogDTO.picture3}" width="360" height="350" alt="서브사진">
+                                	</div>
+                                </c:if>								
                             </div>
                         </div>
                     </div>
-                    <div class="navigation-area">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                                <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="img/blog/prev.jpg" alt=""></a>
-                                </div>
-                                <div class="arrow">
-                                    <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
-                                </div>
-                                <div class="detials">
-                                    <p>Prev Post</p>
-                                    <a href="#"><h4>Space The Final Frontier</h4></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                                <div class="detials">
-                                    <p>Next Post</p>
-                                    <a href="#"><h4>Telescopes 101</h4></a>
-                                </div>
-                                <div class="arrow">
-                                    <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="img/blog/next.jpg" alt=""></a>
-                                </div>										
-                            </div>									
-                        </div>
-                    </div>
+                    </c:forEach>
                     <div class="comments-area">
                         <h4>05 Comments</h4>
                         <div class="comment-list">
@@ -210,12 +169,6 @@
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget search_widget">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Posts">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
-                                </span>
-                            </div><!-- /input-group -->
                             <div class="br"></div>
                         </aside>
                         <aside class="single_sidebar_widget author_widget">
@@ -226,11 +179,11 @@
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-github"></i></a>
-                                <a href="#"><i class="fa fa-behance"></i></a>
                             </div>
                             <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
                             <div class="br"></div>
                         </aside>
+                        <!-- 밑에 부분은 각 블로그 종류 별 최근 순으로 하나 씩만 가져올 예정 -->
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Popular Posts</h3>
                             <div class="media post_item">
@@ -263,13 +216,10 @@
                             </div>
                             <div class="br"></div>
                         </aside>
-                        <aside class="single_sidebar_widget ads_widget">
-                            <a href="#"><img class="img-fluid" src="img/blog/add.jpg" alt=""></a>
-                            <div class="br"></div>
-                        </aside>
                         <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title">Post Catgories</h4>
+                            <h4 class="widget_title">blog Catgories</h4>
                             <ul class="list cat-list">
+                            <!-- 밑에는 각 블로그 종류 별 작성 수를 기재할 것임 -->
                                 <li>
                                     <a href="#" class="d-flex justify-content-between">
                                         <p>Technology</p>
@@ -321,15 +271,6 @@
                             Here, I focus on a range of items and features that we use in life without
                             giving them a second thought.
                             </p>
-                            <div class="form-group d-flex flex-row">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                                    </div>
-                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
-                                </div>
-                                <a href="#" class="bbtns">Subcribe</a>
-                            </div>	
                             <p class="text-bottom">You can unsubscribe at any time</p>	
                             <div class="br"></div>							
                         </aside>

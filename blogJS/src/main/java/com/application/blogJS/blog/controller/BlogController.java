@@ -158,7 +158,51 @@ public class BlogController {
 		
 	}
 	
+	@GetMapping("/blogStudyPicture1")
+	public void blogStudyPicture1(@RequestParam("picture1") String picture1, HttpServletResponse response) throws Exception{
+		
+		OutputStream out = response.getOutputStream();
+		
+		File image=new File(FILE_REPO_PATH+picture1);
+		if(image.exists()) {
+			Thumbnails.of(image).forceSize(750, 350).outputFormat("jpg").toOutputStream(out);
+		}
+		byte[] buffer = new byte[1024 * 8];
+		out.write(buffer);
+		out.close();
+	}
 	
+	@GetMapping("/blogStudyPicture2")
+	public void blogStudyPicture2(@RequestParam("picture2") String picture2, HttpServletResponse response) throws Exception{
+		
+		OutputStream out = response.getOutputStream();
+		
+		File image = new File(FILE_REPO_PATH+picture2);
+		if(image.exists()) {
+			Thumbnails.of(image).forceSize(360, 350).outputFormat("jpg").toOutputStream(out);
+		}
+		
+		byte[] buffer = new byte[1024*8];
+		out.write(buffer);
+		out.close();
+	}
+	
+	@GetMapping("/blogStudyPicture3")
+	public void blogStudyPicture3(@RequestParam("picture3") String picture3, HttpServletResponse response) throws Exception{
+		
+		OutputStream out = response.getOutputStream();
+		
+		File image = new File(FILE_REPO_PATH+picture3);
+		if(image.exists()) {
+			Thumbnails.of(image).forceSize(360, 350).outputFormat("jpg").toOutputStream(out);
+		}
+		
+		byte[] buffer = new byte[1024*8];
+		out.write(buffer);
+		out.close();
+		
+		
+	}
 	
 	
 }
