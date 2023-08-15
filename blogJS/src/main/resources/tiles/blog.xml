@@ -2,12 +2,17 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<definition name="/blog/blogStudy" extends="baseLayout">
-		<put-attribute name="title" value="여행블로그 리스트"></put-attribute>
+		<put-attribute name="title" value="블로그 리스트(개발공부)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogStudy.jsp"></put-attribute>
 	</definition>
 
 	<definition name="/blog/blogWriter" extends="baseLayout">
 		<put-attribute name="title" value="블로그 작성"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogWriter.jsp"></put-attribute>	
+	</definition>
+	
+	<definition name="/blog/blogStudyDetail" extends="baseLayout">
+		<put-attribute name="title" value="블로그 상세정보(개발공부)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogStudyDetail.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>

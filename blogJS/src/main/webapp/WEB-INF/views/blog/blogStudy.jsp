@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
@@ -57,32 +58,30 @@
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
                         <article class="row blog_item">
+                           <c:forEach var="blogStudy" items="${blogStudy }">
                             <div class="col-md-3">
                                 <div class="blog_info text-right">
                                     <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
+                                        <a href="#">${blogStudy.sort }</a>
                                     </div>
                                     <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="lnr lnr-calendar-full"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
+                                        <li><a href="#">${blogStudy.humanId }<i class="lnr lnr-user"></i></a></li>
+                                        <li><a href="#"><fmt:formatDate value="${blogStudy.enrollDt }" pattern="yyyy-MM-dd"/><i class="lnr lnr-calendar-full"></i></a></li>
+                                        <li><a href="#">${blogStudy.readCnt }<i class="lnr lnr-eye"></i></a></li>
+                                        <li><a href="#">보류(전체 댓글 수 가져올 것 댓글 db생성 예정)<i class="lnr lnr-bubble"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-9">
                                 <div class="blog_post">
-                                    <img src="img/blog/main-blog/m-blog-1.jpg" alt="">
+                                    <img src="${contextPath }/blog/thumbnails?picture1=${blogStudy.picture1}" width="555" height="280" alt="메인사진">
                                     <div class="blog_details">
-                                        <a href="single-blog.html"><h2>Astronomy Binoculars A Great Alternative</h2></a>
-                                        <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
-                                        <a href="single-blog.html" class="primary_btn"><span>View More</span></a>
+                                        <a href="${contextPath }/blog/blogStudyDetail?blogId=${blogStudy.blogId}"><h2>${blogStudy.subject }</h2></a>
+                                        <p>${blogStudy.content }</p>
                                     </div>
                                 </div>
                             </div>
+                         </c:forEach>
                         </article>
                     </div>
                 </div>

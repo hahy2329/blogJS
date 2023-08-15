@@ -1,6 +1,8 @@
 package com.application.blogJS.blog.controller;
 
 import java.io.File;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
@@ -8,6 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -17,12 +20,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.application.blogJS.blog.dto.BlogDTO;
 import com.application.blogJS.blog.service.BlogService;
+
+import net.coobird.thumbnailator.Thumbnails;
 
 @Controller
 @RequestMapping("/blog")
@@ -119,13 +125,38 @@ public class BlogController {
 		ModelAndView mv = new ModelAndView();
 		
 		List<BlogDTO> blogDTO = blogService.getBlogStudyList();
-		mv.addObject("blogDTO", blogDTO);
+		mv.addObject("blogStudy", blogDTO);
 		mv.setViewName("/blog/blogStudy");
 		
 		return mv;
 		
 	}
 	
+	
+	@GetMapping("/thumbnails")
+	public void thumbnails(@RequestParam("picture1") String picture1, HttpServletResponse response) throws Exception{
+		
+		OutputStream out = response.getOutputStream();
+		
+		File image = new File(FILE_REPO_PATH+picture1);
+		if(image.exists()) {
+			Thumbnails.of(image).forceSize(555, 280).outputFormat("jpg").toOutputStream(out);
+		}
+		byte[] buffer = new byte[1024 * 8];
+		out.write(buffer);
+		out.close();
+	}
+	
+	@GetMapping("/blogStudyDetail")
+	public ModelAndView blogStudyDetail(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogStudyDetail(blogId);
+		mv.addObject("blogStudy", blogDTO);
+		mv.setViewName("/blog/blogStudyDetail");
+		return mv;
+		
+	}
 	
 	
 	

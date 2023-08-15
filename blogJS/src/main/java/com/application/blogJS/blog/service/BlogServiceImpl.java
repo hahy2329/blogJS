@@ -32,4 +32,11 @@ public class BlogServiceImpl implements BlogService {
 		
 	}
 
+
+
+	@Override
+	public BlogDTO getBlogStudyDetail(long blogId) throws Exception {
+		return blogDAO.getBlogStudyDetail(blogId);
+	}
+
 }

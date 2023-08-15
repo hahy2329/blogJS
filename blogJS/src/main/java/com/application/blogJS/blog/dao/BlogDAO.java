@@ -8,4 +8,5 @@ public interface BlogDAO {
 	
 	public List<BlogDTO> getBlogStudyList() throws Exception;
 	public void insertBlog(BlogDTO blogDTO) throws Exception;
+	public BlogDTO getBlogStudyDetail(long blogId) throws Exception;
 }

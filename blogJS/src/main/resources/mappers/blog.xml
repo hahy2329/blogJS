@@ -8,7 +8,7 @@
 		FROM
 			BLOG
 		WHERE
-			SORT =#{"STUDY"}
+			SORT ="DEVELOPMENT"
 	</select>
 	
 	<insert id="insertBlog" parameterType="BlogDTO">
@@ -30,5 +30,19 @@
 	
 	
 	</insert>
+	
+	<select id="getBlogStudyDetail" parameterType="long" resultType="BlogDTO">
+	
+		
+		SELECT
+			*
+		FROM
+			BLOG
+		WHERE 
+			BLOG_ID = #{blogId}
+		
+		
+	
+	</select>
 
 </mapper>
