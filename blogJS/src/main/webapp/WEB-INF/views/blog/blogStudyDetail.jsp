@@ -15,7 +15,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 posts-list">
-                	<c:forEach var="blogDTO" items="${blogStudyDetail }">
                     <div class="single-post row">
                        <c:if test="${blogDTO.picture1 ne null }">
 	                        <div class="col-lg-12">
@@ -31,7 +30,7 @@
                                 </div>
                                 <ul class="blog_meta list">
                                     <li><a href="#">${blogDTO.humanId }<i class="lnr lnr-user"></i></a></li>
-                                    <li><a href="#"><fmt:formatDate value="${blogDTO.enrollDT }" pattern="yyyy-MM-dd"/><i class="lnr lnr-calendar-full"></i></a></li>
+                                    <li><a href="#"><fmt:formatDate value="${blogDTO.enrollDt }" pattern="yyyy-MM-dd"/><i class="lnr lnr-calendar-full"></i></a></li>
                                     <li><a href="#">${blogDTO.readCnt }<i class="lnr lnr-eye"></i></a></li>
                                     <li><a href="#">우선 보류!(댓글 db생성 예정)<i class="lnr lnr-bubble"></i></a></li>
                                 </ul>
@@ -63,7 +62,6 @@
                             </div>
                         </div>
                     </div>
-                    </c:forEach>
                     <div class="comments-area">
                         <h4>05 Comments</h4>
                         <div class="comment-list">

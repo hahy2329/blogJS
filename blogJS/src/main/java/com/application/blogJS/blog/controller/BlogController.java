@@ -152,7 +152,7 @@ public class BlogController {
 		
 		ModelAndView mv = new ModelAndView();
 		BlogDTO blogDTO = blogService.getBlogStudyDetail(blogId);
-		mv.addObject("blogStudy", blogDTO);
+		mv.addObject("blogDTO", blogDTO);
 		mv.setViewName("/blog/blogStudyDetail");
 		return mv;
 		
