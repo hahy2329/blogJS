@@ -15,6 +15,28 @@
 	
 	
 	</insert>
-
+	
+	<select id="getBlogReplyCnt" parameterType="long" resultType="int">
+		
+		
+		SELECT 
+			COUNT(*)
+		FROM
+			STUDYBLOGREPLY
+		WHERE 
+			BLOG_ID = #{blogId}
+			
+	</select>
+	
+	<select id="getBlogReplyList" parameterType="long" resultType="BlogReplyDTO">
+		
+		SELECT
+			*
+		FROM 
+			STUDYBLOGREPLY
+		WHERE 
+			BLOG_ID = #{blogId}
+			
+	</select>
 
 </mapper>

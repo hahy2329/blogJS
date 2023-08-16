@@ -1,5 +1,7 @@
 package com.application.blogJS.blogReply.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,6 +18,16 @@ public class BlogReplyDAOImpl implements BlogReplyDAO {
 	public void uploadStudyBlogReply(BlogReplyDTO blogReplyDTO) throws Exception {
 		sqlSession.insert("blogReply.uploadStudyReply", blogReplyDTO);
 
+	}
+
+	@Override
+	public int getBlogReplyCnt(long blogId) throws Exception {
+		return sqlSession.selectOne("blogReply.getBlogReplyCnt", blogId);
+	}
+
+	@Override
+	public List<BlogReplyDTO> getBlogReplyList(long blogId) throws Exception {
+		return sqlSession.selectList("blogReply.getBlogReplyList", blogId);
 	}
 
 }

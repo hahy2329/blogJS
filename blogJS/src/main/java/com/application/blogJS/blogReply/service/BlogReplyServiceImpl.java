@@ -1,5 +1,7 @@
 package com.application.blogJS.blogReply.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,20 @@ public class BlogReplyServiceImpl implements BlogReplyService {
 		blogReplyDAO.uploadStudyBlogReply(blogReplyDTO);
 	
 
+	}
+
+
+
+	@Override
+	public int getBlogReplyCnt(long blogId) throws Exception {
+		return blogReplyDAO.getBlogReplyCnt(blogId);
+	}
+
+
+
+	@Override
+	public List<BlogReplyDTO> getBlogStudyReplyList(long blogId) throws Exception {
+		return blogReplyDAO.getBlogReplyList(blogId);
 	}
 
 }

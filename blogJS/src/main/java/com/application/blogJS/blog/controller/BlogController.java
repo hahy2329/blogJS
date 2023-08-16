@@ -27,6 +27,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.application.blogJS.blog.dto.BlogDTO;
 import com.application.blogJS.blog.service.BlogService;
+import com.application.blogJS.blogReply.dto.BlogReplyDTO;
+import com.application.blogJS.blogReply.service.BlogReplyService;
 
 import net.coobird.thumbnailator.Thumbnails;
 
@@ -39,6 +41,9 @@ public class BlogController {
 	
 	@Autowired
 	private BlogService blogService; 
+	
+	@Autowired
+	private BlogReplyService blogReplyService;
 	
 	
 	@GetMapping("/blogWrite")
@@ -152,7 +157,11 @@ public class BlogController {
 		
 		ModelAndView mv = new ModelAndView();
 		BlogDTO blogDTO = blogService.getBlogStudyDetail(blogId);
+		List<BlogReplyDTO> blogReplyList = blogReplyService.getBlogStudyReplyList(blogId);
+		int allBlogReplyCnt = blogReplyService.getBlogReplyCnt(blogId);
 		mv.addObject("blogDTO", blogDTO);
+		mv.addObject("allBlogReplyCnt", allBlogReplyCnt);
+		mv.addObject("blogReplyList", blogReplyList);
 		mv.setViewName("/blog/blogStudyDetail");
 		return mv;
 		

@@ -36,7 +36,7 @@ public class BlogReplyController {
 	private BlogReplyService blogReplyService;
 	
 	
-	@GetMapping("/blogWriteReply")
+	@GetMapping("/blogReplyWrite")
 	public ModelAndView blogWriteReply(@RequestParam("blogId") long blogId) throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
@@ -48,7 +48,7 @@ public class BlogReplyController {
 		
 	}
 	
-	@PostMapping("/blogWriteReply")
+	@PostMapping("/blogReplyWrite")
 	public ResponseEntity<Object> blogWriteReply(@RequestParam("blogId") long blogId,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
 		
 		Iterator<String> fileList = multipartRequest.getFileNames();

@@ -32,7 +32,7 @@
                                     <li><a href="#">${blogDTO.humanId }<i class="lnr lnr-user"></i></a></li>
                                     <li><a href="#"><fmt:formatDate value="${blogDTO.enrollDt }" pattern="yyyy-MM-dd"/><i class="lnr lnr-calendar-full"></i></a></li>
                                     <li><a href="#">${blogDTO.readCnt }<i class="lnr lnr-eye"></i></a></li>
-                                    <li><a href="#">우선 보류!(댓글 db생성 예정)<i class="lnr lnr-bubble"></i></a></li>
+                                    <li><a href="#">${allBlogReplyCnt }<i class="lnr lnr-bubble"></i></a></li>
                                 </ul>
                                 <ul class="social-links">
                                     <li><a href="https://ko-kr.facebook.com/"><i class="fa fa-facebook"></i></a></li>
@@ -63,7 +63,8 @@
                         </div>
                     </div>
                     <div class="comments-area">
-                        <h4>05 Comments</h4>
+                        <h4>${allBlogReplyCnt }개의 댓글이 있습니다.</h4>
+                        <c:forEach var="blogReplyDTO" items="${blogReplyList }">
                         <div class="comment-list">
                             <div class="single-comment justify-content-between d-flex">
                                 <div class="user justify-content-between d-flex">
@@ -71,21 +72,25 @@
                                         <img src="img/blog/c1.jpg" alt="">
                                     </div>
                                     <div class="desc">
-                                        <h5><a href="#">Emilly Blunt</a></h5>
-                                        <p class="date">December 4, 2017 at 3:12 pm </p>
+                                        <h5><a href="#">${blogReplyDTO.humanId }</a></h5>
+                                        <p class="date"><fmt:formatDate value="${blogReplyDTO.enrollDt }" pattern="yyyy-MM-dd,hh:mm"/></p>
                                         <p class="comment">
-                                            Never say goodbye till the end comes!
+                                            ${blogReplyDTO.content }
                                         </p>
                                     </div>
                                 </div>
                                 <div class="reply-btn">
-                                        <a href="" class="btn-reply text-uppercase">reply</a> 
+                                	<c:if test="${sessionScope.humanId eq blogReplyDTO.humanId }">
+                                        <a href="${contextPath }/blogReply/blogReplyUpdate?replyId=${blogReplyDTO.replyId}" class="btn-reply text-uppercase">댓글 수정</a> 
+                                        <a href="${contextPath }/blogReply/blogReplyRemove?replyId=${blogReplyDTO.replyId}" class="btn-reply text-uppercase">댓글 삭제</a> 
+                                	</c:if>
                                 </div>
                             </div>
-                        </div>	                           				
+                        </div>
+                        </c:forEach>	                           				
                     </div>
                     <div class="comment-form">
-                        <a href="${contextPath }/blogReply/blogWriteReply?blogId=${blogDTO.blogId}" class="primary-btn primary_btn"><span>댓글 작성</span></a>
+                        <a href="${contextPath }/blogReply/blogReplyWrite?blogId=${blogDTO.blogId}" class="primary-btn primary_btn"><span>댓글 작성</span></a>
                     </div>
                 </div>
                 <div class="col-lg-4">

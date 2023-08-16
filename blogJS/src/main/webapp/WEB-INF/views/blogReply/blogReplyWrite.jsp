@@ -79,7 +79,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/blogReply/blogWriteReply" method="post" enctype="multipart/form-data">
+                    <form class="row contact_form" action="${contextPath }/blogReply/blogReplyWrite" method="post" enctype="multipart/form-data">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${sessionScope.humanId }" readonly="readonly">
