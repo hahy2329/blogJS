@@ -9,6 +9,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +49,7 @@ public class BlogReplyController {
 	}
 	
 	@PostMapping("/blogWriteReply")
-	public ResponseEntity<Object> blogWriteReply(@RequestAttribute("blogId") long blogId,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> blogWriteReply(@RequestParam("blogId") long blogId,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
 		
 		Iterator<String> fileList = multipartRequest.getFileNames();
 		String fileName = "";
@@ -62,8 +63,10 @@ public class BlogReplyController {
 			}
 		}
 		
+		long id = blogId;
+		
 		BlogReplyDTO blogReplyDTO = new BlogReplyDTO();
-		blogReplyDTO.setBlogId(blogId);
+		blogReplyDTO.setBlogId(id);
 		blogReplyDTO.setContent(multipartRequest.getParameter("content"));
 		blogReplyDTO.setHumanId(multipartRequest.getParameter("humanId"));
 		blogReplyDTO.setImage(fileName);

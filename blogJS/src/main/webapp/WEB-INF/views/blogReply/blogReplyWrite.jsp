@@ -98,9 +98,9 @@
                             </div>
                                 <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." required="required"></textarea>
                                 <script>CKEDITOR.replace("content")</script>
-                        </div>
+                        	</div>
                         		<input type="hidden" name="blogId" value="${blogId }">
-                        <div class="col-md-12 text-right">
+                       		 <div class="col-md-12 text-right">
                             <button type="submit" value="submit" class="primary_btn">
                                 <span>등록</span>
                             </button>

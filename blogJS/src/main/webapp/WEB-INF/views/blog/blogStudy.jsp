@@ -52,12 +52,12 @@
     </section>
     <!--================Blog Categorie Area =================-->
     <!--================Blog Area =================-->
-                      <c:forEach var="blogStudy" items="${blogStudy }">
     <section class="blog_area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
+                      <c:forEach var="blogStudy" items="${blogStudy }">
                         <article class="row blog_item">
                             <div class="col-md-3">
                                 <div class="blog_info text-right">
@@ -83,12 +83,12 @@
                                 </div>
                             </div>
                         </article>
+                      </c:forEach>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-                      </c:forEach>
     <!--================Blog Area =================-->
 	
 	
