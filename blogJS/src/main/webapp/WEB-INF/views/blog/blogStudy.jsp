@@ -52,13 +52,13 @@
     </section>
     <!--================Blog Categorie Area =================-->
     <!--================Blog Area =================-->
+                      <c:forEach var="blogStudy" items="${blogStudy }">
     <section class="blog_area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
                         <article class="row blog_item">
-                           <c:forEach var="blogStudy" items="${blogStudy }">
                             <div class="col-md-3">
                                 <div class="blog_info text-right">
                                     <div class="post_tag">
@@ -68,7 +68,6 @@
                                         <li><a href="#">${blogStudy.humanId }<i class="lnr lnr-user"></i></a></li>
                                         <li><a href="#"><fmt:formatDate value="${blogStudy.enrollDt }" pattern="yyyy-MM-dd"/><i class="lnr lnr-calendar-full"></i></a></li>
                                         <li><a href="#">${blogStudy.readCnt }<i class="lnr lnr-eye"></i></a></li>
-                                        <li><a href="#">보류(전체 댓글 수 가져올 것 댓글 db생성 예정)<i class="lnr lnr-bubble"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -83,13 +82,13 @@
                                     </div>
                                 </div>
                             </div>
-                         </c:forEach>
                         </article>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+                      </c:forEach>
     <!--================Blog Area =================-->
 	
 	

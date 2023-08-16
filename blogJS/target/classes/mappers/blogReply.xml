@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="blogReply">
+
+	<insert id="uploadStudyReply" parameterType="BlogReplyDTO">
+		
+		INSERT INTO STUDYBLOGREPLY(CONTENT, IMAGE, HUMAN_ID, BLOG_ID)
+		
+		VALUES(
+			#{content},
+			#{image},
+			#{humanId},
+			#{blogId}
+		)
+	
+	
+	</insert>
+
+
+</mapper>

@@ -36,6 +36,8 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public BlogDTO getBlogStudyDetail(long blogId) throws Exception {
+		blogDAO.increaseReadCnt(blogId);
+		
 		return blogDAO.getBlogStudyDetail(blogId);
 	}
 

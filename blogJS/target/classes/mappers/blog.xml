@@ -6,14 +6,14 @@
 		SELECT
 			*
 		FROM
-			BLOG
+			STUDYBLOG
 		WHERE
 			SORT ="DEVELOPMENT"
 	</select>
 	
 	<insert id="insertBlog" parameterType="BlogDTO">
 		
-		INSERT INTO BLOG(HUMAN_ID, SUBJECT, CONTENT, SORT, PICTURE1, PICTURE2, PICTURE3)
+		INSERT INTO STUDYBLOG(HUMAN_ID, SUBJECT, CONTENT, SORT, PICTURE1, PICTURE2, PICTURE3)
 		VALUES(
 			
 			#{humanId},
@@ -37,12 +37,23 @@
 		SELECT
 			*
 		FROM
-			BLOG
+			STUDYBLOG
 		WHERE 
 			BLOG_ID = #{blogId}
 		
 		
 	
 	</select>
+	
+	<update id="increaseReadCnt" parameterType="long">
+		
+		UPDATE
+			STUDYBLOG
+		SET
+			READ_CNT = READ_CNT +1
+		WHERE
+			BLOG_ID = #{blogId}
+	</update>
+	
 
 </mapper>
