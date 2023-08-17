@@ -69,4 +69,9 @@ public class HumanServiceImpl implements HumanService {
 		}
 	}
 
+	@Override
+	public HumanDTO getHumanDetail(String humanId) throws Exception {
+		return humanDAO.getHumanDetail(humanId);
+	}
+
 }

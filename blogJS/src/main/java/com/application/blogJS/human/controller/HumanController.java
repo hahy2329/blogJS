@@ -1,12 +1,14 @@
 package com.application.blogJS.human.controller;
 
 import java.io.File;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.application.blogJS.human.dto.HumanDTO;
 import com.application.blogJS.human.service.HumanService;
+
+import net.coobird.thumbnailator.Thumbnails;
 
 @Controller
 @RequestMapping("/human")
@@ -178,6 +182,21 @@ public class HumanController {
 		return new ResponseEntity<String>(humanService.checkDuplicatedPasswd(passwd, humanId), HttpStatus.OK);
 		
 		
+	}
+	
+	
+	@GetMapping("/thumbnails")
+	public void thumbnails(@RequestParam("profile") String profile, HttpServletResponse response) throws Exception{
+		
+		OutputStream out = response.getOutputStream();
+		
+		File image = new File(FILE_REPO_PATH+profile);
+		if(image.exists()) {
+			Thumbnails.of(image).forceSize(120, 120).outputFormat("jpg").toOutputStream(out);
+		}
+		byte[] buffer = new byte[1024*8];
+		out.write(buffer);
+		out.close();
 	}
 	
 }

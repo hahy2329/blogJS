@@ -67,4 +67,15 @@
 		
 		</select>
 		
+		<select id="getHumanDetail" parameterType="String" resultType="HumanDTO">
+			
+			SELECT
+				*
+			FROM
+				HUMAN
+			WHERE
+				HUMAN_ID = #{humanId}
+		
+		</select>
+		
 	</mapper>

@@ -9,5 +9,5 @@ public interface HumanDAO {
 	public void addHuman(HumanDTO humanDTO) throws Exception;
 	public String checkEncodePasswd(String humanId) throws Exception;
 	public HumanDTO loginHuman(HumanDTO humanDTO) throws Exception;
-	
+	public HumanDTO getHumanDetail(String humanId) throws Exception;
 }

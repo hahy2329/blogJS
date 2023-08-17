@@ -44,4 +44,10 @@ public class HumanDAOImpl implements HumanDAO {
 		return sqlSession.selectOne("human.loginHuman", humanDTO);
 	}
 
+
+	@Override
+	public HumanDTO getHumanDetail(String humanId) throws Exception {
+		return sqlSession.selectOne("human.getHumanDetail", humanId);
+	}
+
 }

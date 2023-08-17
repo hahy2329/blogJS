@@ -37,7 +37,7 @@
                                 <ul class="social-links">
                                     <li><a href="https://ko-kr.facebook.com/"><i class="fa fa-facebook"></i></a></li>
                                     <li><a href="http://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="https://github.com/"><i class="fa fa-github"></i></a></li>
+                                    <li><a href="https://github.com/hahy2329"><i class="fa fa-github"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -99,50 +99,18 @@
                             <div class="br"></div>
                         </aside>
                         <aside class="single_sidebar_widget author_widget">
-                            <img class="author_img rounded-circle" src="img/blog/author.png" alt="">
-                            <h4>Charlie Barber</h4>
-                            <p>Senior blog writer</p>
+                            <img class="author_img rounded-circle" src="${contextPath }/human/thumbnails?profile=${humanDTO.profile}" width="120" height="120" alt="프로필 이미지">
+                            <h4>${humanDTO.humanId }</h4>
+                            <p>백엔드 개발자</p>
                             <div class="social_icon">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-github"></i></a>
+                                <a href="https://ko-kr.facebook.com/"><i class="fa fa-facebook"></i></a>
+                                <a href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                                <a href="https://github.com/hahy2329"><i class="fa fa-github"></i></a>
                             </div>
-                            <p>Boot camps have its supporters andit sdetractors. Some people do not understand why you should have to spend money on boot camp when you can get. Boot camps have itssuppor ters andits detractors.</p>
+                            <p>${humanDTO.content }</p>
                             <div class="br"></div>
                         </aside>
                         <!-- 밑에 부분은 각 블로그 종류 별 최근 순으로 하나 씩만 가져올 예정 -->
-                        <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Popular Posts</h3>
-                            <div class="media post_item">
-                                <img src="img/blog/popular-post/post1.jpg" alt="post">
-                                <div class="media-body">
-                                    <a href="blog-details.html"><h3>Space The Final Frontier</h3></a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/blog/popular-post/post2.jpg" alt="post">
-                                <div class="media-body">
-                                    <a href="blog-details.html"><h3>The Amazing Hubble</h3></a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/blog/popular-post/post3.jpg" alt="post">
-                                <div class="media-body">
-                                    <a href="blog-details.html"><h3>Astronomy Or Astrology</h3></a>
-                                    <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="img/blog/popular-post/post4.jpg" alt="post">
-                                <div class="media-body">
-                                    <a href="blog-details.html"><h3>Asteroids telescope</h3></a>
-                                    <p>01 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="br"></div>
-                        </aside>
                         <aside class="single_sidebar_widget post_category_widget">
                             <h4 class="widget_title">blog Catgories</h4>
                             <ul class="list cat-list">
