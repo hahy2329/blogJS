@@ -69,7 +69,7 @@
                             <div class="single-comment justify-content-between d-flex">
                                 <div class="user justify-content-between d-flex">
                                     <div class="thumb">
-                                        <img src="img/blog/c1.jpg" alt="">
+                                        <img src="${contextPath }/human/thumbnails2?profile2=${humanDTO.profile}"  width="60" height="60" alt="프로필 이미지">
                                     </div>
                                     <div class="desc">
                                         <h5><a href="#">${blogReplyDTO.humanId }</a></h5>

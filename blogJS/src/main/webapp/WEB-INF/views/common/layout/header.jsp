@@ -36,7 +36,7 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">포트폴리오 관리</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="elements.html">소재별 핵심포인트</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/portfolio/category">주제별</a></li>
 									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">미지정</a></li>
 								</ul>
 							</li>
@@ -45,7 +45,6 @@
 								 aria-expanded="false">Blog</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="${contextPath }/blog/blogStudy">블로그</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">블로그 세부정보</a></li>
 									<li class="nav-item"><a class="nav-link" href="${contextPath }/blog/blogWrite">블로그 작성</a></li>
 								</ul>
 							</li>

@@ -199,4 +199,19 @@ public class HumanController {
 		out.close();
 	}
 	
+	@GetMapping("/thumbnails2")
+	public void thumbnails2(@RequestParam("profile2") String profile2, HttpServletResponse response) throws Exception{
+		
+		OutputStream out = response.getOutputStream();
+		
+		File image = new File(FILE_REPO_PATH+profile2);
+		if(image.exists()) {
+			Thumbnails.of(image).forceSize(60, 60).outputFormat("jpg").toOutputStream(out);
+		}
+		byte[] buffer = new byte[1024*8];
+		out.write(buffer);
+		out.close();
+	}
+	
+	
 }
