@@ -117,44 +117,26 @@
                             <!-- 밑에는 각 블로그 종류 별 작성 수를 기재할 것임 -->
                                 <li>
                                     <a href="#" class="d-flex justify-content-between">
-                                        <p>Technology</p>
+                                        <p>개발 공부</p>
                                         <p>37</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="d-flex justify-content-between">
-                                        <p>Lifestyle</p>
+                                        <p>소소한 일상</p>
                                         <p>24</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="d-flex justify-content-between">
-                                        <p>Fashion</p>
+                                        <p>오늘의 핵심 키워드</p>
                                         <p>59</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="d-flex justify-content-between">
-                                        <p>Art</p>
-                                        <p>29</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Food</p>
-                                        <p>15</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Architecture</p>
-                                        <p>09</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>Adventure</p>
-                                        <p>44</p>
+                                        <p>여행</p>
+                                        <p>59</p>
                                     </a>
                                 </li>															
                             </ul>
@@ -172,18 +154,18 @@
                         <aside class="single-sidebar-widget tag_cloud_widget">
                             <h4 class="widget_title">Tag Clouds</h4>
                             <ul class="list">
-                                <li><a href="#">Technology</a></li>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Architecture</a></li>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Food</a></li>
-                                <li><a href="#">Technology</a></li>
-                                <li><a href="#">Lifestyle</a></li>
-                                <li><a href="#">Art</a></li>
-                                <li><a href="#">Adventure</a></li>
-                                <li><a href="#">Food</a></li>
-                                <li><a href="#">Lifestyle</a></li>
-                                <li><a href="#">Adventure</a></li>
+                                <li><a href="#">HTML5</a></li>
+                                <li><a href="#">CSS3</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="#">Jquery</a></li>
+                                <li><a href="#">Java</a></li>
+                                <li><a href="#">JSP</a></li>
+                                <li><a href="#">Spring Framework</a></li>
+                                <li><a href="#">Mybatis</a></li>
+                                <li><a href="#">JPA</a></li>
+                                <li><a href="#">REST API</a></li>
+                                <li><a href="#">API</a></li>
+                                <li><a href="#">Web Socket</a></li>
                             </ul>
                         </aside>
                     </div>
