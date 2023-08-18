@@ -155,6 +155,9 @@
                             <div class="reply-btn" align="right">
                                         <input type="button" id="btnOverlappedId" class="btn-reply text-uppercase" value="중복확인"> 
                             </div> <!-- 아이디 중복확인 -->
+                            <div>
+                            	<br>
+                            </div>
                                 <input type="password" class="form-control" id="passwd" name="passwd" placeholder="비밀번호 입력" required="required">
                                 <input type="password"  id="confirmPasswd" class="form-control" placeholder="비밀번호 재입력" required="required">
                         	<div><!-- 비밀번호 -->
@@ -174,7 +177,8 @@
                             <div>
                             	<br>
                             </div>
-                                <textarea class="form-control" name="content" rows="1" placeholder="가입인사를 적어주세요." required="required"></textarea>
+                            	<input type="text" class="form-control" value="자기소개를 간단하게 부탁드립니다." readonly="readonly">
+                                <textarea class="form-control" name="content" rows="1" required="required"></textarea>
                             <div>
                             	<br>
                             </div>  
@@ -187,9 +191,8 @@
                             <div>
                             	<br>
                             </div>
-                            
-                               	<input type="text" class="form-control" value="생년월일을 선택해주세요." readonly="readonly">
                            <div> 	
+                               	<input type="text" class="form-control" value="생년월일을 선택해주세요." readonly="readonly">
                           	<div>
                             	<select id="birthY" class="form-control" required="required">
                             		<c:forEach var="i" begin="0" end="2023">

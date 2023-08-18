@@ -37,7 +37,7 @@
 								 aria-expanded="false">포트폴리오 관리</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="${contextPath }/portfolio/category">주제별</a></li>
-									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">미지정</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/portfolio/portfolioWrite">글쓰기</a></li>
 								</ul>
 							</li>
 							<li class="nav-item submenu dropdown">

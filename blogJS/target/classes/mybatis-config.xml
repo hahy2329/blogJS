@@ -11,6 +11,7 @@
 		<typeAlias type="com.application.blogJS.human.dto.HumanDTO" alias="HumanDTO"/>
 		<typeAlias type="com.application.blogJS.blog.dto.BlogDTO" alias="BlogDTO"/>
 		<typeAlias type="com.application.blogJS.blogReply.dto.BlogReplyDTO" alias="BlogReplyDTO"/>
+		<typeAlias type="com.application.blogJS.portfolio.dto.PortfolioDTO" alias="PortfolioDTO"/>
 	</typeAliases>	
 		
 		
