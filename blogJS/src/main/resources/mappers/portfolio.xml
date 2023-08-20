@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="portfolio">
 	<insert id="insertUploadPortfolio" parameterType="PortfolioDTO">
-		INSERT INTO PORTFOLIO(IMAGE, SUBJECT, CONTENT, MAKE_DT, SORT, NUMBER_PEOPLE, MADE_PEOPLE, COMPLETE, HUMAN_ID)
+		INSERT INTO PORTFOLIO(HUMAN_ID, SUBJECT, CONTENT, MAKE_DT, SORT, NUMBER_PEOPLE, MADE_PEOPLE, COMPLETE, IMAGE)
 		
 		VALUES(
-			#{image},
+			#{humanId},
 			#{subject},
 			#{content},
 			#{makeDt},
@@ -13,7 +13,7 @@
 			#{numberPeople},
 			#{madePeople},
 			#{complete},
-			#{humanId}
+			#{image}
 		
 		
 		)

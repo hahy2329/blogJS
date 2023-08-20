@@ -95,12 +95,12 @@ $().ready(function(){
                             <div>
                             	<br>
                             </div>
-                            	<input type="text" class="form-control" value="포트폴리오 사진을 올려주세요." readonly="readonly">
+                            	<input type="text" class="form-control" placeholder="포트폴리오 사진을 올려주세요." readonly="readonly">
                             	<input type="file" class="form-control" name="image" value="파일 선택">
                             <div>
                             	<br>
                             </div>
-                            	<input type="text" class="form-control" value="포트폴리오 관련 간단하게 설명 부탁드립니다." readonly="readonly">
+                            	<input type="text" class="form-control" placeholder="포트폴리오 관련 간단하게 설명 부탁드립니다." readonly="readonly">
                                 <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." required="required"></textarea>
                                 <script>CKEDITOR.replace("content")</script>
                             <div>
@@ -109,7 +109,7 @@ $().ready(function(){
                             <div>
                             	<br>
                             </div>
-                           		  	<input type="text" class="form-control" value="프로젝트 완성날짜를 선택해주세요." readonly="readonly">
+                           		  	<input type="text" class="form-control" placeholder="프로젝트 완성날짜를 선택해주세요." readonly="readonly">
                            <div> 	
                           	<div>
                             	<select id="makeY" class="form-control" required="required">
@@ -151,20 +151,20 @@ $().ready(function(){
                             <div>
                             	<br>
                             </div>
-                            	<input type="text" class="form-control" value="프로젝트의 유형을 선택해주세요." readonly="readonly">
+                            	<input type="text" class="form-control" placeholder="프로젝트의 유형을 선택해주세요." readonly="readonly">
                             	<input type="radio" id="sort" name="sort" value="web">웹
                                	<input type="radio" id="sort" name="sort" value="app">앱
                              <div>
                              	<br> 
                              </div>
-                             	<input type="text" class="form-control" value="프로젝트의 인원을 숫자로 입력해주세요." readonly="readonly">
+                             	<input type="text" class="form-control" placeholder="프로젝트의 인원을 숫자로 입력해주세요." readonly="readonly">
                              	<input type="text" class="form-control" name="numberPeople" required="required">&nbsp;
-                             	<input type="text" class="form-control" value="프로젝트 만든이를 입력해주세요." readonly="readonly">
+                             	<input type="text" class="form-control" placeholder="프로젝트 만든이를 입력해주세요." readonly="readonly">
                              	<input type="text" class="form-control" name="madePeople" required="required">
                              <div>
                              	<br>
                              </div>
-                             	<input type="text" class="form-control" value="프로젝트의 완성도를 1~5까지 입력해주세요." readonly="readonly">
+                             	<input type="text" class="form-control" placeholder="프로젝트의 완성도를 1~5까지 입력해주세요." readonly="readonly">
                              	<select id="complete" name="complete" class="form-control" required="required">
                              		<c:forEach var="i" begin="1" end="5">
                              			<option>${i }</option>

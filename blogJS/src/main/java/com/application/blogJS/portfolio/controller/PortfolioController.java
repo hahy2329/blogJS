@@ -44,7 +44,7 @@ public class PortfolioController {
 	}
 	
 	@PostMapping("/portfolioWrite")
-	public ResponseEntity<Object> portfolioWrite(@RequestParam("complete") int complete, @RequestParam("numberPeople") int numberPeople ,@RequestParam("makeDt") Date makeDt, MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> portfolioWrite(@RequestParam("complete") int complete, @RequestParam("numberPeople") int numberPeople , MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
 		
 		Iterator<String> fileList = multipartRequest.getFileNames();
 		String fileName="";
@@ -58,7 +58,8 @@ public class PortfolioController {
 			}
 		}
 		
-		Date date1 = makeDt;
+		
+		
 		int number = numberPeople;
 		int rating1 = complete;
 		
@@ -66,12 +67,23 @@ public class PortfolioController {
 		portfolioDTO.setImage(fileName);
 		portfolioDTO.setSubject(multipartRequest.getParameter("subject"));
 		portfolioDTO.setContent(multipartRequest.getParameter("content"));
-		portfolioDTO.setMakeDt(date1);
-		portfolioDTO.setSort("sort");
+		portfolioDTO.setMakeDt(multipartRequest.getParameter("makeDt"));
+		portfolioDTO.setSort(multipartRequest.getParameter("sort"));
 		portfolioDTO.setNumberPeople(number);
-		portfolioDTO.setMadePeople("madePeople");
+		portfolioDTO.setMadePeople(multipartRequest.getParameter("madePeople"));
 		portfolioDTO.setComplete(rating1);
-		portfolioDTO.setHumanId("humanId");
+		portfolioDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		
+		
+		System.out.println(fileName);
+		System.out.println(multipartRequest.getParameter("subject"));
+		System.out.println(multipartRequest.getParameter("content"));
+		System.out.println(multipartRequest.getParameter("makeDt"));
+		System.out.println(multipartRequest.getParameter("sort"));
+		System.out.println(number);
+		System.out.println(multipartRequest.getParameter("madePeople"));
+		System.out.println(multipartRequest.getParameter("humanId"));
+		System.out.println(rating1);
 		
 		portfolioService.insertUploadPortfolio(portfolioDTO);
 		

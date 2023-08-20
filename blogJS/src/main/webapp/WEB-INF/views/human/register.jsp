@@ -177,7 +177,7 @@
                             <div>
                             	<br>
                             </div>
-                            	<input type="text" class="form-control" value="자기소개를 간단하게 부탁드립니다." readonly="readonly">
+                            	<input type="text" class="form-control" placeholder="자기소개를 간단하게 부탁드립니다." readonly="readonly">
                                 <textarea class="form-control" name="content" rows="1" required="required"></textarea>
                             <div>
                             	<br>
