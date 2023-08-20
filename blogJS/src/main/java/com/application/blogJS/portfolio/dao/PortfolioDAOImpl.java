@@ -8,14 +8,16 @@ import com.application.blogJS.portfolio.dto.PortfolioDTO;
 
 @Repository
 public class PortfolioDAOImpl implements PortfolioDAO {
-	
+
 	@Autowired
 	private SqlSession sqlSession;
 	
 	@Override
-	public void insertUploadPortfolio(PortfolioDTO portfolioDTO) throws Exception {
-		sqlSession.insert("portfolio.insertUploadPortfolio");
+	public void addPortfolio(PortfolioDTO portfolioDTO) throws Exception {
+		
+		sqlSession.insert("portfolio.addPortfolio", portfolioDTO);
 		
 	}
-
+	
+	
 }

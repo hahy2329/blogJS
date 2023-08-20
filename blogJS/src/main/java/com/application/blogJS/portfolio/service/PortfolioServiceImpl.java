@@ -8,13 +8,13 @@ import com.application.blogJS.portfolio.dto.PortfolioDTO;
 
 @Service
 public class PortfolioServiceImpl implements PortfolioService {
-
+	
 	@Autowired
 	private PortfolioDAO portfolioDAO;
-	
+
 	@Override
-	public void insertUploadPortfolio(PortfolioDTO portfolioDTO) throws Exception {
-		portfolioDAO.insertUploadPortfolio(portfolioDTO);
+	public void addPortfolio(PortfolioDTO portfolioDTO) throws Exception {
+		portfolioDAO.addPortfolio(portfolioDTO);
 		
 	}
 

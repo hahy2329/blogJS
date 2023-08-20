@@ -44,7 +44,10 @@ public class PortfolioController {
 	}
 	
 	@PostMapping("/portfolioWrite")
-	public ResponseEntity<Object> portfolioWrite(@RequestParam("complete") int complete, @RequestParam("numberPeople") int numberPeople , MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> portfolioWrite(@RequestParam("complete") String complete, @RequestParam("numberPeople") String numberPeople , MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		
+		PortfolioDTO portfolioDTO = new PortfolioDTO();
 		
 		Iterator<String> fileList = multipartRequest.getFileNames();
 		String fileName="";
@@ -55,47 +58,41 @@ public class PortfolioController {
 				SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 				fileName = fmt.format(new Date()) + "_" + UUID.randomUUID()+"_"+uploadFile.getOriginalFilename();
 				uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+				portfolioDTO.setImage(fileName);
 			}
 		}
 		
+		int number = Integer.parseInt(numberPeople);
+		int rating = Integer.parseInt(complete);
 		
 		
-		int number = numberPeople;
-		int rating1 = complete;
-		
-		PortfolioDTO portfolioDTO = new PortfolioDTO();
-		portfolioDTO.setImage(fileName);
+		portfolioDTO.setHumanId(multipartRequest.getParameter("humanId"));
 		portfolioDTO.setSubject(multipartRequest.getParameter("subject"));
 		portfolioDTO.setContent(multipartRequest.getParameter("content"));
 		portfolioDTO.setMakeDt(multipartRequest.getParameter("makeDt"));
 		portfolioDTO.setSort(multipartRequest.getParameter("sort"));
 		portfolioDTO.setNumberPeople(number);
 		portfolioDTO.setMadePeople(multipartRequest.getParameter("madePeople"));
-		portfolioDTO.setComplete(rating1);
-		portfolioDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		portfolioDTO.setComplete(rating);
 		
-		
-		System.out.println(fileName);
-		System.out.println(multipartRequest.getParameter("subject"));
-		System.out.println(multipartRequest.getParameter("content"));
-		System.out.println(multipartRequest.getParameter("makeDt"));
-		System.out.println(multipartRequest.getParameter("sort"));
-		System.out.println(number);
-		System.out.println(multipartRequest.getParameter("madePeople"));
-		System.out.println(multipartRequest.getParameter("humanId"));
-		System.out.println(rating1);
-		
-		portfolioService.insertUploadPortfolio(portfolioDTO);
+		portfolioService.addPortfolio(portfolioDTO);
 		
 		String message = "<script>";
-		message +="alert('정상적으로 등록 되었습니다.');";
-		message +="location.href='"+request.getContextPath()+"/';";
+		message +="alert('정상적으로 등록이 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath() +"/';";
 		message +="</script>";
 		
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		
-		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+		
+		
+		
+		
+	
 		
 		
 	}

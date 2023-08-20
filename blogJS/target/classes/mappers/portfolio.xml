@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="portfolio">
-	<insert id="insertUploadPortfolio" parameterType="PortfolioDTO">
-		INSERT INTO PORTFOLIO(HUMAN_ID, SUBJECT, CONTENT, MAKE_DT, SORT, NUMBER_PEOPLE, MADE_PEOPLE, COMPLETE, IMAGE)
+
+	<insert id="addPortfolio" parameterType="PortfolioDTO">
+		
+		INSERT INTO PORTFOLIO(IMAGE, SUBJECT, CONTENT, MAKE_DT, SORT, NUMBER_PEOPLE, MADE_PEOPLE, COMPLETE, HUMAN_ID)
 		
 		VALUES(
-			#{humanId},
+		
+			#{image},
 			#{subject},
 			#{content},
 			#{makeDt},
@@ -13,11 +16,13 @@
 			#{numberPeople},
 			#{madePeople},
 			#{complete},
-			#{image}
+			#{humanId}
 		
 		
 		)
+	
 	</insert>
+
 
 
 </mapper>
