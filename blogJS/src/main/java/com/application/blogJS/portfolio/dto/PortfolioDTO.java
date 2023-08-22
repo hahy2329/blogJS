@@ -1,5 +1,7 @@
 package com.application.blogJS.portfolio.dto;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,13 +12,12 @@ public class PortfolioDTO {
 	private String image;
 	private String subject;
 	private String content;
-	private String makeDt;
+	private Date makeDt;
 	private String sort;
 	private int numberPeople;
 	private String madePeople;
 	private int complete;
 	private String humanId;
-	
 	public long getPortfolioId() {
 		return portfolioId;
 	}
@@ -41,10 +42,10 @@ public class PortfolioDTO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getMakeDt() {
+	public Date getMakeDt() {
 		return makeDt;
 	}
-	public void setMakeDt(String makeDt) {
+	public void setMakeDt(Date makeDt) {
 		this.makeDt = makeDt;
 	}
 	public String getSort() {
@@ -84,6 +85,8 @@ public class PortfolioDTO {
 				+ madePeople + ", complete=" + complete + ", humanId=" + humanId + ", toString()=" + super.toString()
 				+ "]";
 	}
+	
+	
 	
 	
 	

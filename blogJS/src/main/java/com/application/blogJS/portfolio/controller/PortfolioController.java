@@ -1,12 +1,16 @@
 package com.application.blogJS.portfolio.controller;
 
 import java.io.File;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Formatter;
 import java.util.Iterator;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -23,6 +27,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.application.blogJS.portfolio.dto.PortfolioDTO;
 import com.application.blogJS.portfolio.service.PortfolioService;
+
+import net.coobird.thumbnailator.Thumbnails;
+
+
 
 @Controller
 @RequestMapping("/portfolio")
@@ -44,7 +52,7 @@ public class PortfolioController {
 	}
 	
 	@PostMapping("/portfolioWrite")
-	public ResponseEntity<Object> portfolioWrite(@RequestParam("complete") String complete, @RequestParam("numberPeople") String numberPeople , MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> portfolioWrite(@RequestParam("makeDt")String makeDt ,@RequestParam("complete") String complete, @RequestParam("numberPeople") String numberPeople , MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
 		
 		
 		PortfolioDTO portfolioDTO = new PortfolioDTO();
@@ -65,11 +73,16 @@ public class PortfolioController {
 		int number = Integer.parseInt(numberPeople);
 		int rating = Integer.parseInt(complete);
 		
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = fmt.parse(makeDt);
+		
+		
+		
 		
 		portfolioDTO.setHumanId(multipartRequest.getParameter("humanId"));
 		portfolioDTO.setSubject(multipartRequest.getParameter("subject"));
 		portfolioDTO.setContent(multipartRequest.getParameter("content"));
-		portfolioDTO.setMakeDt(multipartRequest.getParameter("makeDt"));
+		portfolioDTO.setMakeDt(date);
 		portfolioDTO.setSort(multipartRequest.getParameter("sort"));
 		portfolioDTO.setNumberPeople(number);
 		portfolioDTO.setMadePeople(multipartRequest.getParameter("madePeople"));
@@ -88,12 +101,45 @@ public class PortfolioController {
 		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
 		
 		
-		
-		
-		
-		
+	}
 	
+	
+	
+	@GetMapping("/portfolioTopic")
+	public ModelAndView topic() throws Exception{
 		
+		ModelAndView mv = new ModelAndView();
+		List<PortfolioDTO> portfolioList = portfolioService.getPortfolioList();
+		mv.addObject("portfolioList", portfolioList);
+		mv.setViewName("/portfolio/portfolioTopic");
+		return mv;
+	
+	}
+	
+	@GetMapping("/portfolioImage")
+	public void portfolioImage(@RequestParam("image") String image, HttpServletResponse response) throws Exception{
+		
+		OutputStream out = response.getOutputStream();
+		
+		File picture = new File(FILE_REPO_PATH+image);
+		if(picture.exists()) {
+			Thumbnails.of(picture).forceSize(375, 325).outputFormat("jpg").toOutputStream(out);
+		}
+		byte[] buffer = new byte[1024*8];
+		out.write(buffer);
+		out.close();
+	}
+	
+	@GetMapping("/webPortfolio")
+	public ModelAndView webPortfolio() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		List<PortfolioDTO> portfolioList = portfolioService.getWebPortfolioList();
+		mv.addObject("portfolioList", portfolioList);
+		mv.setViewName("/portfolio/webPortfolio");
+		
+		return mv;
 		
 	}
+	
 }

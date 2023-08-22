@@ -36,7 +36,7 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">포트폴리오 관리</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="${contextPath }/portfolio/category">주제별</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/portfolio/portfolioTopic">주제별</a></li>
 									<li class="nav-item"><a class="nav-link" href="${contextPath }/portfolio/portfolioWrite">글쓰기</a></li>
 								</ul>
 							</li>

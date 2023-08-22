@@ -7,5 +7,13 @@
 		<put-attribute name="body" value="/WEB-INF/views/portfolio/portfolioWrite.jsp"></put-attribute>
 	</definition>
 
-
+	<definition name="/portfolio/portfolioTopic" extends="baseLayout">
+		<put-attribute name="title" value="포트폴리오 관리(All)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/portfolio/portfolioTopic.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/portfolio/webPortfolio" extends="baseLayout">
+		<put-attribute name="title" value="포트폴리오 관리(Web)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/portfolio/webPortfolio.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>

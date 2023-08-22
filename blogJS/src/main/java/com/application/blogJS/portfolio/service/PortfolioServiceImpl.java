@@ -1,5 +1,7 @@
 package com.application.blogJS.portfolio.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,16 @@ public class PortfolioServiceImpl implements PortfolioService {
 	public void addPortfolio(PortfolioDTO portfolioDTO) throws Exception {
 		portfolioDAO.addPortfolio(portfolioDTO);
 		
+	}
+
+	@Override
+	public List<PortfolioDTO> getPortfolioList() throws Exception {
+		return portfolioDAO.getPortfolioList();
+	}
+
+	@Override
+	public List<PortfolioDTO> getWebPortfolioList() throws Exception {
+		return portfolioDAO.getWebPortfolioList();
 	}
 
 }

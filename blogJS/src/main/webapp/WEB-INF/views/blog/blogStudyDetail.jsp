@@ -10,6 +10,25 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>개발 블로그(상세정보)</h2>
+                    <div class="page_link">
+                        <a href="${contextPath }/">Home</a>
+                        <a href="#">개발 블로그(상세정보)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+
+
+
 		<!--================Blog Area =================-->
     <section class="blog_area single-post-area section_gap">
         <div class="container">
