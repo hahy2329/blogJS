@@ -55,5 +55,29 @@
 			BLOG_ID = #{blogId}
 	</update>
 	
+	<select id="getBlogKeywordList" resultType="BlogDTO">
+		
+		SELECT
+			*
+		FROM
+			STUDYBLOG
+		WHERE 
+			SORT='KEYWORD'
+		
+	
+	
+	</select>
+	
+	<select id="getBlogKeywordDetail" parameterType="Long" resultType="BlogDTO">
+	 	
+	 	SELECT
+			*
+		FROM
+			STUDYBLOG
+		WHERE 
+			BLOG_ID = #{blogId}
+	
+	
+	</select>
 
 </mapper>

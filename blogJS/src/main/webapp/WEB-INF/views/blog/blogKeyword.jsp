@@ -15,10 +15,10 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>개발 공부</h2>
+                    <h2>오늘의 키워드</h2>
                     <div class="page_link">
                         <a href="${contextPath }/">Home</a>
-                        <a href="#">개발 공부</a>
+                        <a href="#">오늘의 키워드</a>
                     </div>
                 </div>
             </div>
@@ -74,28 +74,28 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
-                      <c:forEach var="blogStudy" items="${blogStudy }">
+                      <c:forEach var="blogDTO" items="${blogKeyword }">
                         <article class="row blog_item">
                             <div class="col-md-3">
                                 <div class="blog_info text-right">
                                     <div class="post_tag">
-                                        <a href="#">${blogStudy.sort }</a>
+                                        <a href="#">${blogDTO.sort }</a>
                                     </div>
                                     <ul class="blog_meta list">
-                                        <li><a href="#">${blogStudy.humanId }<i class="lnr lnr-user"></i></a></li>
-                                        <li><a href="#"><fmt:formatDate value="${blogStudy.enrollDt }" pattern="yyyy-MM-dd"/><i class="lnr lnr-calendar-full"></i></a></li>
-                                        <li><a href="#">${blogStudy.readCnt }<i class="lnr lnr-eye"></i></a></li>
+                                        <li><a href="#">${blogDTO.humanId }<i class="lnr lnr-user"></i></a></li>
+                                        <li><a href="#"><fmt:formatDate value="${blogDTO.enrollDt }" pattern="yyyy-MM-dd"/><i class="lnr lnr-calendar-full"></i></a></li>
+                                        <li><a href="#">${blogDTO.readCnt }<i class="lnr lnr-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-9">
                                 <div class="blog_post">
-                                	<c:if test="${blogStudy.picture1 ne null }">
-                                    	<img src="${contextPath }/blog/thumbnails?picture1=${blogStudy.picture1}" width="555" height="280" alt="메인사진">
+                                	<c:if test="${blogDTO.picture1 ne null }">
+                                    	<img src="${contextPath }/blog/thumbnails?picture1=${blogDTO.picture1}" width="555" height="280" alt="메인사진">
                                     </c:if>
                                     <div class="blog_details">
-                                        <a href="${contextPath }/blog/blogStudyDetail?blogId=${blogStudy.blogId}&humanId=${blogStudy.humanId}"><h2>${blogStudy.subject }</h2></a>
-                                        <p>${blogStudy.content }</p>
+                                        <a href="${contextPath }/blog/blogKeywordDetail?blogId=${blogDTO.blogId}&humanId=${blogDTO.humanId}"><h2>${blogDTO.subject }</h2></a>
+                                        <p>${blogDTO.content }</p>
                                     </div>
                                 </div>
                             </div>

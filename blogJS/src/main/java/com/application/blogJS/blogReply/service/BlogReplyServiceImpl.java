@@ -33,7 +33,7 @@ public class BlogReplyServiceImpl implements BlogReplyService {
 
 
 	@Override
-	public List<BlogReplyDTO> getBlogStudyReplyList(long blogId) throws Exception {
+	public List<BlogReplyDTO> getBlogReplyList(long blogId) throws Exception {
 		return blogReplyDAO.getBlogReplyList(blogId);
 	}
 

@@ -35,6 +35,16 @@ public class BlogDAOImpl implements BlogDAO {
 		sqlSession.update("blog.increaseReadCnt", blogId);
 		
 	}
+
+	@Override
+	public List<BlogDTO> getBlogKeywordList() throws Exception {
+		return sqlSession.selectList("blog.getBlogKeywordList");
+	}
+
+	@Override
+	public BlogDTO getBlogKeywordDetail(long blogId) throws Exception {
+		return sqlSession.selectOne("blog.getBlogKeywordDetail", blogId);
+	}
 	
 	
 	

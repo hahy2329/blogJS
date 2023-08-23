@@ -15,4 +15,14 @@
 		<put-attribute name="title" value="블로그 상세정보(개발공부)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogStudyDetail.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="/blog/todayKeyword" extends="baseLayout">
+		<put-attribute name="title" value="블로그 리스트(오늘의 키워드)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogKeyword.jsp"></put-attribute>	
+	</definition>
+	
+	<definition name="/blog/blogKeywordDetail" extends="baseLayout">
+		<put-attribute name="title" value="블로그 상세정보(오늘의 키워드)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogKeywordDetail.jsp"></put-attribute>	
+	</definition>
 </tiles-definitions>

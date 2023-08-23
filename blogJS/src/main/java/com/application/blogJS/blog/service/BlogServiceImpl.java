@@ -41,4 +41,18 @@ public class BlogServiceImpl implements BlogService {
 		return blogDAO.getBlogStudyDetail(blogId);
 	}
 
+
+
+	@Override
+	public List<BlogDTO> getBlogKeywordList() throws Exception {
+		return blogDAO.getBlogKeywordList();
+	}
+
+
+
+	@Override
+	public BlogDTO getBlogKeywordDetail(long blogId) throws Exception {
+		return blogDAO.getBlogKeywordDetail(blogId);
+	}
+
 }

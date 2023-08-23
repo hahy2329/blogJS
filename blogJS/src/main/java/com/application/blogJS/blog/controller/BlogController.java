@@ -161,7 +161,7 @@ public class BlogController {
 		
 		ModelAndView mv = new ModelAndView();
 		BlogDTO blogDTO = blogService.getBlogStudyDetail(blogId);
-		List<BlogReplyDTO> blogReplyList = blogReplyService.getBlogStudyReplyList(blogId);
+		List<BlogReplyDTO> blogReplyList = blogReplyService.getBlogReplyList(blogId);
 		int allBlogReplyCnt = blogReplyService.getBlogReplyCnt(blogId);
 		HumanDTO humanDTO = humanService.getHumanDetail(humanId);
 		mv.addObject("blogDTO", blogDTO);
@@ -173,7 +173,7 @@ public class BlogController {
 		
 	}
 	
-	@GetMapping("/blogStudyPicture1")
+	@GetMapping("/blogDetailPicture1")
 	public void blogStudyPicture1(@RequestParam("picture1") String picture1, HttpServletResponse response) throws Exception{
 		
 		OutputStream out = response.getOutputStream();
@@ -187,7 +187,7 @@ public class BlogController {
 		out.close();
 	}
 	
-	@GetMapping("/blogStudyPicture2")
+	@GetMapping("/blogKeywordPicture2")
 	public void blogStudyPicture2(@RequestParam("picture2") String picture2, HttpServletResponse response) throws Exception{
 		
 		OutputStream out = response.getOutputStream();
@@ -202,7 +202,7 @@ public class BlogController {
 		out.close();
 	}
 	
-	@GetMapping("/blogStudyPicture3")
+	@GetMapping("/blogKeywordPicture3")
 	public void blogStudyPicture3(@RequestParam("picture3") String picture3, HttpServletResponse response) throws Exception{
 		
 		OutputStream out = response.getOutputStream();
@@ -219,5 +219,33 @@ public class BlogController {
 		
 	}
 	
+	@GetMapping("/todayKeyword")
+	public ModelAndView todayKeyword() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		List<BlogDTO> blogList = blogService.getBlogKeywordList();
+		mv.addObject("blogKeyword", blogList);
+		mv.setViewName("/blog/todayKeyword");
+		return mv;
+		
+	}
+	
+	@GetMapping("/blogKeywordDetail")
+	public ModelAndView blogKeywordDetail(@RequestParam("blogId") long blogId, @RequestParam("humanId") String humanId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogKeywordDetail(blogId);
+		List<BlogReplyDTO> blogReplyList = blogReplyService.getBlogReplyList(blogId);
+		int allBlogReplyCnt = blogReplyService.getBlogReplyCnt(blogId);
+		HumanDTO humanDTO = humanService.getHumanDetail(humanId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.addObject("allBlogReplyCnt", allBlogReplyCnt);
+		mv.addObject("blogReplyList", blogReplyList);
+		mv.addObject("humanDTO", humanDTO);
+		mv.setViewName("/blog/blogKeywordDetail");
+		return mv;
+		
+		
+	}
 	
 }

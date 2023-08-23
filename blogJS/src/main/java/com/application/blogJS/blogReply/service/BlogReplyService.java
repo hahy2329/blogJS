@@ -8,5 +8,5 @@ public interface BlogReplyService {
 	
 	public void uploadStudyBlogReply(BlogReplyDTO blogReplyDTO) throws Exception;
 	public int getBlogReplyCnt(long blogId) throws Exception;
-	public List<BlogReplyDTO> getBlogStudyReplyList(long blogId) throws Exception;
+	public List<BlogReplyDTO> getBlogReplyList(long blogId) throws Exception;
 }
