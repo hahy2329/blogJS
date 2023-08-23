@@ -38,5 +38,17 @@
 			BLOG_ID = #{blogId}
 			
 	</select>
+	
+	<select id="getBlogReplyDetail" parameterType="long" resultType="BlogReplyDTO">
+	
+	 	SELECT
+	 		*
+	 	FROM
+	 		STUDYBLOGREPLY
+	 	WHERE
+	 		REPLY_ID = #{replyId}
+	
+	
+	</select>
 
 </mapper>

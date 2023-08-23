@@ -30,4 +30,9 @@ public class BlogReplyDAOImpl implements BlogReplyDAO {
 		return sqlSession.selectList("blogReply.getBlogReplyList", blogId);
 	}
 
+	@Override
+	public BlogReplyDTO getBlogReplyDetail(long replyId) throws Exception {
+		return sqlSession.selectOne("blogReply.getBlogReplyDetail", replyId);
+	}
+
 }

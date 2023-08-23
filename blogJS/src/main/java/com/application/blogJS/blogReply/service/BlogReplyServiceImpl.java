@@ -37,4 +37,11 @@ public class BlogReplyServiceImpl implements BlogReplyService {
 		return blogReplyDAO.getBlogReplyList(blogId);
 	}
 
+
+
+	@Override
+	public BlogReplyDTO getBlogReplyDetail(long replyId) throws Exception {
+		return blogReplyDAO.getBlogReplyDetail(replyId);
+	}
+
 }

@@ -86,6 +86,20 @@ public class BlogReplyController {
 		
 	}
 	
+	@GetMapping("/blogReplyUpdate")
+	public ModelAndView blogReplyUpdate(@RequestParam("replyId") long replyId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogReplyDTO blogReplyDTO = blogReplyService.getBlogReplyDetail(replyId);
+		mv.setViewName("/blogReply/blogUpdateReply");
+		mv.addObject("blogReplyDTO" , blogReplyDTO);
+		
+		return mv;
+		
+		
+		
+	}
+	
 	
 	
 	
