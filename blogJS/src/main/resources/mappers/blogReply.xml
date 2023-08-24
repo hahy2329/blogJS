@@ -50,5 +50,21 @@
 	
 	
 	</select>
+	
+	<insert id="blogReplyUpdate" parameterType="BlogReplyDTO">
+	
+		UPDATE 
+			STUDYBLOGREPLY
+		SET
+			IMAGE = #{image},
+			CONTENT = #{content},
+			ENROLL_DT = NOW()
+		WHERE
+			REPLY_ID = #{replyId}
+			
+			
+	
+	
+	</insert>
 
 </mapper>

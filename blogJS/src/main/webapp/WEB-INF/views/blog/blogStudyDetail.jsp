@@ -38,7 +38,7 @@
                        <c:if test="${blogDTO.picture1 ne null }">
 	                        <div class="col-lg-12">
 	                            <div class="feature-img">
-	                                <img class="img-fluid" src="${contextPath }/blog/blogStudyPicture1?picture1=${blogDTO.picture1}" width="750" height="350" alt="메인사진">
+	                                <img class="img-fluid" src="${contextPath }/blog/blogDetailPicture1?picture1=${blogDTO.picture1}" width="750" height="350" alt="메인사진">
 	                            </div>									
 	                        </div>
 	                     </c:if>
@@ -70,12 +70,12 @@
                             <div class="row">
                             	<c:if test="${blogDTO.picture2 ne null }">
 	                                <div class="col-6">
-	                                    <img class="img-fluid" src="${contextPath }/blog/blogStudyPicture2?picture2=${blogDTO.picture2}" width="360" height="350" alt="서브사진">
+	                                    <img class="img-fluid" src="${contextPath }/blog/blogDetailPicture2?picture2=${blogDTO.picture2}" width="360" height="350" alt="서브사진">
 	                                </div>
 	                             </c:if>
 	                            <c:if test="${blogDTO.picture3 ne null }">
                                 	<div class="col-6">
-                                    	<img class="img-fluid" src="${contextPath }/blog/blogStudyPicture3?picture3=${blogDTO.picture3}" width="360" height="350" alt="서브사진">
+                                    	<img class="img-fluid" src="${contextPath }/blog/blogDetailPicture3?picture3=${blogDTO.picture3}" width="360" height="350" alt="서브사진">
                                 	</div>
                                 </c:if>								
                             </div>

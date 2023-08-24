@@ -70,12 +70,12 @@
                             <div class="row">
                             	<c:if test="${blogDTO.picture2 ne null }">
 	                                <div class="col-6">
-	                                    <img class="img-fluid" src="${contextPath }/blog/blogKeywordPicture2?picture2=${blogDTO.picture2}" width="360" height="350" alt="서브사진">
+	                                    <img class="img-fluid" src="${contextPath }/blog/blogDetailPicture2?picture2=${blogDTO.picture2}" width="360" height="350" alt="서브사진">
 	                                </div>
 	                             </c:if>
 	                            <c:if test="${blogDTO.picture3 ne null }">
                                 	<div class="col-6">
-                                    	<img class="img-fluid" src="${contextPath }/blog/blogKeywordPicture3?picture3=${blogDTO.picture3}" width="360" height="350" alt="서브사진">
+                                    	<img class="img-fluid" src="${contextPath }/blog/blogDetailPicture3?picture3=${blogDTO.picture3}" width="360" height="350" alt="서브사진">
                                 	</div>
                                 </c:if>								
                             </div>

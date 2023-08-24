@@ -100,6 +100,47 @@ public class BlogReplyController {
 		
 	}
 	
+	@PostMapping("/blogReplyUpdate")
+	public ResponseEntity<Object> blogReplyUpdate(@RequestParam("replyId") long replyId ,@RequestParam("blogId") long blogId, MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		Iterator<String> fileList = multipartRequest.getFileNames();
+		String fileName = "";
+		
+		if(fileList.hasNext()) {
+			MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+			if(!uploadFile.getOriginalFilename().isEmpty()) {
+				SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+				fileName = fmt.format(new Date())+"_"+UUID.randomUUID()+"_"+uploadFile.getOriginalFilename();
+				uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+			}
+		}
+		
+		long id = blogId;
+		long rpId = replyId;
+		
+		BlogReplyDTO blogReplyDTO = new BlogReplyDTO();
+		blogReplyDTO.setBlogId(id);
+		blogReplyDTO.setContent(multipartRequest.getParameter("content"));
+		blogReplyDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		blogReplyDTO.setImage(fileName);
+		blogReplyDTO.setReplyId(rpId);
+		
+		blogReplyService.blogReplyUpdate(blogReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 변경이 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath() +"/blog/blogStudyDetail?blogId="+blogId+"&humanId="+blogReplyDTO.getHumanId()+"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	
+	
 	
 	
 	

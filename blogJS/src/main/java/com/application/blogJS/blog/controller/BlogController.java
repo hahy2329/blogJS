@@ -187,7 +187,7 @@ public class BlogController {
 		out.close();
 	}
 	
-	@GetMapping("/blogKeywordPicture2")
+	@GetMapping("/blogDetailPicture2")
 	public void blogStudyPicture2(@RequestParam("picture2") String picture2, HttpServletResponse response) throws Exception{
 		
 		OutputStream out = response.getOutputStream();
@@ -202,7 +202,7 @@ public class BlogController {
 		out.close();
 	}
 	
-	@GetMapping("/blogKeywordPicture3")
+	@GetMapping("/blogDetailPicture3")
 	public void blogStudyPicture3(@RequestParam("picture3") String picture3, HttpServletResponse response) throws Exception{
 		
 		OutputStream out = response.getOutputStream();
