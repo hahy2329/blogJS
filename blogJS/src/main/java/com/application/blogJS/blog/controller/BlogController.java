@@ -259,4 +259,23 @@ public class BlogController {
 		return mv;
 	}
 	
+	
+	@GetMapping("/blogDayTimeDetail")
+	public ModelAndView blogDayTimeDetail(@RequestParam("blogId") long blogId, @RequestParam("humanId") String humanId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogDayTimeDetail(blogId);
+		List<BlogReplyDTO> blogReplyList = blogReplyService.getBlogReplyList(blogId);
+		int allBlogReplyCnt = blogReplyService.getBlogReplyCnt(blogId);
+		HumanDTO humanDTO = humanService.getHumanDetail(humanId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.addObject("allBlogReplyCnt", allBlogReplyCnt);
+		mv.addObject("blogReplyList", blogReplyList);
+		mv.addObject("humanDTO", humanDTO);
+		mv.setViewName("/blog/blogDayTimeDetail");
+		
+		return mv;
+		
+		
+	}
 }

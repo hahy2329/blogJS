@@ -65,6 +65,13 @@ public class BlogServiceImpl implements BlogService {
 
 
 
+	@Override
+	public BlogDTO getBlogDayTimeDetail(long blogId) throws Exception {
+		return blogDAO.getBlogDayTimeDetail(blogId);
+	}
+
+
+
 	
 
 }

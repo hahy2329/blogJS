@@ -13,6 +13,7 @@ public interface BlogService {
 	public List<BlogDTO> getBlogKeywordList() throws Exception;
 	public BlogDTO getBlogKeywordDetail(long blogId) throws Exception;
 	public List<BlogDTO> getblogDayTimeList() throws Exception;
+	public BlogDTO getBlogDayTimeDetail(long blogId) throws Exception;
 	
 	
 }
