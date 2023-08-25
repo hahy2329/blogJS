@@ -79,7 +79,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/blogReply/blogReplyUpdate" method="post">
+                    <form class="row contact_form" action="${contextPath }/blogReply/blogReplyRemove" method="post">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${sessionScope.humanId }" readonly="readonly">
@@ -91,7 +91,7 @@
                             <div>
                             	<br><br>
                             </div>
-                                <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." required="required">${blogReplyDTO.content }</textarea>
+                                <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." readonly="readonly">${blogReplyDTO.content }</textarea>
                                 <script>CKEDITOR.replace("content")</script>
                         	</div>
                         		<input type="hidden" name="replyId" value="${blogReplyDTO.replyId }">

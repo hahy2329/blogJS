@@ -12,4 +12,5 @@ public interface BlogDAO {
 	public void increaseReadCnt(long blogId) throws Exception;
 	public List<BlogDTO> getBlogKeywordList() throws Exception;
 	public BlogDTO getBlogKeywordDetail(long blogId) throws Exception;
+	public List<BlogDTO> getblogDayTimeList() throws Exception;
 }

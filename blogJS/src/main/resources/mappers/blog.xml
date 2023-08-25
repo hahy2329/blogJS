@@ -79,5 +79,16 @@
 	
 	
 	</select>
+	
+	<select id="getblogDayTimeList" resultType="BlogDTO">
+		
+		SELECT
+			*
+		FROM
+			STUDYBLOG
+		WHERE
+			SORT = 'DAILYROUTINE'
+	
+	</select>
 
 </mapper>

@@ -52,4 +52,12 @@ public class BlogReplyServiceImpl implements BlogReplyService {
 		
 	}
 
+
+
+	@Override
+	public void blogReplyRemove(BlogReplyDTO blogReplyDTO) throws Exception {
+		blogReplyDAO.blogReplyRemove(blogReplyDTO);
+		
+	}
+
 }

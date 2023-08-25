@@ -79,7 +79,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/blogReply/blogReplyWrite" method="post" enctype="multipart/form-data">
+                    <form class="row contact_form" action="${contextPath }/blogReply/blogReplyWrite" method="post">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${sessionScope.humanId }" readonly="readonly">
@@ -90,11 +90,6 @@
                             <p class="answer"></p>
                             <div>
                             	<br><br>
-                            </div>
-                            	<input type="file" class="form-control" name="image" value="파일 선택">
-                            	<input type="text" class="form-control" placeholder="자신을 표현 할 이미지를 선택해주세요." readonly="readonly">
-                            <div>
-                            	<br>
                             </div>
                                 <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." required="required"></textarea>
                                 <script>CKEDITOR.replace("content")</script>

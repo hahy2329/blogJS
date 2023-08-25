@@ -10,5 +10,11 @@
 		<put-attribute name="title" value="댓글수정"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/blogReply/blogReplyUpdate.jsp"></put-attribute>
 	</definition>
-
+	
+	<definition name="/blogReply/blogRemoveReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 삭제"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blogReply/blogReplyRemove.jsp"></put-attribute>
+	</definition>
+	
+	
 </tiles-definitions>

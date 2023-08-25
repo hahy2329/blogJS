@@ -248,4 +248,15 @@ public class BlogController {
 		
 	}
 	
+	@GetMapping("/dayTime")
+	public ModelAndView dayTime() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		List<BlogDTO> blogList = blogService.getblogDayTimeList();
+		mv.addObject("blogDayTime", blogList);
+		mv.setViewName("/blog/dayTime");
+		
+		return mv;
+	}
+	
 }

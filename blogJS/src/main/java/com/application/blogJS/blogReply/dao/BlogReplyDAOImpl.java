@@ -37,7 +37,13 @@ public class BlogReplyDAOImpl implements BlogReplyDAO {
 
 	@Override
 	public void blogReplyUpdate(BlogReplyDTO blogReplyDTO) throws Exception {
-		sqlSession.insert("blogReply.blogReplyUpdate", blogReplyDTO);
+		sqlSession.update("blogReply.blogReplyUpdate", blogReplyDTO);
+		
+	}
+
+	@Override
+	public void blogReplyRemove(BlogReplyDTO blogReplyDTO) throws Exception {
+		sqlSession.delete("blogReply.blogReplyRemove", blogReplyDTO);
 		
 	}
 

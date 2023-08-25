@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.application.blogJS.blog.dao.BlogDAO;
 import com.application.blogJS.blog.dto.BlogDTO;
+import com.application.blogJS.blogReply.dto.BlogReplyDTO;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -54,5 +55,16 @@ public class BlogServiceImpl implements BlogService {
 	public BlogDTO getBlogKeywordDetail(long blogId) throws Exception {
 		return blogDAO.getBlogKeywordDetail(blogId);
 	}
+
+
+
+	@Override
+	public List<BlogDTO> getblogDayTimeList() throws Exception {
+		return blogDAO.getblogDayTimeList();
+	}
+
+
+
+	
 
 }

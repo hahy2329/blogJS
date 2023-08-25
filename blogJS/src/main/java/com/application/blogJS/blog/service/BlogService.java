@@ -3,6 +3,7 @@ package com.application.blogJS.blog.service;
 import java.util.List;
 
 import com.application.blogJS.blog.dto.BlogDTO;
+import com.application.blogJS.blogReply.dto.BlogReplyDTO;
 
 public interface BlogService {
 	
@@ -11,5 +12,7 @@ public interface BlogService {
 	public BlogDTO getBlogStudyDetail(long blogId) throws Exception;
 	public List<BlogDTO> getBlogKeywordList() throws Exception;
 	public BlogDTO getBlogKeywordDetail(long blogId) throws Exception;
+	public List<BlogDTO> getblogDayTimeList() throws Exception;
+	
 	
 }

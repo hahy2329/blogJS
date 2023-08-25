@@ -11,4 +11,5 @@ public interface BlogReplyService {
 	public List<BlogReplyDTO> getBlogReplyList(long blogId) throws Exception;
 	public BlogReplyDTO getBlogReplyDetail(long replyId) throws Exception;
 	public void blogReplyUpdate(BlogReplyDTO blogReplyDTO) throws Exception;
+	public void blogReplyRemove(BlogReplyDTO blogReplyDTO) throws Exception;
 }
