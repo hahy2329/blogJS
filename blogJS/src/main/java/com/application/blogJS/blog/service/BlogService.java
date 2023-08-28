@@ -3,7 +3,7 @@ package com.application.blogJS.blog.service;
 import java.util.List;
 
 import com.application.blogJS.blog.dto.BlogDTO;
-import com.application.blogJS.blogReply.dto.BlogReplyDTO;
+
 
 public interface BlogService {
 	

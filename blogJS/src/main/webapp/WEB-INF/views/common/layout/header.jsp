@@ -31,7 +31,7 @@
 							<li class="nav-item active"><a class="nav-link" href="${contextPath }/">Home</a></li>
 							<c:if test="${sessionScope.humanId ne null or sessionScope.userId ne null }">
 							<li class="nav-item"><a class="nav-link" href="about.html">나의 경력</a></li>
-							<li class="nav-item"><a class="nav-link" href="services.html">REST API서비스(연습)</a></li>
+							<li class="nav-item"><a class="nav-link" href="${contextPath }/api/fineDust">REST API서비스(연습)</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">포트폴리오 관리</a>
