@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<definition name="/api/fineDust" extends="baseLayout">
-		<put-attribute name="title" value=""></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/api/fineDust.jsp"></put-attribute>
+
+	<definition name="/api/apiList" extends="baseLayout">
+		<put-attribute name="title" value="공공데이터 API리스트"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/apiList.jsp"></put-attribute>	
 	</definition>
+
+	<definition name="/api/OpenAPIPharmacyTest01" extends="baseLayout">
+		<put-attribute name="title" value="약국정보서비스"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/OpenAPIPharmacyTest01.jsp"></put-attribute>
+	</definition>
+	
 
 </tiles-definitions>
