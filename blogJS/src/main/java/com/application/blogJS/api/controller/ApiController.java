@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-
-import jdk.internal.org.xml.sax.SAXException;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -111,8 +111,17 @@ public class ApiController {
 			System.out.println(root.getTagName()); // 위의 url주소를 입력한 후 검색하면 response태그가 나오고 그 아래 header, body부분의 내용들이 나온다.
 												   // 현재 출력을 하면 response가 나올거다.
 			
-			
-			
+			NodeList list = root.getElementsByTagName("item");
+			System.out.println(list.getLength());
+			for(int i=0; i<list.getLength(); i++) {
+				Node node = list.item(i);
+				NodeList item_childList = node.getChildNodes();
+				for(int j=0; j<item_childList.getLength(); j++) {
+					Node item_child = item_childList.item(j);
+					System.out.print(item_child.getNodeName()+":" + item_child.getTextContent());	
+				}
+				System.out.println();
+			}
 			
 		}catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -126,6 +135,7 @@ public class ApiController {
 		
 		
 		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/api/OpenAPIPharmacyTest02");
 		return mv;
 		
 	}
