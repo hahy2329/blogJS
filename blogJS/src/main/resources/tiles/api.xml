@@ -7,12 +7,12 @@
 		<put-attribute name="body" value="/WEB-INF/views/api/apiList.jsp"></put-attribute>	
 	</definition>
 
-	<definition name="/api/OpenAPIPharmacyTest01" extends="baseLayout">
+	<definition name="/api/openAPIPharmacyTest01" extends="baseLayout">
 		<put-attribute name="title" value="약국정보서비스"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/api/openAPIPharmacyTest01.jsp"></put-attribute>
 	</definition>
 	
-	<definition name="/api/OpenAPIPharmacyTest02" extends="baseLayout">
+	<definition name="/api/openAPIPharmacyTest02" extends="baseLayout">
 		<put-attribute name="title" value="약국정보서비스(파싱)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/api/openAPIPharmacyTest02.jsp"></put-attribute>
 	</definition>

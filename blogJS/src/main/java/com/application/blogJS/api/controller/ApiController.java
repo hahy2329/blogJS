@@ -40,8 +40,8 @@ public class ApiController {
 		
 	}
 	
-	@GetMapping("/OpenAPIPharmacyTest01")
-	public ModelAndView fineDust() throws Exception{
+	@GetMapping("/openAPIPharmacyTest01")
+	public ModelAndView openAPIPharmacyTest01() throws Exception{
 		
 		        StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/B551182/pharmacyInfoService/getParmacyBasisList"); /*URL*/
 		        urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=6RRCCWB0tUHXuCvJnGg5rBiMZgqAFUZtkQ9QE0CPn7SckD7nu3A4OIzwEnktBAr9j99adkuMsFoOKAIRxIDMwQ%3D%3D"); /*Service Key*/
@@ -76,15 +76,15 @@ public class ApiController {
 		        System.out.println(sb.toString());
 		        
 		        ModelAndView mv = new ModelAndView();
-		        mv.setViewName("/api/OpenAPIPharmacyTest01");
+		        mv.setViewName("/api/openAPIPharmacyTest01");
 		        return mv;
 		
 		}
 	
-	@GetMapping("/OpenAPIPharmacyTest02")
+	@GetMapping("/openAPIPharmacyTest02")
 	//건강보험심사평가원_약국정보를 파싱하기
 	//위에서 URL을 통해서 접속하고 XML정보를 가져온 후 Parser로 원하는 정보를 추출해보자 
-	public ModelAndView OpenAPIPharmacyTest02() throws Exception{
+	public ModelAndView openAPIPharmacyTest02() throws Exception{
 		
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		
@@ -135,7 +135,7 @@ public class ApiController {
 		
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/api/OpenAPIPharmacyTest02");
+		mv.setViewName("/api/openAPIPharmacyTest02");
 		return mv;
 		
 	}

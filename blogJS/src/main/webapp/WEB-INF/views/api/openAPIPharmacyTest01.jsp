@@ -5,13 +5,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-	console.log("페이지 잘 넘어 왔어요.");
+	console.log("잘 나왔습니다.");
 
 </script>
 </head>
 <body>
 	
-	
-	
+
 </body>
 </html>

@@ -49,7 +49,7 @@
 								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="${contextPath }/api/OpenAPIPharmacyTest01">건강보험심사평가원_약국정보(XML버전)</a></h4>
+								<h4><a href="${contextPath }/api/openAPIPharmacyTest01">건강보험심사평가원_약국정보(XML버전)</a></h4>
 							</div>
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="${contextPath }/api/OpenAPIPharmacyTest02">건강보험심사평가원_약국정보(파싱)</a></h4>
+								<h4><a href="${contextPath }/api/openAPIPharmacyTest02">건강보험심사평가원_약국정보(파싱)</a></h4>
 							</div>
 						</div>
 					</div>
