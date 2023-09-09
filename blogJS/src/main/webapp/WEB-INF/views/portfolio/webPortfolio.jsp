@@ -38,9 +38,9 @@
             </div>
             <div class="filters portfolio-filter">
                 <ul>
-                    <a href="${contextPath }/portfolio/portfolioTopic"><li class="active" data-filter="*">all</li></a>
-                    <a href="${contextPath }/portfolio/webPortfolio"><li data-filter=".popular">web</li></a>
-                    <li data-filter=".latest"> app</li>
+                    <a href="${contextPath }/portfolio/portfolioTopic"><li data-filter="*">all</li></a>
+                    <a href="${contextPath }/portfolio/webPortfolio"><li class="active" data-filter=".popular">web</li></a>
+                    <a href="${contextPath }/portfolio/appPortfolio"><li data-filter=".latest"> app</li></a>
                 </ul>
             </div>
     

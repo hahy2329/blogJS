@@ -16,10 +16,10 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>소소한 일상(상세정보)</h2>
+                    <h2>여행(상세정보)</h2>
                     <div class="page_link">
                         <a href="${contextPath }/">Home</a>
-                        <a href="#">소소한 일상(상세정보)</a>
+                        <a href="#">여행(상세정보)</a>
                     </div>
                 </div>
             </div>

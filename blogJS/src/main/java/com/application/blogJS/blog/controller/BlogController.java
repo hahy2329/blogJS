@@ -295,7 +295,16 @@ public class BlogController {
 		
 		ModelAndView mv = new ModelAndView();
 		BlogDTO blogDTO = blogService.getBlogTravelDetail(blogId);
-		List<BlogReplyDTO> blogReply
+		List<BlogReplyDTO> blogReplyList =  blogReplyService.getBlogReplyList(blogId);
+		int allBlogReplyCnt = blogReplyService.getBlogReplyCnt(blogId);
+		HumanDTO humanDTO = humanService.getHumanDetail(humanId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.addObject("allBlogReplyCnt", allBlogReplyCnt);
+		mv.addObject("blogReplyList", blogReplyList);
+		mv.addObject("humanDTO", humanDTO);
 		
+		mv.setViewName("/blog/blogTravelDetail");
+		
+		return mv;
 	}
 }

@@ -40,4 +40,9 @@
 		<put-attribute name="title" value="블로그 리스트(여행)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogTravel.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="/blog/blogTravelDetail" extends="baseLayout">
+		<put-attribute name="title" value="블로그 상세정보(여행)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogTravelDetail.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>

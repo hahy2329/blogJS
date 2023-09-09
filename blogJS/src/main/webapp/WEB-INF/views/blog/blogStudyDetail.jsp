@@ -135,27 +135,27 @@
                             <ul class="list cat-list">
                             <!-- 밑에는 각 블로그 종류 별 작성 수를 기재할 것임 -->
                                 <li>
-                                    <a href="#" class="d-flex justify-content-between">
+                                    <a href="${contextPath }/blog/blogStudy" class="d-flex justify-content-between">
                                         <p>개발 공부</p>
-                                        <p>37</p>
+                                        <p>GO</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="d-flex justify-content-between">
+                                    <a href="${contextPath }/blog/dayTime" class="d-flex justify-content-between">
                                         <p>소소한 일상</p>
-                                        <p>24</p>
+                                        <p>GO</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p>오늘의 핵심 키워드</p>
-                                        <p>59</p>
+                                    <a href="${contextPath}/blog/todayKeyword" class="d-flex justify-content-between">
+                                        <p>오늘의 키워드</p>
+                                        <p>GO</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="d-flex justify-content-between">
+                                    <a href="${contextPath }/blog/travel" class="d-flex justify-content-between">
                                         <p>여행</p>
-                                        <p>59</p>
+                                        <p>GO</p>
                                     </a>
                                 </li>															
                             </ul>
