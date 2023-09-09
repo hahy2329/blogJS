@@ -278,4 +278,24 @@ public class BlogController {
 		
 		
 	}
+	
+	@GetMapping("/travel")
+	public ModelAndView travel() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		List<BlogDTO> blogList = blogService.getblogTravelList();
+		mv.setViewName("/blog/travel");
+		mv.addObject("blogTravel", blogList);
+		return mv;
+		
+	}
+	
+	@GetMapping("/blogTravelDetail")
+	public ModelAndView blogTravelDetail(@RequestParam("blogId") long blogId, @RequestParam("humanId") String humanId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogTravelDetail(blogId);
+		List<BlogReplyDTO> blogReply
+		
+	}
 }

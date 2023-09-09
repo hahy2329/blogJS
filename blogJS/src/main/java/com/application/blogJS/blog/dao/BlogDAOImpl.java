@@ -55,6 +55,16 @@ public class BlogDAOImpl implements BlogDAO {
 	public BlogDTO getBlogDayTimeDetail(long blogId) throws Exception {
 		return sqlSession.selectOne("blog.getBlogDayTimeDetail", blogId);
 	}
+
+	@Override
+	public List<BlogDTO> getblogTravelList() throws Exception {
+		return sqlSession.selectList("blog.getblogTravelList");
+	}
+
+	@Override
+	public BlogDTO getBlogTravelDetail(long blogId) throws Exception {
+		return sqlSession.selectOne("blog.getBlogTravelDetail",blogId);
+	}
 	
 	
 	

@@ -44,7 +44,10 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Blog</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="${contextPath }/blog/blogStudy">블로그</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/blog/blogStudy">개발공부</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/blog/dayTime">소소한 일상</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath}/blog/todayKeyword">오늘의 키워드</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/blog/travel">여행</a></li>
 									<li class="nav-item"><a class="nav-link" href="${contextPath }/blog/blogWrite">블로그 작성</a></li>
 								</ul>
 							</li>

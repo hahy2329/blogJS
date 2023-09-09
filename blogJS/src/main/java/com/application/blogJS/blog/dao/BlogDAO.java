@@ -14,4 +14,6 @@ public interface BlogDAO {
 	public BlogDTO getBlogKeywordDetail(long blogId) throws Exception;
 	public List<BlogDTO> getblogDayTimeList() throws Exception;
 	public BlogDTO getBlogDayTimeDetail(long blogId) throws Exception;
+	public List<BlogDTO> getblogTravelList() throws Exception;
+	public BlogDTO getBlogTravelDetail(long blogId) throws Exception;
 }
