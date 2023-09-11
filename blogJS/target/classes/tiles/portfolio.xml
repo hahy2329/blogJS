@@ -16,4 +16,9 @@
 		<put-attribute name="title" value="포트폴리오 관리(Web)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/portfolio/webPortfolio.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="/portfolioList/appPortfolio" extends="baseLayout">
+		<put-attribute name="title" value="포트폴리오 관리(App)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/portfolio/appPortfolio.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
@@ -68,36 +69,36 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 text-center">
 					<div class="main_title">
-						<h2>카테고리 </h2>
+						<h2>블로그 </h2>
 					</div>
 				</div>
 			</div>
 			<div class="row feature_inner">
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
-						<img src="${contextPath }/resources/satner-master/img/services/shapoo.png" alt="">
-						<h4>오늘의 공부</h4>
+						<a href="${contextPath }/blog/blogStudy"><img src="${contextPath }/resources/satner-master/img/services/shapoo.png" alt=""></a>
+						<h4>개발공부</h4>
 						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
-						<img src="${contextPath }/resources/satner-master/img/services/today.png" alt="">
+						<a href="${contextPath }/blog/dayTime"><img src="${contextPath }/resources/satner-master/img/services/today.png" alt=""></a>
 						<h4>소소한 일상</h4>
 						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
-						<img src="${contextPath }/resources/satner-master/img/services/travel.png" alt="">
+						<a href="${contextPath }/blog/travel"><img src="${contextPath }/resources/satner-master/img/services/travel.png" alt=""></a>
 						<h4>여행</h4>
 						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
-						<img src="${contextPath }/resources/satner-master/img/services/keyword.png" alt="">
-						<h4>오늘의 핵심단어</h4>
+						<a href="${contextPath}/blog/todayKeyword"><img src="${contextPath }/resources/satner-master/img/services/keyword.png" alt=""></a>
+						<h4>오늘의 키워드</h4>
 						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
 					</div>
 				</div>
@@ -105,7 +106,55 @@
 		</div>
 	</section>
 	<!--================ End Features Area =================-->
-
+	<section class="portfolio_area section_gap_top" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main_title text-left">
+                        <h2>나의 포트폴리오</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="filters portfolio-filter">
+                <ul>
+                    <a href="${contextPath }/portfolio/portfolioTopic"><li class="active" data-filter="*">all</li></a>
+                    <a href="${contextPath }/portfolio/webPortfolio"><li data-filter=".popular">web</li></a>
+                    <a href="${contextPath }/portfolio/appPortfolio"><li data-filter=".latest"> app</li></a>
+                </ul>
+            </div>
+    
+            <div class="filters-content">
+				<div class="row portfolio-grid justify-content-center">
+					<c:choose>
+					<c:when test="${portfolioList ne null }">
+					<c:forEach var="portfolioDTO" items="${portfolioList }">
+						<div class="col-lg-4 col-md-6 all latest">
+							<div class="portfolio_box">
+								<div class="single_portfolio">
+									<img class="img-fluid w-100" src="${contextPath }/portfolio/portfolioImage?image=${portfolioDTO.image}" width="375" height="325" alt="포트폴리오 사진">
+									<div class="overlay"></div>
+									<a href="${contextPath }/portfolio/portfolioDetail" class="img-gal">
+										<div class="icon">
+											<span class="lnr lnr-cross"></span>
+										</div>
+									</a>
+								</div>
+								<div class="short_info">
+									<h4><a href="portfolio-details.html">${portfolioDTO.subject }</a></h4>
+									<p>${portfolioDTO.humanId }, <fmt:formatDate value="${portfolioDTO.makeDt }" pattern="yyyy-MM-dd"/></p>
+								</div>
+							</div>
+						</div>
+					</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<strong><h3>조회된 내역이 없습니다.</h3></strong>
+					</c:otherwise>
+					</c:choose>
+				</div>
+			</div>
+		</div>
+    </section>
 	
 	
 	

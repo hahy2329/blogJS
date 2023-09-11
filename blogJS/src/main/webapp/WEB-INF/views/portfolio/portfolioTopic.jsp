@@ -40,7 +40,7 @@
                 <ul>
                     <a href="${contextPath }/portfolio/portfolioTopic"><li class="active" data-filter="*">all</li></a>
                     <a href="${contextPath }/portfolio/webPortfolio"><li data-filter=".popular">web</li></a>
-                    <li data-filter=".latest"> app</li>
+                    <a href="${contextPath }/portfolio/appPortfolio"><li data-filter=".latest">app</li></a>
                 </ul>
             </div>
     

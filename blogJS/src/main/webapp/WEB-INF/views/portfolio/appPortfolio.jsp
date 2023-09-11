@@ -15,10 +15,10 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>포트폴리오(Web)</h2>
+                    <h2>포트폴리오(App)</h2>
                     <div class="page_link">
                         <a href="${contextPath }/">Home</a>
-                        <a href="#">포트폴리오(Web)</a>
+                        <a href="#">포트폴리오(App)</a>
                     </div>
                 </div>
             </div>
@@ -39,8 +39,8 @@
             <div class="filters portfolio-filter">
                 <ul>
                     <a href="${contextPath }/portfolio/portfolioTopic"><li data-filter="*">all</li></a>
-                    <a href="${contextPath }/portfolio/webPortfolio"><li class="active" data-filter=".popular">web</li></a>
-                    <a href="${contextPath }/portfolio/appPortfolio"><li data-filter=".latest">app</li></a>
+                    <a href="${contextPath }/portfolio/webPortfolio"><li data-filter=".popular">web</li></a>
+                    <a href="${contextPath }/portfolio/appPortfolio"><li class="active" data-filter=".latest">app</li></a>
                 </ul>
             </div>
     

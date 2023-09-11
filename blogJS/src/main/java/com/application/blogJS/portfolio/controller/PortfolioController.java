@@ -142,6 +142,18 @@ public class PortfolioController {
 		
 	}
 	
+	@GetMapping("/appPortfolio")
+	public ModelAndView appPortfolio() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		List<PortfolioDTO> portfolioList = portfolioService.getAppPortfolioList();
+		mv.addObject("portfolioList", portfolioList);
+		mv.setViewName("/portfolioList/appPortfolio");
+		
+		return mv; 
+		
+	}
+	
 
 	
 }

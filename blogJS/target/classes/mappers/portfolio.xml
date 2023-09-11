@@ -40,6 +40,15 @@
 			SORT = 'WEB'
 	</select>
 
+	<select id="getAppPortfolioList" resultType="PortfolioDTO">
+	
+		SELECT
+			*
+		FROM
+			PORTFOLIO
+		WHERE
+			SORT='APP'
+	</select>
 
 
 </mapper>

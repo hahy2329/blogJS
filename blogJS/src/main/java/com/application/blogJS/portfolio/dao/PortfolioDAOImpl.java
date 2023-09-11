@@ -30,6 +30,11 @@ public class PortfolioDAOImpl implements PortfolioDAO {
 	public List<PortfolioDTO> getWebPortfolioList() throws Exception {
 		return sqlSession.selectList("portfolio.getWebPortfolioList");
 	}
+
+	@Override
+	public List<PortfolioDTO> getAppPortfolioList() throws Exception {
+		return sqlSession.selectList("portfolio.getAppPortfolioList");
+	}
 	
 	
 }
