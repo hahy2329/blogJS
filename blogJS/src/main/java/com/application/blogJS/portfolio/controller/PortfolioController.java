@@ -148,9 +148,21 @@ public class PortfolioController {
 		ModelAndView mv = new ModelAndView();
 		List<PortfolioDTO> portfolioList = portfolioService.getAppPortfolioList();
 		mv.addObject("portfolioList", portfolioList);
-		mv.setViewName("/portfolioList/appPortfolio");
+		mv.setViewName("/portfolio/appPortfolio");
 		
 		return mv; 
+		
+	}
+	
+	@GetMapping("/portfolioDetail")
+	public ModelAndView portfolioDetail(@RequestParam("portfolioId") long portfolioId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		PortfolioDTO portfolioDTO = portfolioService.getPortfolioDetail(portfolioId);
+		mv.addObject("portfolioDTO", portfolioDTO);
+		mv.setViewName("/portfolio/portfolioDetail");
+		
+		return mv;
 		
 	}
 	

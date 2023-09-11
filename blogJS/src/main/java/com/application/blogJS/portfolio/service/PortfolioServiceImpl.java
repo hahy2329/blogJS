@@ -35,4 +35,9 @@ public class PortfolioServiceImpl implements PortfolioService {
 		return portfolioDAO.getAppPortfolioList();
 	}
 
+	@Override
+	public PortfolioDTO getPortfolioDetail(long portfolioId) throws Exception {
+		return portfolioDAO.getPortfolioDetail(portfolioId);
+	}
+
 }

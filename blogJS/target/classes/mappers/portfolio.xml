@@ -49,6 +49,17 @@
 		WHERE
 			SORT='APP'
 	</select>
+	
+	<select id="getPortfolioDetail" parameterType="long" resultType="PortfolioDTO">
+		
+		SELECT
+			*
+		FROM
+			PORTFOLIO
+		WHERE
+			PORTFOLIO_ID = #{portfolioId}
+	
+	</select>
 
 
 </mapper>
