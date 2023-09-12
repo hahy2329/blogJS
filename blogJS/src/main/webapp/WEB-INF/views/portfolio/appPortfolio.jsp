@@ -54,7 +54,7 @@
 								<div class="single_portfolio">
 									<img class="img-fluid w-100" src="${contextPath }/portfolio/portfolioImage?image=${portfolioDTO.image}" width="375" height="325" alt="포트폴리오 사진">
 									<div class="overlay"></div>
-									<a href="${contextPath }/portfolio/portfolioDetail" class="img-gal">
+									<a href="${contextPath }/portfolio/portfolioDetail?portfolioId=${portfolioDTO.portfolioId}" class="img-gal">
 										<div class="icon">
 											<span class="lnr lnr-cross"></span>
 										</div>

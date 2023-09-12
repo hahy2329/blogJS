@@ -41,12 +41,6 @@
 						<div class="portfolio_box">
 							<div class="single_portfolio">
 								<img class="img-fluid w-100" src="img/portfolio/p1.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p1.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
 							</div>
 							<div class="short_info">
 								<h4><a href="${contextPath }/api/openAPIPharmacyTest01">건강보험심사평가원_약국정보(XML버전)</a></h4>
@@ -57,12 +51,6 @@
 						<div class="portfolio_box">
 							<div class="single_portfolio">
 								<img class="img-fluid w-100" src="img/portfolio/p2.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p2.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
 							</div>
 							<div class="short_info">
 								<h4><a href="${contextPath }/api/openAPIPharmacyTest02">건강보험심사평가원_약국정보(파싱)</a></h4>

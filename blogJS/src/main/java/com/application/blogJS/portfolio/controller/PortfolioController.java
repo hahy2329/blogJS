@@ -166,6 +166,20 @@ public class PortfolioController {
 		
 	}
 	
+	@GetMapping("/portfolioDetailImg")
+	public void portfolioDetailImg(@RequestParam("image") String image, HttpServletResponse response) throws Exception{
+		
+		OutputStream out = response.getOutputStream();
+		
+		File picture = new File(FILE_REPO_PATH+image);
+		if(picture.exists()) {
+			Thumbnails.of(picture).forceSize(570, 520).outputFormat("jpg").toOutputStream(out);
+		}
+		byte[] buffer = new byte[1024*8];
+		out.write(buffer);
+		out.close();
+		
+	}
 
 	
 }
