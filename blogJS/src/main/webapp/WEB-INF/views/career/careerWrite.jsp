@@ -6,6 +6,65 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+
+var isValid = false;
+
+$().ready(function(){
+	
+	$("#btnOverlappedPasswd").click(function(){
+		
+		$(".answer").empty();
+		
+		var humanId = $("#humanId").val();
+		var passwd  = $("#passwd").val();
+		
+		if(passwd ==''){
+			alert("비밀번호를 입력해주세요.");
+			return;
+		}
+		
+		$.ajax({
+			
+			type : "get",
+			url : "${contextPath}/human/checkDuplicatedPasswd?passwd="+passwd+"&humanId="+humanId,
+			success : function(data){
+				
+				if(data =="duplicate"){
+					alert("확인되었습니다.");
+					isValid = true;
+					$("#btnOverlappedPasswd").remove();
+					$(".answer").append("<p style='color: green;'>" + "확인되었습니다." +"</p>");
+				
+				}
+				else{
+					alert("비밀번호를 확인해주세요.");
+					isValid = false;
+					$(".answer").append("<p style='color: red;'>" +"비밀번호를 다시 확인해주세요." + "</p>");
+					
+				}
+				
+			}
+			
+		});
+	});
+	
+	$("form").submit(function(){
+		
+		if(isValid == false){
+			alert("비밀번호를 다시 확인해주세요.");
+			return false;
+		}
+		if(isValid == true){
+			$("[name='joinDate']").val($("#joinY").val() + "-" + $("#joinM").val() + "-" + $("#joinD").val());
+			$("[name='resignationDate']").val($("#resignationY").val() + "-" + $("#resignationM").val() + "-" + $("#resignationD").val());
+			return true;
+		}
+		
+	});
+});
+	
+</script>
 </head>
 <body>
 	<!--================ Start Banner Area =================-->
@@ -33,7 +92,7 @@
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${sessionScope.humanId }" readonly="readonly">
                                 <input type="password" class="form-control" id="passwd" name="passwd" placeholder="비밀번호 입력" required="required">
                             <div class="reply-btn" align="right">
-                                        <input type="button" id="btnOverlappedPasswd" class="btn-reply text-uppercase" value="인증"> 
+                                 <input type="button" id="btnOverlappedPasswd" class="btn-reply text-uppercase" value="인증"> 
                             </div>
                             <p class="answer"></p>
                         	<div>
@@ -52,8 +111,7 @@
                             <div>
                             	<br>
                             </div>
-                            
-                           		  	<input type="text" class="form-control" placeholder="입사 날짜를 선택해주세요." readonly="readonly">
+                            	<input type="text" class="form-control" placeholder="입사 날짜를 선택해주세요." readonly="readonly">
                            <div> 	
                           	<div>
                             	<select id="joinY" class="form-control" required="required">
