@@ -35,7 +35,8 @@ public class CareerController {
 	}
 	
 	@PostMapping("/careerWrite")
-	public ResponseEntity<Object> careerWrite(CareerDTO careerDTO, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> careerWrite(@RequestParam("joinDate") Date joinDate,CareerDTO careerDTO, HttpServletRequest request) throws Exception{
+		
 		
 		careerService.insertCareerData(careerDTO);
 		
@@ -44,10 +45,10 @@ public class CareerController {
 		message +="location.href='"+request.getContextPath()+"/';";
 		message +="</script>";
 		
-		HttpHeaders responsheaders = new HttpHeaders();
-		responsheaders.add("Content-Type", "text/html; charset=utf-8");
+		HttpHeaders responseheaders = new HttpHeaders();
+		responseheaders.add("Content-Type", "text/html; charset=utf-8");
 		
-		return new ResponseEntity<Object>(message, responsheaders, HttpStatus.OK);
+		return new ResponseEntity<Object>(message, responseheaders, HttpStatus.OK);
 		
 	}
 	

@@ -86,7 +86,7 @@ $().ready(function(){
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/career/careerWrite" method="post" enctype="multipart/form-data">
+                    <form class="row contact_form" action="${contextPath }/career/careerWrite" method="post">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${sessionScope.humanId }" readonly="readonly">
@@ -102,7 +102,7 @@ $().ready(function(){
                             <div>
                             	<br>
                             </div>
-                            	<input type="text" id="department" name="department" class="form-control" placeholder="부서명을 입력해주세요." required="required">
+                            	<input type="text" id="department" name="department" class="form-control" placeholder="직무를 입력해주세요." required="required">
                             <div>
                             	<br>
                             </div>
