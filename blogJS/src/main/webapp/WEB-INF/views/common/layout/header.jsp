@@ -30,7 +30,14 @@
 						<ul class="nav navbar-nav menu_nav justify-content-end">
 							<li class="nav-item active"><a class="nav-link" href="${contextPath }/">Home</a></li>
 							<c:if test="${sessionScope.humanId ne null or sessionScope.userId ne null }">
-							<li class="nav-item"><a class="nav-link" href="${contextPath }/career/myCareer">나의 경력</a></li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">경력 관리</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/career/careerManagement">나의 경력</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/career/careerWrite">글쓰기</a></li>
+								</ul>
+							</li>
 							<li class="nav-item"><a class="nav-link" href="${contextPath }/api/apiList">REST API서비스(연습)</a></li>
 							<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
