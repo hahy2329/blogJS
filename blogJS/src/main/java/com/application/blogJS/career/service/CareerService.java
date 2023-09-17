@@ -1,6 +1,5 @@
 package com.application.blogJS.career.service;
 
-import org.springframework.stereotype.Service;
 
 import com.application.blogJS.career.dto.CareerDTO;
 

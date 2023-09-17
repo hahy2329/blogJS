@@ -1,5 +1,6 @@
 package com.application.blogJS.career.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,10 +36,13 @@ public class CareerController {
 	}
 	
 	@PostMapping("/careerWrite")
-	public ResponseEntity<Object> careerWrite(@RequestParam("joinDate") Date joinDate,CareerDTO careerDTO, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> careerWrite(CareerDTO careerDTO, HttpServletRequest request) throws Exception{
 		
+		
+		System.out.println("수신 성공");
 		
 		careerService.insertCareerData(careerDTO);
+		
 		
 		String message = "<script>";
 		message +="alert('정상적으로 등록이 완료되었습니다.');";

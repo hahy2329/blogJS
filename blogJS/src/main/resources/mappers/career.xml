@@ -3,7 +3,7 @@
 <mapper namespace="career">
 	<insert id="insertCareerData" parameterType="CareerDTO">
 		
-		INSERT INTO CAREER 
+		INSERT INTO CAREER(COMPANY_NAME, DEPARTMENT, PERIOD, SKILL, JOIN_DATE, RESIGNATION_DATE, HUMAN_ID) 
 		
 		VALUES(
 		
