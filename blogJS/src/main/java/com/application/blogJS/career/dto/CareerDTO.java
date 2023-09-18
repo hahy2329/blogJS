@@ -4,6 +4,8 @@ package com.application.blogJS.career.dto;
 
 
 
+import java.util.Date;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,8 +15,8 @@ public class CareerDTO {
 	private String department;
 	private String period;
 	private String skill;
-	private String joinDate;
-	private String resignationDate;
+	private Date joinDate;
+	private Date resignationDate;
 	private String humanId;
 	
 	public String getCompanyName() {
@@ -41,16 +43,16 @@ public class CareerDTO {
 	public void setSkill(String skill) {
 		this.skill = skill;
 	}
-	public String getJoinDate() {
+	public Date getJoinDate() {
 		return joinDate;
 	}
-	public void setJoinDate(String joinDate) {
+	public void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
 	}
-	public String getResignationDate() {
+	public Date getResignationDate() {
 		return resignationDate;
 	}
-	public void setResignationDate(String resignationDate) {
+	public void setResignationDate(Date resignationDate) {
 		this.resignationDate = resignationDate;
 	}
 	public String getHumanId() {
@@ -65,6 +67,9 @@ public class CareerDTO {
 				+ ", skill=" + skill + ", joinDate=" + joinDate + ", resignationDate=" + resignationDate + ", humanId="
 				+ humanId + ", toString()=" + super.toString() + "]";
 	}
+	
+	
+	
 	
 	
 	

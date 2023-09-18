@@ -37,8 +37,23 @@ public class CareerController {
 	}
 	
 	@PostMapping("/careerWrite")
-	public ResponseEntity<Object> careerWrite(CareerDTO careerDTO, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> careerWrite(HttpServletRequest request) throws Exception{
 		
+		
+		CareerDTO careerDTO = new CareerDTO();
+		careerDTO.setCompanyName(request.getParameter("companyName"));
+		careerDTO.setDepartment(request.getParameter("department"));
+		careerDTO.setHumanId(request.getParameter("humanId"));
+		careerDTO.setPeriod(request.getParameter("period"));
+		careerDTO.setSkill(request.getParameter("skill"));
+		
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		Date joinDt = fmt.parse(request.getParameter("joinDate"));
+		Date resignationDt = fmt.parse(request.getParameter("resignationDate"));
+		
+		careerDTO.setJoinDate(joinDt);
+		careerDTO.setResignationDate(resignationDt);
+			
 		
 		careerService.insertCareerData(careerDTO);
 		
