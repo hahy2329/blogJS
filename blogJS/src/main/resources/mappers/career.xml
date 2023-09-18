@@ -19,6 +19,16 @@
 		)
 	</insert>
 	
+	
+	<select id="getCareerList" resultType="CareerDTO">
+		
+		SELECT
+			*
+		FROM 
+			CAREER
+	
+	
+	</select>
 
 
 </mapper>

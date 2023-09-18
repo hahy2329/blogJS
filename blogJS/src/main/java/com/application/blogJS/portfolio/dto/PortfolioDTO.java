@@ -18,6 +18,7 @@ public class PortfolioDTO {
 	private String madePeople;
 	private int complete;
 	private String humanId;
+	
 	public long getPortfolioId() {
 		return portfolioId;
 	}

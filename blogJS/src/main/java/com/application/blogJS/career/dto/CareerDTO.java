@@ -2,6 +2,8 @@ package com.application.blogJS.career.dto;
 
 
 
+
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -63,6 +65,10 @@ public class CareerDTO {
 				+ ", skill=" + skill + ", joinDate=" + joinDate + ", resignationDate=" + resignationDate + ", humanId="
 				+ humanId + ", toString()=" + super.toString() + "]";
 	}
+	
+	
+	
+	
 	
 	
 	

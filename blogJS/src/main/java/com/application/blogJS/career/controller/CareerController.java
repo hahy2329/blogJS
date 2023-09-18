@@ -2,6 +2,7 @@ package com.application.blogJS.career.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -39,8 +40,6 @@ public class CareerController {
 	public ResponseEntity<Object> careerWrite(CareerDTO careerDTO, HttpServletRequest request) throws Exception{
 		
 		
-		System.out.println("수신 성공");
-		
 		careerService.insertCareerData(careerDTO);
 		
 		
@@ -54,6 +53,17 @@ public class CareerController {
 		
 		return new ResponseEntity<Object>(message, responseheaders, HttpStatus.OK);
 		
+	}
+	
+	@GetMapping("/careerManagement")
+	public ModelAndView careerManagement() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		List<CareerDTO> careerList = careerService.getCareerList();
+		mv.setViewName("/career/careerManagement");
+		mv.addObject("careerList", careerList);
+		
+		return mv;
 	}
 	
 }

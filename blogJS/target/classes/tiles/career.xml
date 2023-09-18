@@ -5,6 +5,10 @@
 		<put-attribute name="title" value="글쓰기"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/career/careerWrite.jsp"></put-attribute>
 	</definition>
-
+	
+	<definition name="/career/careerManagement" extends="baseLayout">
+		<put-attribute name="title" value="나의 경력"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/career/careerManagement.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>
