@@ -62,15 +62,9 @@
 							<div class="single_portfolio">
 								<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
 								<div class="overlay"></div>
-								<a href="img/portfolio/p3.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="portfolio-details.html">female light</a></h4>
-								<p>Animated, portfolio</p>
+								<h4><a href="${contextPath }/api/openAPIMidFcstTest01">기상청_중기육상예보(XML버전)</a></h4>
 							</div>
 						</div>
 					</div>

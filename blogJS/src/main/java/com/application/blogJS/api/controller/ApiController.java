@@ -139,6 +139,45 @@ public class ApiController {
 		return mv;
 		
 	}
+	
+	@GetMapping("/openAPIMidFcstTest01")
+	public ModelAndView openAPIMidFcstTest01() throws Exception{
+		
+		StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst"); //url
+		urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=6RRCCWB0tUHXuCvJnGg5rBiMZgqAFUZtkQ9QE0CPn7SckD7nu3A4OIzwEnktBAr9j99adkuMsFoOKAIRxIDMwQ%3D%3D"); //서비스 키
+		urlBuilder.append("&"+URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("10","UTF-8")); //한 페이지 결과 수 
+		urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1","UTF-8")); // 페이지 번호
+		urlBuilder.append("&" + URLEncoder.encode("regId","UTF-8") + "=" + URLEncoder.encode("11B10103", "UTF-8")); //지역 코드 번호(11B10103: 광명)
+		urlBuilder.append("&"+ URLEncoder.encode("tmFc", "UTF-8") + "=" + URLEncoder.encode("202309180600","UTF-8")); //해당 날짜 기준으로 앞으로의 기상예보를 알려줌
+		
+		URL url = new URL(urlBuilder.toString());
+		HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+		conn.setRequestMethod("GET");
+		conn.setRequestProperty("Content-type", "application/json");
+		System.out.println("Response code : " + conn.getResponseCode());
+		BufferedReader rd;
+		if(conn.getResponseCode() >= 200 && conn.getResponseCode() <=300) {
+			rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+		}else {
+			rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+			
+		}
+		StringBuilder sb = new StringBuilder();
+		String line;
+		
+		while((line=rd.readLine())!=null) {
+			sb.append(line);
+		}
+		
+		rd.close();
+		conn.disconnect();
+		System.out.println(sb.toString());
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/api/openAPIMidFcstTest01");
+		return mv;
+		
+	}
 		
 	
 	
