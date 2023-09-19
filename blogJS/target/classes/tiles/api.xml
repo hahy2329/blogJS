@@ -31,5 +31,10 @@
 		<put-attribute name="title" value="기상청_강수확률 및 날씨예보(서울,경기,인천_XML)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/api/openAPIPrecipitationTest01.jsp"></put-attribute>
 	</definition>
-
+	
+	<definition name="/api/openAPIPrecipitationTest02" extends="baseLayout">
+		<put-attribute name="title" value="기상청_강수확률 및 날씨예보(서울,경기,인천_파싱)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/openAPIPrecipitationTest02.jsp"></put-attribute>
+	</definition>
+	
 </tiles-definitions>

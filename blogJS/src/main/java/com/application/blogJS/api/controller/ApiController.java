@@ -304,6 +304,46 @@ public class ApiController {
 			
 			pharm_url.append("https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst");
 			pharm_url.append("?serviceKey=6RRCCWB0tUHXuCvJnGg5rBiMZgqAFUZtkQ9QE0CPn7SckD7nu3A4OIzwEnktBAr9j99adkuMsFoOKAIRxIDMwQ%3D%3D");
+			pharm_url.append("&numOfRows=10&pageNo=1&regId=11B00000&tmFc=202309190600");
+			
+			//2) 웹서버에 접속하기 
+			URL url = new URL(pharm_url.toString());
+			
+			
+			//3) 접속해서 response되는 데이터를 읽어오기 
+			//읽어온 데이터를 저장 - BufferedInputStream은 InputStream의 하위
+			
+			BufferedInputStream xmlData = new BufferedInputStream(url.openStream());
+			System.out.println(url.openStream());
+			
+			Document document = builder.parse(xmlData); //InputStream객체의 형태로 파싱할 정보를 넘겨준다.
+			Element root = document.getDocumentElement();
+			System.out.println(root.getTagName());
+			//위의 url주소를 입력한 후 검색하면 response태그가 나오고 그 아래 header, body부분의 내용들이 나온다.
+			//현재 시점에서 출력하면 response가 나올것이다.
+			
+			NodeList list = root.getElementsByTagName("item");
+			System.out.println(list.getLength());
+			for(int i=0; i<list.getLength(); i++) {
+				
+				Node node = list.item(i);
+				NodeList item_childList = node.getChildNodes();
+				for(int j=0; j<item_childList.getLength(); j++) {
+					
+					Node item_child = item_childList.item(j);
+					System.out.println(item_child.getNodeName() + " : " + item_child.getTextContent());
+				}
+				System.out.println();
+			}
+			
+			
+			
+		}catch(ParserConfigurationException e) {
+			e.printStackTrace();
+		}catch (SAXException e) {
+			e.printStackTrace();
+		}catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		ModelAndView mv = new ModelAndView();
