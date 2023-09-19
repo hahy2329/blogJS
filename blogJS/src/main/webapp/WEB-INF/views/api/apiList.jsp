@@ -43,7 +43,7 @@
 								<img class="img-fluid w-100" src="img/portfolio/p1.jpg" alt="">
 							</div>
 							<div class="short_info">
-								<h4><a href="${contextPath }/api/openAPIPharmacyTest01">건강보험심사평가원_약국정보(XML버전)</a></h4>
+								<h4><a href="${contextPath }/api/openAPIPharmacyTest01">건강보험심사평가원_약국정보(XML)</a></h4>
 							</div>
 						</div>
 					</div>
@@ -64,58 +64,40 @@
 								<div class="overlay"></div>
 							</div>
 							<div class="short_info">
-								<h4><a href="${contextPath }/api/openAPIMidFcstTest01">기상청_중기육상예보(XML버전)</a></h4>
+								<h4><a href="${contextPath }/api/openAPIMidFcstTest01">기상청_중기예보(전국_XML)</a></h4>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 all popular">
+					<div class="col-lg-4 col-md-6 all latest">
 						<div class="portfolio_box">
 							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p4.jpg" alt="">
+								<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
 								<div class="overlay"></div>
-								<a href="img/portfolio/p4.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="portfolio-details.html">fourth air</a></h4>
-								<p>Animated, portfolio</p>
+								<h4><a href="${contextPath }/api/openAPIMidFcstTest02">기상청_전국중기예보(전국_파싱)</a></h4>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 all following">
+					<div class="col-lg-4 col-md-6 all latest">
 						<div class="portfolio_box">
 							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p6.jpg" alt="">
+								<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
 								<div class="overlay"></div>
-								<a href="img/portfolio/p5.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="portfolio-details.html">together sign</a></h4>
-								<p>Animated, portfolio</p>
+								<h4><a href="${contextPath }/api/openAPIPrecipitationTest01">기상청_강수확률 및 날씨예보(서울,경기,인천_XML)</a></h4>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6 all upcoming">
+					<div class="col-lg-4 col-md-6 all latest">
 						<div class="portfolio_box">
 							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p5.jpg" alt="">
+								<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
 								<div class="overlay"></div>
-								<a href="img/portfolio/p6.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
 							</div>
 							<div class="short_info">
-								<h4><a href="portfolio-details.html">multiply fowl</a></h4>
-								<p>Animated, portfolio</p>
+								<h4><a href="${contextPath }/api/openAPIPrecipitationTest02">기상청_강수확률 및 날씨예보(서울,경기,인천_파싱)</a></h4>
 							</div>
 						</div>
 					</div>

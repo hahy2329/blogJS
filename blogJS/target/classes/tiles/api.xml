@@ -18,8 +18,18 @@
 	</definition>
 	
 	<definition name="/api/openAPIMidFcstTest01" extends="baseLayout">
-		<put-attribute name="title" value="기상청_중기육상예보(XML)"></put-attribute>
+		<put-attribute name="title" value="기상청_중기예보(XML)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/api/openAPIMidFcstTest01.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/api/openAPIMidFcstTest02" extends="baseLayout">
+		<put-attribute name="title" value="기상청_중기예보(파싱정보)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/openAPIMidFcstTest02.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/api/openAPIPrecipitationTest01" extends="baseLayout">
+		<put-attribute name="title" value="기상청_강수확률 및 날씨예보(서울,경기,인천_XML)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/openAPIPrecipitationTest01.jsp"></put-attribute>
 	</definition>
 
 </tiles-definitions>
