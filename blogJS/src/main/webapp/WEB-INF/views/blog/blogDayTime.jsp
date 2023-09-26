@@ -95,7 +95,6 @@
                                     </c:if>
                                     <div class="blog_details">
                                         <a href="${contextPath }/blog/blogDayTimeDetail?blogId=${blogDayTime.blogId}&humanId=${blogDayTime.humanId}"><h2>${blogDayTime.subject }</h2></a>
-                                        <p>${blogDayTime.content }</p>
                                     </div>
                                 </div>
                             </div>

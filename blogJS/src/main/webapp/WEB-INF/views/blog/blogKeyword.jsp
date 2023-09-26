@@ -95,7 +95,8 @@
                                     </c:if>
                                     <div class="blog_details">
                                         <a href="${contextPath }/blog/blogKeywordDetail?blogId=${blogDTO.blogId}&humanId=${blogDTO.humanId}"><h2>${blogDTO.subject }</h2></a>
-                                        <p>${blogDTO.content }</p>
+                                    	<a href="${contextPath }/blog/blogKeywordUpdate?blogId=${blogDTO.blogId}" class="primary_btn"><span>수정하기</span></a>
+                                    	<a href="${contextPath }/blog/blogKeywordDelete?blogId=${blogDTO.blogId}" class="primary_btn"><span>삭제하기</span></a>
                                     </div>
                                 </div>
                             </div>
