@@ -307,4 +307,81 @@ public class BlogController {
 		
 		return mv;
 	}
+	
+	@GetMapping("/blogKeywordUpdate")
+	public ModelAndView blogKeywordDetail(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogKeywordDetail(blogId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.setViewName("/blog/blogKeywordDetail");
+		
+		return mv;
+	}
+	
+	@PostMapping("blogKeywordUpdate")
+	public ResponseEntity<Object> blogKeywordUpdate(@RequestParam("blogId") long blogId ,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		BlogDTO blogDTO = new BlogDTO();
+		
+		Iterator<String> fileList = multipartRequest.getFileNames();
+		String fileName = "";
+		String fileName2 = "";
+		String fileName3 = "";
+		
+		while(fileList.hasNext()) {
+			for(int i = 1; i<=3; i++) {
+				if(i == 1) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+						blogDTO.setPicture1(fileName);
+					}
+				}
+				
+				if(i == 2) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName2 = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH + fileName2));
+						blogDTO.setPicture2(fileName2);
+					}
+				}
+				
+				if(i == 3) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName3 = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH + fileName3));
+						blogDTO.setPicture3(fileName3);
+					}
+				}
+			}
+		}
+		
+		blogDTO.setBlogId(blogId);
+		blogDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		blogDTO.setSubject(multipartRequest.getParameter("subject"));
+		blogDTO.setContent(multipartRequest.getParameter("content"));
+		blogDTO.setSort(multipartRequest.getParameter("sort"));
+		
+		blogService.updateKeywordBlog(blogDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 변경이 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "blog/blogKeywordDetail?blogId=" + blogDTO.getBlogId() +"&humanId=" + blogDTO.getHumanId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+	}
+	
+	
 }

@@ -86,6 +86,14 @@ public class BlogServiceImpl implements BlogService {
 
 
 
+	@Override
+	public void updateKeywordBlog(BlogDTO blogDTO) throws Exception {
+		blogDAO.updateKeywordBlog(blogDTO);
+		
+	}
+
+
+
 	
 
 }

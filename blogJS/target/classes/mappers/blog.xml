@@ -125,5 +125,23 @@
 	
 	
 	</select>
+	
+	<update id="updateKeywordBlog" parameterType="BlogDTO">
+		
+		UPDATE
+			STUDYBLOG
+		SET
+			PICTURE1 = #{picture1}
+			PICTURE2 = #{picture2}
+			PICTURE3 = #{picture3}
+			SORT = #{sort}
+			ENROLL_DT = NOW()
+			CONTENT = #{content}
+			SUBJECT = #{subject}
+		WHERE
+			BLOG_ID = #{blogId}
+			
+	
+	</update>
 
 </mapper>
