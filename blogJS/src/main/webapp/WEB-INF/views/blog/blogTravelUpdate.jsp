@@ -79,10 +79,10 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>블로그 수정(오늘의 키워드)</h2>
+                    <h2>블로그 수정(여행)</h2>
                     <div class="page_link">
                         <a href="${contextPath }/">Home</a>
-                        <a href="#">블로그 수정(오늘의 키워드)</a>
+                        <a href="#">블로그 수정(여행)</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/blog/blogKeywordUpdate" method="post" enctype="multipart/form-data">
+                    <form class="row contact_form" action="${contextPath }/blog/blogTravelUpdate" method="post" enctype="multipart/form-data">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${blogDTO.humanId }" readonly="readonly">

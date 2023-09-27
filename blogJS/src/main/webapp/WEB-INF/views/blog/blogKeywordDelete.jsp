@@ -94,7 +94,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/blog/blogKeywordUpdate" method="post" enctype="multipart/form-data">
+                    <form class="row contact_form" action="${contextPath }/blog/blogKeywordDelete" method="post" enctype="multipart/form-data">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${blogDTO.humanId }" readonly="readonly">
@@ -106,42 +106,17 @@
                         	<div>
                         		<br>
                             </div>
-                            	<input type="text" id="subject" name="subject" class="form-control" placeholder="제목을 입력해주세요." value="${blogDTO.subject }" required="required">
+                            	<input type="text" id="subject" name="subject" class="form-control" placeholder="제목을 입력해주세요." value="${blogDTO.subject }" readonly="readonly">
                             <div>
                             	<br>
                             </div>
-                            <div>
-                            	<br>
-                            </div>
-                            	<input type="file" class="form-control" name="picture1" value="파일 선택">
-                            	<input type="text" class="form-control" placeholder="상단 메인에 업로드 할 이미지 파일을 선택해주세요." readonly="readonly" value="${blogDTO.picture1 }">
-                            	<input type="file" class="form-control" name="picture2" value="파일 선택">
-                            	<input type="text" class="form-control" placeholder="서브에 업로드 할 이미지 파일을 선택해주세요." readonly="readonly" value="${blogDTO.picture2 }">
-                            	<input type="file" class="form-control" name="picture3" value="파일 선택">
-                            	<input type="text" class="form-control" placeholder="서브에 업로드 할 이미지 파일을 선택해주세요." readonly="readonly" value="${blogDTO.picture3 }">
-                            <div>
-                            	<br>
-                            </div>
-                                <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." required="required">${blogDTO.content }</textarea>
+                                <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." readonly="readonly">${blogDTO.content }</textarea>
                                 <script>CKEDITOR.replace("content")</script>
-                            <div>
-                            	<br>
-                            </div>
-                            <div>
-                            	<br>
-                            </div>
-                               	<input type="radio" id="sort" name="sort" value="travel">여행
-                               	<input type="radio" id="sort" name="sort" value="dailyRoutine">소소한 일상
-                               	<input type="radio" id="sort" name="sort" value="keyword">오늘의 핵심 키워드
-                               	<input type="radio" id="sort" name="sort" value="development">개발 공부
-                           <div> 
-                           		<br>
-                           </div>
                         </div>
                         <div class="col-md-12 text-right">
                         	<input type="hidden" name="blogId" value="${blogDTO.blogId }">
                             <button type="submit" value="submit" class="primary_btn">
-                                <span>등록</span>
+                                <span>삭제</span>
                             </button>
                       	</div>
                        </div>

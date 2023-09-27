@@ -131,17 +131,26 @@
 		UPDATE
 			STUDYBLOG
 		SET
-			PICTURE1 = #{picture1}
-			PICTURE2 = #{picture2}
-			PICTURE3 = #{picture3}
-			SORT = #{sort}
-			ENROLL_DT = NOW()
-			CONTENT = #{content}
-			SUBJECT = #{subject}
+			PICTURE1 = #{picture1},
+			PICTURE2 = #{picture2},
+			PICTURE3 = #{picture3},
+			SORT = #{sort},
+			ENROLL_DT = NOW(),
+			CONTENT = #{content},
+			SUBJECT = #{subject}			
 		WHERE
 			BLOG_ID = #{blogId}
 			
 	
 	</update>
+	
+	<delete id="blogKeywordDelete" parameterType="BlogDTO">
+		
+		DELETE FROM 
+			STUDYBLOG
+		WHERE
+			BLOG_ID = #{blogId}
+			
+	</delete>
 
 </mapper>

@@ -71,6 +71,12 @@ public class BlogDAOImpl implements BlogDAO {
 		sqlSession.update("blog.updateKeywordBlog", blogDTO);
 		
 	}
+
+	@Override
+	public void blogKeywordDelete(BlogDTO blogDTO) throws Exception {
+		sqlSession.delete("blog.blogKeywordDelete", blogDTO);
+		
+	}
 	
 	
 	

@@ -94,6 +94,14 @@ public class BlogServiceImpl implements BlogService {
 
 
 
+	@Override
+	public void blogKeywordDelete(BlogDTO blogDTO) throws Exception {
+		blogDAO.blogKeywordDelete(blogDTO);
+		
+	}
+
+
+
 	
 
 }

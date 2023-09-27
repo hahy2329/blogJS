@@ -314,12 +314,12 @@ public class BlogController {
 		ModelAndView mv = new ModelAndView();
 		BlogDTO blogDTO = blogService.getBlogKeywordDetail(blogId);
 		mv.addObject("blogDTO", blogDTO);
-		mv.setViewName("/blog/blogKeywordDetail");
+		mv.setViewName("/blog/blogKeywordUpdate");
 		
 		return mv;
 	}
 	
-	@PostMapping("blogKeywordUpdate")
+	@PostMapping("/blogKeywordUpdate")
 	public ResponseEntity<Object> blogKeywordUpdate(@RequestParam("blogId") long blogId ,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
 		
 		BlogDTO blogDTO = new BlogDTO();
@@ -373,7 +373,7 @@ public class BlogController {
 		
 		String message = "<script>";
 		message +="alert('정상적으로 변경이 완료되었습니다.');";
-		message +="location.href='" + request.getContextPath() + "blog/blogKeywordDetail?blogId=" + blogDTO.getBlogId() +"&humanId=" + blogDTO.getHumanId() +"';";
+		message +="location.href='" + request.getContextPath() + "/blog/blogKeywordDetail?blogId=" + blogDTO.getBlogId() +"&humanId=" + blogDTO.getHumanId() +"';";
 		message +="</script>";
 		
 		HttpHeaders responseHeaders = new HttpHeaders();
@@ -382,6 +382,272 @@ public class BlogController {
 		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
 		
 	}
+	
+	@GetMapping("/blogDayTimeUpdate")
+	public ModelAndView blogDayTimeUpdate(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogDayTimeDetail(blogId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.setViewName("/blog/blogDayTimeUpdate");
+		
+		return mv;
+		
+	}
+	
+	@PostMapping("/blogDayTimeUpdate")
+	public ResponseEntity<Object> blogDayTimeUpdate(@RequestParam("blogId") long blogId ,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		BlogDTO blogDTO = new BlogDTO();
+		
+		Iterator<String> fileList = multipartRequest.getFileNames();
+		String fileName = "";
+		String fileName2 = "";
+		String fileName3 = "";
+		
+		while(fileList.hasNext()) {
+			for(int i = 1; i<=3; i++) {
+				if(i == 1) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+						blogDTO.setPicture1(fileName);
+					}
+				}
+				
+				if(i == 2) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName2 = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH + fileName2));
+						blogDTO.setPicture2(fileName2);
+					}
+				}
+				
+				if(i == 3) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName3 = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH + fileName3));
+						blogDTO.setPicture3(fileName3);
+					}
+				}
+			}
+		}
+		
+		blogDTO.setBlogId(blogId);
+		blogDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		blogDTO.setSubject(multipartRequest.getParameter("subject"));
+		blogDTO.setContent(multipartRequest.getParameter("content"));
+		blogDTO.setSort(multipartRequest.getParameter("sort"));
+		
+		blogService.updateKeywordBlog(blogDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 변경이 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/blog/blogDayTimeDetail?blogId=" + blogDTO.getBlogId() +"&humanId=" + blogDTO.getHumanId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+	}
+	
+	@GetMapping("/blogStudyUpdate")
+	public ModelAndView blogStudyUpdate(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogStudyDetail(blogId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.setViewName("/blog/blogStudyUpdate");
+		
+		return mv;
+		
+	}
+	
+	@PostMapping("/blogStudyUpdate")
+	public ResponseEntity<Object> blogStudyUpdate(@RequestParam("blogId") long blogId ,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		BlogDTO blogDTO = new BlogDTO();
+		
+		Iterator<String> fileList = multipartRequest.getFileNames();
+		String fileName = "";
+		String fileName2 = "";
+		String fileName3 = "";
+		
+		while(fileList.hasNext()) {
+			for(int i = 1; i<=3; i++) {
+				if(i == 1) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+						blogDTO.setPicture1(fileName);
+					}
+				}
+				
+				if(i == 2) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName2 = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH + fileName2));
+						blogDTO.setPicture2(fileName2);
+					}
+				}
+				
+				if(i == 3) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName3 = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH + fileName3));
+						blogDTO.setPicture3(fileName3);
+					}
+				}
+			}
+		}
+		
+		blogDTO.setBlogId(blogId);
+		blogDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		blogDTO.setSubject(multipartRequest.getParameter("subject"));
+		blogDTO.setContent(multipartRequest.getParameter("content"));
+		blogDTO.setSort(multipartRequest.getParameter("sort"));
+		
+		blogService.updateKeywordBlog(blogDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 변경이 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/blog/blogStudyDetail?blogId=" + blogDTO.getBlogId() +"&humanId=" + blogDTO.getHumanId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+	}
+	
+	@GetMapping("/blogTravelUpdate")
+	public ModelAndView blogTravelUpdate(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogStudyDetail(blogId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.setViewName("/blog/blogTravelUpdate");
+		
+		return mv;
+		
+	}
+	
+	@PostMapping("/blogTravelUpdate")
+	public ResponseEntity<Object> blogTravelUpdate(@RequestParam("blogId") long blogId ,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		BlogDTO blogDTO = new BlogDTO();
+		
+		Iterator<String> fileList = multipartRequest.getFileNames();
+		String fileName = "";
+		String fileName2 = "";
+		String fileName3 = "";
+		
+		while(fileList.hasNext()) {
+			for(int i = 1; i<=3; i++) {
+				if(i == 1) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+						blogDTO.setPicture1(fileName);
+					}
+				}
+				
+				if(i == 2) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName2 = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH + fileName2));
+						blogDTO.setPicture2(fileName2);
+					}
+				}
+				
+				if(i == 3) {
+					MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+					if(!uploadFile.getOriginalFilename().isEmpty()) {
+						SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+						fileName3 = fmt.format(new Date()) + "_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+						uploadFile.transferTo(new File(FILE_REPO_PATH + fileName3));
+						blogDTO.setPicture3(fileName3);
+					}
+				}
+			}
+		}
+		
+		blogDTO.setBlogId(blogId);
+		blogDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		blogDTO.setSubject(multipartRequest.getParameter("subject"));
+		blogDTO.setContent(multipartRequest.getParameter("content"));
+		blogDTO.setSort(multipartRequest.getParameter("sort"));
+		
+		blogService.updateKeywordBlog(blogDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 변경이 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/blog/blogTravelDetail?blogId=" + blogDTO.getBlogId() +"&humanId=" + blogDTO.getHumanId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+	}
+	
+	@GetMapping("/blogKeywordDelete")
+	public ModelAndView blogKeywordDelete(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogStudyDetail(blogId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.setViewName("/blog/blogKeywordDelete");
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/blogKeywordDelete")
+	public ResponseEntity<Object> blogKeywordDelete(BlogDTO blogDTO ,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		
+		blogService.blogKeywordDelete(blogDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제가 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+	}
+	
+	
+	
 	
 	
 }

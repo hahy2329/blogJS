@@ -46,8 +46,28 @@
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogTravelDetail.jsp"></put-attribute>
 	</definition>
 	
-	<definition name="/blog/blogKeywordDetail" extends="baseLayout">
+	<definition name="/blog/blogKeywordUpdate" extends="baseLayout">
 		<put-attribute name="title" value="블로그 수정(오늘의 키워드)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogKeywordUpdate.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/blogDayTimeUpdate" extends="baseLayout">
+		<put-attribute name="title" value="블로그 수정(소소한 일상)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogDayTimeUpdate.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/blogStudyUpdate" extends="baseLayout">
+		<put-attribute name="title" value="블로그 수정(개발공부)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogStudyUpdate.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/blogTravelUpdate" extends="baseLayout">
+		<put-attribute name="title" value="블로그 수정(여행)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogTravelUpdate.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/blogKeywordDelete" extends="baseLayout">
+		<put-attribute name="title" value="블로그 삭제(오늘의 키워드)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogKeywordDelete.jsp"></put-attribute>
 	</definition>
 </tiles-definitions>
