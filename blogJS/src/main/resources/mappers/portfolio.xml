@@ -60,6 +60,25 @@
 			PORTFOLIO_ID = #{portfolioId}
 	
 	</select>
-
+	
+	<update id="portfolioUpdate" parameterType="PortfolioDTO">
+		
+		UPDATE 
+			PORTFOLIO
+		SET
+			IMAGE = #{image},
+			HUMAN_ID = #{humanId},
+			SUBJECT = #{subject},
+			CONTENT = #{content},
+			MAKE_DT = #{makeDt},
+			SORT = #{sort},
+			NUMBER_PEOPLE = #{numberPeople},
+			MADE_PEOPLE = #{madePeople},
+			COMPLETE = #{complete}
+			
+		WHERE
+			PORTFOLIO_ID = #{portfolioId}
+	
+	</update>
 
 </mapper>

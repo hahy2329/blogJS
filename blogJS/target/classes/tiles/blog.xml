@@ -81,6 +81,4 @@
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogTravelDelete.jsp"></put-attribute>	
 	</definition>
 	
-	
-	
 </tiles-definitions>

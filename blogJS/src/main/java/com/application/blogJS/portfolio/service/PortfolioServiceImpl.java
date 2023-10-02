@@ -40,4 +40,10 @@ public class PortfolioServiceImpl implements PortfolioService {
 		return portfolioDAO.getPortfolioDetail(portfolioId);
 	}
 
+	@Override
+	public void portfolioUpdate(PortfolioDTO portfolioDTO) throws Exception {
+		portfolioDAO.portfolioUpdate(portfolioDTO);
+		
+	}
+
 }

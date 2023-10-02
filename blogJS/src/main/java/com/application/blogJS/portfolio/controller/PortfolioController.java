@@ -180,6 +180,69 @@ public class PortfolioController {
 		out.close();
 		
 	}
+	
+	@GetMapping("/portfolioTopicUpdate")
+	public ModelAndView portfolioTopicUpdate(@RequestParam("portfolioId") long  portfolioId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		PortfolioDTO portfolioDTO = portfolioService.getPortfolioDetail(portfolioId);
+		mv.addObject("portfolioDTO", portfolioDTO);
+		mv.setViewName("/portfolio/portfolioTopicUpdate");
+		return mv;
+		
+	}
+	
+	@PostMapping("/portfolioTopicUpdate")
+	public ResponseEntity<Object> portfolioTopicUpdate(@RequestParam("portfolioId") long portfolioId, @RequestParam("makeDt") String makeDt, @RequestParam("complete") String complete, @RequestParam("numberPeople") String numberPeople, MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		PortfolioDTO portfolioDTO = new PortfolioDTO();
+		
+		Iterator<String> fileList = multipartRequest.getFileNames();
+		String fileName="";
+		
+		if(fileList.hasNext()) {
+			MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+			if(!uploadFile.getOriginalFilename().isEmpty()) {
+				SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+				fileName = fmt.format(new Date()) + "_" + UUID.randomUUID()+"_"+uploadFile.getOriginalFilename();
+				uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+				portfolioDTO.setImage(fileName);
+			}
+		}
+		
+		int number = Integer.parseInt(numberPeople);
+		int rating = Integer.parseInt(complete);
+		
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = fmt.parse(makeDt);
+		
+		portfolioDTO.setPortfolioId(portfolioId);
+		portfolioDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		portfolioDTO.setSubject(multipartRequest.getParameter("subject"));
+		portfolioDTO.setContent(multipartRequest.getParameter("content"));
+		portfolioDTO.setMakeDt(date);
+		portfolioDTO.setSort(multipartRequest.getParameter("sort"));
+		portfolioDTO.setNumberPeople(number);
+		portfolioDTO.setMadePeople(multipartRequest.getParameter("madePeople"));
+		portfolioDTO.setComplete(rating);
+		
+		portfolioService.portfolioUpdate(portfolioDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정이 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath() +"/portfolio/portfolioDetail?portfolioId=" + portfolioDTO.getPortfolioId()+"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+		
+		
+	}
 
 	
 }

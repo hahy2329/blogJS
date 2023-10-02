@@ -40,6 +40,12 @@ public class PortfolioDAOImpl implements PortfolioDAO {
 	public PortfolioDTO getPortfolioDetail(long portfolioId) throws Exception {
 		return sqlSession.selectOne("portfolio.getPortfolioDetail", portfolioId);
 	}
+
+	@Override
+	public void portfolioUpdate(PortfolioDTO portfolioDTO) throws Exception {
+		 sqlSession.update("portfolio.portfolioUpdate", portfolioDTO);
+		
+	}
 	
 	
 	
