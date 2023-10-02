@@ -77,6 +77,24 @@ public class BlogDAOImpl implements BlogDAO {
 		sqlSession.delete("blog.blogKeywordDelete", blogDTO);
 		
 	}
+
+	@Override
+	public void blogDayTimeDelete(BlogDTO blogDTO) throws Exception {
+		sqlSession.delete("blog.blogDayTimeDelete", blogDTO);
+		
+	}
+
+	@Override
+	public void blogStudyDelete(BlogDTO blogDTO) throws Exception {
+		sqlSession.delete("blog.blogStudyDelete",blogDTO);
+		
+	}
+
+	@Override
+	public void blogTravelDelete(BlogDTO blogDTO) throws Exception {
+		sqlSession.delete("blog.blogTravelDelete", blogDTO);
+		
+	}
 	
 	
 	

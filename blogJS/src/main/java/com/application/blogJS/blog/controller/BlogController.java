@@ -628,7 +628,7 @@ public class BlogController {
 	}
 	
 	@PostMapping("/blogKeywordDelete")
-	public ResponseEntity<Object> blogKeywordDelete(BlogDTO blogDTO ,MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> blogKeywordDelete(BlogDTO blogDTO, HttpServletRequest request) throws Exception{
 		
 		
 		blogService.blogKeywordDelete(blogDTO);
@@ -646,7 +646,90 @@ public class BlogController {
 		
 	}
 	
+	@GetMapping("/blogDayTimeDelete")
+	public ModelAndView blogDayTimeDelete(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogDayTimeDetail(blogId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.setViewName("/blog/blogDayTimeDelete");
+		
+		return mv;
+		
+	}
 	
+	@PostMapping("/blogDayTimeDelete")
+	public ResponseEntity<Object> blogDayTimeDelete(BlogDTO blogDTO, HttpServletRequest request) throws Exception{
+		
+		blogService.blogDayTimeDelete(blogDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제가 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() +"/';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/blogStudyDelete")
+	public ModelAndView blogStudyDelete(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogStudyDetail(blogId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.setViewName("/blog/blogStudyDelete");
+		
+		return mv;
+	}
+	
+	@PostMapping("/blogStudyDelete")
+	public ResponseEntity<Object> blogStudyDelete(BlogDTO blogDTO, HttpServletRequest request) throws Exception{
+		
+		
+		blogService.blogStudyDelete(blogDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제가 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() +"/';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+	}
+	
+	@GetMapping("/blogTravelDelete")
+	public ModelAndView blogTravelDelete(@RequestParam("blogId") long blogId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		BlogDTO blogDTO = blogService.getBlogTravelDetail(blogId);
+		mv.addObject("blogDTO", blogDTO);
+		mv.setViewName("/blog/blogTravelDelete");
+		
+		return mv;
+	}
+	
+	@PostMapping("/blogTravelDelete")
+	public ResponseEntity<Object> blogTravelDelete(BlogDTO blogDTO, HttpServletRequest request) throws Exception{
+		
+		blogService.blogTravelDelete(blogDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제가 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() +"/';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+	}
 	
 	
 	

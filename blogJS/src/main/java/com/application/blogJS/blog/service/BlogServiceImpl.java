@@ -102,6 +102,30 @@ public class BlogServiceImpl implements BlogService {
 
 
 
+	@Override
+	public void blogDayTimeDelete(BlogDTO blogDTO) throws Exception {
+		blogDAO.blogDayTimeDelete(blogDTO);
+		
+	}
+
+
+
+	@Override
+	public void blogStudyDelete(BlogDTO blogDTO) throws Exception {
+		blogDAO.blogStudyDelete(blogDTO);
+		
+	}
+
+
+
+	@Override
+	public void blogTravelDelete(BlogDTO blogDTO) throws Exception {
+		blogDAO.blogTravelDelete(blogDTO);
+
+	}
+
+
+
 	
 
 }

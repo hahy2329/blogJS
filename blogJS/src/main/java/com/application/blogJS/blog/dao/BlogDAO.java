@@ -18,4 +18,7 @@ public interface BlogDAO {
 	public BlogDTO getBlogTravelDetail(long blogId) throws Exception;
 	public void updateKeywordBlog(BlogDTO blogDTO) throws Exception;
 	public void blogKeywordDelete(BlogDTO blogDTO) throws Exception;
+	public void blogDayTimeDelete(BlogDTO blogDTO) throws Exception;
+	public void blogStudyDelete(BlogDTO blogDTO) throws Exception;
+	public void blogTravelDelete(BlogDTO blogDTO) throws Exception;
 }

@@ -70,4 +70,17 @@
 		<put-attribute name="title" value="블로그 삭제(오늘의 키워드)"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogKeywordDelete.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="/blog/blogDayTimeDelete" extends="baseLayout">
+		<put-attribute name="title" value="블로그 삭제(소소한 일상)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogDayTimeDelete.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/blog/blogTravelDelete" extends="baseLayout">
+		<put-attribute name="title" value="블로그 삭제(여행)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogTravelDelete.jsp"></put-attribute>	
+	</definition>
+	
+	
+	
 </tiles-definitions>
