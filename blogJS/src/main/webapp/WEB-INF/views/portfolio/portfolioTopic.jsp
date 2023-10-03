@@ -63,8 +63,8 @@
 								<div class="short_info">
 									<h4><a href="#">${portfolioDTO.subject }</a></h4>
 									<p>${portfolioDTO.humanId }, <fmt:formatDate value="${portfolioDTO.makeDt }" pattern="yyyy-MM-dd"/></p>
-									<a href="${contextPath }/portfolio/portfolioTopicUpdate?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>수정하기</span></a>
-                                    <a href="#" class="primary_btn"><span>삭제하기</span></a>
+									<a href="${contextPath }/portfolio/portfolioUpdate?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>수정하기</span></a>
+                                    <a href="${contextPath }/portfolio/portfolioDelete?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>삭제하기</span></a>
 								</div>
 							</div>
 						</div>

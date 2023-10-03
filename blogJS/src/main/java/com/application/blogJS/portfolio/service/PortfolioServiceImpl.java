@@ -46,4 +46,10 @@ public class PortfolioServiceImpl implements PortfolioService {
 		
 	}
 
+	@Override
+	public void portfolioDelete(PortfolioDTO portfolioDTO) throws Exception {
+		portfolioDAO.portfolioDelete(portfolioDTO);
+		
+	}
+
 }

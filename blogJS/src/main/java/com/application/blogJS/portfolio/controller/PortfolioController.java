@@ -181,19 +181,19 @@ public class PortfolioController {
 		
 	}
 	
-	@GetMapping("/portfolioTopicUpdate")
+	@GetMapping("/portfolioUpdate")
 	public ModelAndView portfolioTopicUpdate(@RequestParam("portfolioId") long  portfolioId) throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
 		
 		PortfolioDTO portfolioDTO = portfolioService.getPortfolioDetail(portfolioId);
 		mv.addObject("portfolioDTO", portfolioDTO);
-		mv.setViewName("/portfolio/portfolioTopicUpdate");
+		mv.setViewName("/portfolio/portfolioUpdate");
 		return mv;
 		
 	}
 	
-	@PostMapping("/portfolioTopicUpdate")
+	@PostMapping("/portfolioUpdate")
 	public ResponseEntity<Object> portfolioTopicUpdate(@RequestParam("portfolioId") long portfolioId, @RequestParam("makeDt") String makeDt, @RequestParam("complete") String complete, @RequestParam("numberPeople") String numberPeople, MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
 		
 		PortfolioDTO portfolioDTO = new PortfolioDTO();
@@ -242,6 +242,36 @@ public class PortfolioController {
 		
 		
 		
+	}
+	
+	@GetMapping("/portfolioDelete")
+	public ModelAndView portfolioDelete(@RequestParam("portfolioId") long portfolioId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		PortfolioDTO portfolioDTO = portfolioService.getPortfolioDetail(portfolioId);
+		mv.addObject("portfolioDTO", portfolioDTO);
+		mv.setViewName("/portfolio/portfolioDelete");
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/portfolioDelete")
+	public ResponseEntity<Object> portfolioDelete(PortfolioDTO portfolioDTO, HttpServletRequest request) throws Exception{
+		
+		portfolioService.portfolioDelete(portfolioDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제가 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
 	}
 
 	

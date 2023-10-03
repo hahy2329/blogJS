@@ -1,0 +1,142 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath }"/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+var isValid = false;
+
+$().ready(function(){
+	
+	$("#btnOverlappedPasswd").click(function(){
+		
+		$(".answer").empty();
+		
+		var humanId = $("#humanId").val();
+		var passwd = $("#passwd").val();
+	
+		if(passwd == ''){
+			alert("비밀번호를 입력해주세요.");
+			return;
+		}
+		
+		$.ajax({
+			
+			type : "get",
+			url : "${contextPath}/human/checkDuplicatedPasswd?passwd="+passwd+"&humanId="+humanId,
+			success : function(data){
+				
+				if(data =="duplicate"){
+					alert("확인되었습니다.");
+					isValid = true;
+					$("#btnOverlappedPasswd").remove();
+					$(".answer").append("<p style='color: green;'>" + "확인되었습니다." +"</p>");
+				
+				}
+				else{
+					alert("비밀번호를 확인해주세요.");
+					isValid = false;
+					$(".answer").append("<p style='color: red;'>" +"비밀번호를 다시 확인해주세요." + "</p>");
+					
+				}
+			
+			
+			}
+		
+		
+		
+	});
+	
+});
+	
+	$("form").submit(function(){
+		
+		if(isValid == false){
+			
+			alert("비밀번호를 다시 확인해주세요.");
+			return false;
+		}
+		if(isValid == true){
+			$("[name='makeDt']").val($("#makeY").val() + "-" + $("#makeM").val() + "-" + $("#makeD").val());
+			return true;
+		}
+		
+	});
+});
+
+
+</script>
+</head>
+<body>
+
+	<!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>포트폴리오 삭제</h2>
+                    <div class="page_link">
+                        <a href="${contextPath }/">Home</a>
+                        <a href="#">포트폴리오 삭제</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+	<section class="contact_area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <form class="row contact_form" action="${contextPath }/portfolio/portfolioDelete" method="post" enctype="multipart/form-data">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${sessionScope.humanId }" readonly="readonly">
+                                <input type="password" class="form-control" id="passwd" name="passwd" placeholder="비밀번호 입력" required="required">
+                            <div class="reply-btn" align="right">
+                                        <input type="button" id="btnOverlappedPasswd" class="btn-reply text-uppercase" value="인증"> 
+                            </div>
+                            <p class="answer"></p>
+                        	<div>
+                        		<br>
+                            </div>
+                            	<input type="text" id="subject" name="subject" class="form-control" placeholder="제목을 입력해주세요." readonly="readonly" value="${portfolioDTO.subject }">
+                            <div>
+                            	<br>
+                            </div>
+                            <div>
+                            	<br>
+                            </div>
+                            	<input type="text" class="form-control" placeholder="포트폴리오 관련 간단하게 설명 부탁드립니다." readonly="readonly">
+                                <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." readonly="readonly">${portfolioDTO.content }</textarea>
+                                <script>CKEDITOR.replace("content")</script>
+                            <div>
+                            	<br>
+                            </div>
+                             	<input type="text" class="form-control" placeholder="프로젝트의 인원을 숫자로 입력해주세요." readonly="readonly">
+                             	<input type="text" class="form-control" name="numberPeople" readonly="readonly" value="${portfolioDTO.numberPeople }">&nbsp;
+                             	<input type="text" class="form-control" placeholder="프로젝트 만든이를 입력해주세요." readonly="readonly">
+                             	<input type="text" class="form-control" name="madePeople" readonly="readonly" value="${portfolioDTO.madePeople }">
+                             <div>
+                             	<br>
+                             </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                        	<input type="hidden" name="portfolioId" value="${portfolioDTO.portfolioId }">
+                            <button type="submit" value="submit" class="primary_btn">
+                                <span>삭제</span>
+                            </button>
+                      	</div>
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+</body>
+</html>

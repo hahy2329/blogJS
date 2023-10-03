@@ -29,6 +29,35 @@
 	
 	
 	</select>
-
+	
+	<select id="getcareerDetail" parameterType="Long" resultType="CareerDTO">
+		
+		SELECT 
+			*
+		FROM
+			CAREER
+		WHERE
+			CAREER_ID = #{careerId}
+	
+	</select>
+	
+	<update id="careerUpdate" parameterType="CareerDTO">
+		
+		UPDATE
+			CAREER
+		SET
+			COMPANY_NAME = #{companyName},
+			DEPARTMENT = #{department},
+			PERIOD = #{period},
+			SKILL = #{skill},
+			JOIN_DATE = #{joinDate},
+			RESIGNATION_DATE = #{resignationDate}
+			
+		WHERE
+			CAREER_ID = #{careerId}
+	
+	</update>
+	
+	
 
 </mapper>

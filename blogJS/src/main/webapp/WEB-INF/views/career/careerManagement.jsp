@@ -53,6 +53,11 @@
 	                            <li><span><strong>퇴사 날짜</strong></span>: <fmt:formatDate value="${careerDTO.resignationDate }" pattern="yyyy-MM-dd" /></li>
                             </ul>
                     </div>
+                    <div class="short_info">
+						<a href="${contextPath }/career/careerUpdate?careerId=${careerDTO.careerId}" class="primary_btn"><span>수정하기</span></a>
+						<br><br>
+                        <a href="${contextPath }/career/careerDelete?careerId=${careerDTO.careerId}" class="primary_btn"><span>삭제하기</span></a>
+					</div>
                  </div>
                 </c:forEach>
             </div>

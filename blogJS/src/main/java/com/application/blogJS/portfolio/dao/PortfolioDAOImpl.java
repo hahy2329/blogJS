@@ -46,6 +46,12 @@ public class PortfolioDAOImpl implements PortfolioDAO {
 		 sqlSession.update("portfolio.portfolioUpdate", portfolioDTO);
 		
 	}
+
+	@Override
+	public void portfolioDelete(PortfolioDTO portfolioDTO) throws Exception {
+		sqlSession.delete("portfolio.portfolioDelete", portfolioDTO);
+		
+	}
 	
 	
 	

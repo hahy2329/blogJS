@@ -81,4 +81,56 @@ public class CareerController {
 		return mv;
 	}
 	
+	@GetMapping("/careerUpdate")
+	public ModelAndView careerUpdate(@RequestParam("careerId") long careerId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		CareerDTO careerDTO = careerService.getcareerDetail(careerId);
+		mv.addObject("careerDTO", careerDTO);
+		mv.setViewName("/career/careerUpdate");
+		
+		return mv;
+		
+		
+		
+		
+	}
+	
+	@PostMapping("/careerUpdate")
+	public ResponseEntity<Object> careerUpdate(@RequestParam("careerId") long careerId ,HttpServletRequest request) throws Exception{
+		
+		CareerDTO careerDTO = new CareerDTO();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Date joinDt = sdf.parse(request.getParameter("joinDate"));
+		Date resignationDt = sdf.parse(request.getParameter("resignationDate"));
+		
+		careerDTO.setCareerId(careerId);
+		careerDTO.setCompanyName(request.getParameter("companyName"));
+		careerDTO.setDepartment(request.getParameter("department"));
+		careerDTO.setHumanId(request.getParameter("humanId"));
+		careerDTO.setPeriod(request.getParameter("period"));
+		careerDTO.setSkill(request.getParameter("skill"));
+		
+		careerDTO.setJoinDate(joinDt);
+		careerDTO.setResignationDate(resignationDt);
+		
+		careerService.careerUpdate(careerDTO);
+		
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정이 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	
 }

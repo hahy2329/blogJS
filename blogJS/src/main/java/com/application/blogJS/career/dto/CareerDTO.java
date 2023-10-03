@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CareerDTO {
 	
+	private long careerId;
 	private String companyName;
 	private String department;
 	private String period;
@@ -19,6 +20,12 @@ public class CareerDTO {
 	private Date resignationDate;
 	private String humanId;
 	
+	public long getCareerId() {
+		return careerId;
+	}
+	public void setCareerId(long careerId) {
+		this.careerId = careerId;
+	}
 	public String getCompanyName() {
 		return companyName;
 	}
@@ -61,26 +68,13 @@ public class CareerDTO {
 	public void setHumanId(String humanId) {
 		this.humanId = humanId;
 	}
+	
 	@Override
 	public String toString() {
-		return "CareerDTO [companyName=" + companyName + ", department=" + department + ", period=" + period
-				+ ", skill=" + skill + ", joinDate=" + joinDate + ", resignationDate=" + resignationDate + ", humanId="
-				+ humanId + ", toString()=" + super.toString() + "]";
+		return "CareerDTO [careerId=" + careerId + ", companyName=" + companyName + ", department=" + department
+				+ ", period=" + period + ", skill=" + skill + ", joinDate=" + joinDate + ", resignationDate="
+				+ resignationDate + ", humanId=" + humanId + ", toString()=" + super.toString() + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

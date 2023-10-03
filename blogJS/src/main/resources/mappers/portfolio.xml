@@ -80,5 +80,16 @@
 			PORTFOLIO_ID = #{portfolioId}
 	
 	</update>
-
+	
+	<delete id="portfolioDelete" parameterType="PortfolioDTO">
+		
+		DELETE FROM PORTFOLIO
+		
+		WHERE 
+			PORTFOLIO_ID = #{portfolioId}
+	
+	</delete>
+	
+	
+	
 </mapper>

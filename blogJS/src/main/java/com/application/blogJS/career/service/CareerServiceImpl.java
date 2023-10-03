@@ -24,5 +24,16 @@ public class CareerServiceImpl implements CareerService {
 	public List<CareerDTO> getCareerList() throws Exception {
 		return careerDAO.getCareerList();
 	}
+
+	@Override
+	public CareerDTO getcareerDetail(long careerId) throws Exception {
+		return careerDAO.getcareerDetail(careerId);
+	}
+
+	@Override
+	public void careerUpdate(CareerDTO careerDTO) throws Exception {
+		careerDAO.careerUpdate(careerDTO);
+		
+	}
 	
 }

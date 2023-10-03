@@ -25,4 +25,15 @@ public class CareerDAOImpl implements CareerDAO {
 		return sqlSession.selectList("career.getCareerList");
 	}
 
+	@Override
+	public CareerDTO getcareerDetail(long careerId) throws Exception {
+		return sqlSession.selectOne("career.getcareerDetail", careerId);
+	}
+
+	@Override
+	public void careerUpdate(CareerDTO careerDTO) throws Exception {
+		sqlSession.update("career.careerUpdate", careerDTO);
+		
+	}
+
 }

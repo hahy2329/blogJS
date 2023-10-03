@@ -12,4 +12,5 @@ public interface PortfolioService {
 	public List<PortfolioDTO> getAppPortfolioList() throws Exception;
 	public PortfolioDTO getPortfolioDetail(long portfolioId) throws Exception;
 	public void portfolioUpdate(PortfolioDTO portfolioDTO) throws Exception;
+	public void portfolioDelete(PortfolioDTO portfolioDTO) throws Exception;
 }

@@ -17,9 +17,9 @@ $().ready(function(){
 		$(".answer").empty();
 		
 		var humanId = $("#humanId").val();
-		var passwd = $("#passwd").val();
-	
-		if(passwd == ''){
+		var passwd  = $("#passwd").val();
+		
+		if(passwd ==''){
 			alert("비밀번호를 입력해주세요.");
 			return;
 		}
@@ -43,45 +43,39 @@ $().ready(function(){
 					$(".answer").append("<p style='color: red;'>" +"비밀번호를 다시 확인해주세요." + "</p>");
 					
 				}
-			
-			
+				
 			}
-		
-		
-		
+			
+		});
 	});
-	
-});
 	
 	$("form").submit(function(){
 		
 		if(isValid == false){
-			
 			alert("비밀번호를 다시 확인해주세요.");
 			return false;
 		}
 		if(isValid == true){
-			$("[name='makeDt']").val($("#makeY").val() + "-" + $("#makeM").val() + "-" + $("#makeD").val());
+			$("[name='joinDate']").val($("#joinY").val() + "-" + $("#joinM").val() + "-" + $("#joinD").val());
+			$("[name='resignationDate']").val($("#resignationY").val() + "-" + $("#resignationM").val() + "-" + $("#resignationD").val());
 			return true;
 		}
 		
 	});
 });
-
-
+	
 </script>
 </head>
 <body>
-
 	<!--================ Start Banner Area =================-->
     <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>포트폴리오 수정</h2>
+                    <h2>경력 작성</h2>
                     <div class="page_link">
                         <a href="${contextPath }/">Home</a>
-                        <a href="#">포트폴리오 수정</a>
+                        <a href="#">경력 작성</a>
                     </div>
                 </div>
             </div>
@@ -92,50 +86,42 @@ $().ready(function(){
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/portfolio/portfolioUpdate" method="post" enctype="multipart/form-data">
+                    <form class="row contact_form" action="${contextPath }/career/careerUpdate" method="post">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${sessionScope.humanId }" readonly="readonly">
                                 <input type="password" class="form-control" id="passwd" name="passwd" placeholder="비밀번호 입력" required="required">
                             <div class="reply-btn" align="right">
-                                        <input type="button" id="btnOverlappedPasswd" class="btn-reply text-uppercase" value="인증"> 
+                                 <input type="button" id="btnOverlappedPasswd" class="btn-reply text-uppercase" value="인증"> 
                             </div>
                             <p class="answer"></p>
                         	<div>
                         		<br>
                             </div>
-                            	<input type="text" id="subject" name="subject" class="form-control" placeholder="제목을 입력해주세요." required="required" value="${portfolioDTO.subject }">
+                            	<input type="text" id="companyName" name="companyName" class="form-control" placeholder="회사명을 입력해주세요." required="required" value="${careerDTO.companyName }">
                             <div>
                             	<br>
                             </div>
+                            	<input type="text" id="department" name="department" class="form-control" placeholder="직무를 입력해주세요." required="required" value="${careerDTO.department }">
                             <div>
                             	<br>
                             </div>
-                            	<input type="text" class="form-control" placeholder="포트폴리오 사진을 올려주세요." readonly="readonly" value="${portfolioDTO.image }">
-                            	<input type="file" class="form-control" name="image" value="파일 선택">
+                            	<input type="text" class="form-control" placeholder="근무 기간(숫자+개월,년)을 입력해주세요." readonly="readonly">
+                             	<input type="text" class="form-control" name="period" required="required" value="${careerDTO.period }">&nbsp;
                             <div>
                             	<br>
                             </div>
-                            	<input type="text" class="form-control" placeholder="포트폴리오 관련 간단하게 설명 부탁드립니다." readonly="readonly">
-                                <textarea class="form-control" name="content" rows="1" placeholder="내용을 입력해주세요." required="required">${portfolioDTO.content }</textarea>
-                                <script>CKEDITOR.replace("content")</script>
-                            <div>
-                            	<br>
-                            </div>
-                            <div>
-                            	<br>
-                            </div>
-                           		  	<input type="text" class="form-control" placeholder="프로젝트 완성날짜를 선택해주세요." readonly="readonly">
+                            	<input type="text" class="form-control" placeholder="입사 날짜를 선택해주세요." readonly="readonly">
                            <div> 	
                           	<div>
-                            	<select id="makeY" class="form-control" required="required">
+                            	<select id="joinY" class="form-control" required="required">
                             		<c:forEach var="i" begin="0" end="2023">
                             			<option>${2023-i }</option>
                             		</c:forEach>
                             	</select>
                             </div>	
                             <div>
-                            	<select id="makeM" class="form-control" required="required">
+                            	<select id="joinM" class="form-control" required="required">
                             		<c:forEach var="i" begin="1" end="12">
                             			<c:choose>
                             				<c:when test="${i<10 }">
@@ -149,7 +135,7 @@ $().ready(function(){
                             	</select>
                             </div>
                             <div>
-                            	<select id="makeD" class="form-control" required="required">
+                            	<select id="joinD" class="form-control" required="required">
                             		<c:forEach var="i" begin="1" end="31">
                             			<c:choose>
                             				<c:when test="${i<10 }">
@@ -162,33 +148,58 @@ $().ready(function(){
                             		</c:forEach>
                             	</select>
                             </div>
-                            <input type="hidden" name="makeDt"/>
+                            <input type="hidden" name="joinDate"/>
                             </div>
                             <div>
                             	<br>
                             </div>
-                            	<input type="text" class="form-control" placeholder="프로젝트의 유형을 선택해주세요." readonly="readonly">
-                            	<input type="radio" id="sort" name="sort" value="web" <c:if test="${portfolioDTO.sort eq 'web' }">checked="checked"</c:if>>웹 
-                               	<input type="radio" id="sort" name="sort" value="app"<c:if test="${portfolioDTO.sort eq 'app' }">checked="checked"</c:if>>앱
-                             <div>
-                             	<br> 
-                             </div>
-                             	<input type="text" class="form-control" placeholder="프로젝트의 인원을 숫자로 입력해주세요." readonly="readonly">
-                             	<input type="text" class="form-control" name="numberPeople" required="required" value="${portfolioDTO.numberPeople }">&nbsp;
-                             	<input type="text" class="form-control" placeholder="프로젝트 만든이를 입력해주세요." readonly="readonly">
-                             	<input type="text" class="form-control" name="madePeople" required="required" value="${portfolioDTO.madePeople }">
-                             <div>
-                             	<br>
-                             </div>
-                             	<input type="text" class="form-control" placeholder="프로젝트의 완성도를 1~5까지 입력해주세요." readonly="readonly">
-                             	<select id="complete" name="complete" class="form-control" required="required">
-                             		<c:forEach var="i" begin="1" end="5">
-                             			<option>${i }</option>
-                             		</c:forEach>
-                             	</select>
+                            	<input type="text" class="form-control" placeholder="퇴사 날짜를 선택해주세요." readonly="readonly">
+                            <div> 	
+                          	<div>
+                            	<select id="resignationY" class="form-control" required="required">
+                            		<c:forEach var="i" begin="0" end="2023">
+                            			<option>${2023-i }</option>
+                            		</c:forEach>
+                            	</select>
+                            </div>	
+                            <div>
+                            	<select id="resignationM" class="form-control" required="required">
+                            		<c:forEach var="i" begin="1" end="12">
+                            			<c:choose>
+                            				<c:when test="${i<10 }">
+                            					<option>0${i }</option>
+                            				</c:when>
+                            				<c:otherwise>
+                            					<option>${i }</option>
+                            				</c:otherwise>
+                            			</c:choose>
+                            		</c:forEach>
+                            	</select>
+                            </div>
+                            <div>
+                            	<select id="resignationD" class="form-control" required="required">
+                            		<c:forEach var="i" begin="1" end="31">
+                            			<c:choose>
+                            				<c:when test="${i<10 }">
+                            					<option>0${i }</option>
+                            				</c:when>
+                            				<c:otherwise>
+                            					<option>${i }</option>
+                            				</c:otherwise>
+                            			</c:choose>
+                            		</c:forEach>
+                            	</select>
+                            </div>
+                            <input type="hidden" name="resignationDate"/>
+                            </div>
+                            <div>
+                            	<br>
+                            </div>
+                             	<input type="text" class="form-control" placeholder="회사에서 사용한 기술을 입력해주세요." readonly="readonly">
+                             	<input type="text" class="form-control" id="skill" name="skill" required="required" value="${careerDTO.skill }">
                         </div>
                         <div class="col-md-12 text-right">
-                        	<input type="hidden" name="portfolioId" value="${portfolioDTO.portfolioId }">
+                        	<input type="hidden" name="careerId" value="${careerDTO.careerId }">
                             <button type="submit" value="submit" class="primary_btn">
                                 <span>수정</span>
                             </button>
@@ -199,6 +210,5 @@ $().ready(function(){
             </div>
         </div>
     </section>
-	
 </body>
 </html>
