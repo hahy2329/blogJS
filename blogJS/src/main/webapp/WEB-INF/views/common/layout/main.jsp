@@ -133,14 +133,14 @@
 								<div class="single_portfolio">
 									<img class="img-fluid w-100" src="${contextPath }/portfolio/portfolioImage?image=${portfolioDTO.image}" width="375" height="325" alt="포트폴리오 사진">
 									<div class="overlay"></div>
-									<a href="${contextPath }/portfolio/portfolioDetail" class="img-gal">
+									<a href="${contextPath }/portfolio/portfolioDetail?portfolioId=${portfolioDTO.portfolioId}" class="img-gal">
 										<div class="icon">
 											<span class="lnr lnr-cross"></span>
 										</div>
 									</a>
 								</div>
 								<div class="short_info">
-									<h4><a href="portfolio-details.html">${portfolioDTO.subject }</a></h4>
+									<h4><a href="#">${portfolioDTO.subject }</a></h4>
 									<p>${portfolioDTO.humanId }, <fmt:formatDate value="${portfolioDTO.makeDt }" pattern="yyyy-MM-dd"/></p>
 									<a href="${contextPath }/portfolio/portfolioUpdate?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>수정하기</span></a>
                                     <a href="${contextPath }/portfolio/portfolioDelete?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>삭제하기</span></a>
