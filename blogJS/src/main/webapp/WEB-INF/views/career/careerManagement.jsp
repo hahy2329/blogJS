@@ -40,26 +40,26 @@
             </div>
             <div class="row feature_inner">
             	<c:forEach var="careerDTO" items="${careerList }">
-                 <div class="col-lg-3 col-md-6">
-                    <div class="feature_item">
-                        <img src="img/services/s1.png" alt="">
-                        <h4>${careerDTO.humanId }</h4>
-                        	<ul class="list">
-	                        	<li><span><strong>회사 이름</strong></span>: ${careerDTO.companyName }</li>
-	                            <li><span><strong>직무</strong></span>: ${careerDTO.department }</li>	
-	                            <li><span><strong>근무 기간</strong></span>: ${careerDTO.period }</li>
-	                            <li><span><strong>사용 스킬</strong></span>: ${careerDTO.skill }</li>
-	                            <li><span><strong>입사 날짜</strong></span>: <fmt:formatDate value="${careerDTO.joinDate }" pattern="yyyy-MM-dd" /></li>
-	                            <li><span><strong>퇴사 날짜</strong></span>: <fmt:formatDate value="${careerDTO.resignationDate }" pattern="yyyy-MM-dd" /></li>
-                            </ul>
-                    </div>
-                    <div class="short_info">
-						<a href="${contextPath }/career/careerUpdate?careerId=${careerDTO.careerId}" class="primary_btn"><span>수정하기</span></a>
-						<br><br>
-                        <a href="${contextPath }/career/careerDelete?careerId=${careerDTO.careerId}" class="primary_btn"><span>삭제하기</span></a>
-					</div>
-                 </div>
-                </c:forEach>
+	                 <div class="col-lg-3 col-md-6">
+	                    <div class="feature_item">
+	                        <img src="img/services/s1.png" alt="">
+	                        <h4>${careerDTO.humanId }</h4>
+	                        	<ul class="list">
+		                        	<li><span><strong>회사 이름</strong></span>: ${careerDTO.companyName }</li>
+		                            <li><span><strong>직무</strong></span>: ${careerDTO.department }</li>	
+		                            <li><span><strong>근무 기간</strong></span>: ${careerDTO.period }</li>
+		                            <li><span><strong>사용 스킬</strong></span>: ${careerDTO.skill }</li>
+		                            <li><span><strong>입사 날짜</strong></span>: <fmt:formatDate value="${careerDTO.joinDate }" pattern="yyyy-MM-dd" /></li>
+		                            <li><span><strong>퇴사 날짜</strong></span>: <fmt:formatDate value="${careerDTO.resignationDate }" pattern="yyyy-MM-dd" /></li>
+	                            </ul>
+	                    </div>
+	                    <div class="short_info">
+							<a href="${contextPath }/career/careerUpdate?careerId=${careerDTO.careerId}" class="primary_btn"><span>수정하기</span></a>
+							<br><br>
+	                        <a href="${contextPath }/career/careerDelete?careerId=${careerDTO.careerId}" class="primary_btn"><span>삭제하기</span></a>
+						</div>
+	                 </div>
+            	</c:forEach>
             </div>
         </div>
     </section>

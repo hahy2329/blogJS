@@ -15,4 +15,9 @@
 		<put-attribute name="title" value="경력 수정"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/career/careerUpdate.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="/career/careerDelete" extends="baseLayout">
+		<put-attribute name="title" value="경력 삭제"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/career/careerDelete.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>

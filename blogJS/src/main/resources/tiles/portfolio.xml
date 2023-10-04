@@ -29,7 +29,7 @@
 	
 	<definition name="/portfolio/portfolioUpdate" extends="baseLayout">
 		<put-attribute name="title" value="포트폴리오 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/portfolio/portfolioTopicUpdate.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/portfolio/portfolioUpdate.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/portfolio/portfolioDelete" extends="baseLayout">

@@ -72,10 +72,10 @@ $().ready(function(){
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>경력 작성</h2>
+                    <h2>경력 수정</h2>
                     <div class="page_link">
                         <a href="${contextPath }/">Home</a>
-                        <a href="#">경력 작성</a>
+                        <a href="#">경력 수정</a>
                     </div>
                 </div>
             </div>

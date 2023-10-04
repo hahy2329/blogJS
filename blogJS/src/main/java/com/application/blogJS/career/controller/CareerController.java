@@ -132,5 +132,37 @@ public class CareerController {
 		
 	}
 	
+	@GetMapping("/careerDelete")
+	public ModelAndView careerDelete(@RequestParam("careerId") long careerId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		CareerDTO careerDTO = careerService.getcareerDetail(careerId);
+		mv.addObject("careerDTO", careerDTO);
+		mv.setViewName("/career/careerDelete");
+		
+		return mv;
+		
+	}
+	
+	@PostMapping("/careerDelete")
+	public ResponseEntity<Object> careerDelete(CareerDTO careerDTO, HttpServletRequest request) throws Exception{
+		
+		
+		careerService.careerDelete(careerDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제가 완료되었습니다.');";
+		message +="location.href='" + request.getContextPath() +"/';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+	}
+	
+	
+	
 	
 }

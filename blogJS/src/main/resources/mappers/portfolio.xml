@@ -25,9 +25,12 @@
 	
 	<select id="getPortfolioList" resultType="PortfolioDTO">
 		
-		SELECT *
-			
-		FROM PORTFOLIO
+		SELECT 
+			*
+		FROM 
+			PORTFOLIO
+		ORDER BY 
+			MAKE_DT ASC
 	</select>
 
 	<select id="getWebPortfolioList" resultType="PortfolioDTO">
@@ -38,6 +41,9 @@
 		
 		WHERE 
 			SORT = 'WEB'
+			
+		ORDER BY 
+			MAKE_DT ASC
 	</select>
 
 	<select id="getAppPortfolioList" resultType="PortfolioDTO">
@@ -48,6 +54,8 @@
 			PORTFOLIO
 		WHERE
 			SORT='APP'
+		ORDER BY
+			MAKE_DT ASC
 	</select>
 	
 	<select id="getPortfolioDetail" parameterType="long" resultType="PortfolioDTO">
