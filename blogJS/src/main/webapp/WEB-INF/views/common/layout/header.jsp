@@ -58,6 +58,14 @@
 									<li class="nav-item"><a class="nav-link" href="${contextPath }/blog/blogWrite">블로그 작성</a></li>
 								</ul>
 							</li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">개인정보</a>
+								 <ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/human/informationUpdate?humanId=${sessionScope.humanId}">개인정보수정</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">비밀번호변경</a></li>
+								</ul>
+							</li>
 							</c:if>
 							<c:if test="${sessionScope.humanId eq null and sessionScope.userId eq null}">
 								<li class="nav-item"><a class="nav-link" href="${contextPath }/human/login">login</a></li>

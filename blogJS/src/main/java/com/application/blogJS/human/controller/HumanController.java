@@ -27,6 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.application.blogJS.human.dto.HumanDTO;
 import com.application.blogJS.human.service.HumanService;
 
+
 import net.coobird.thumbnailator.Thumbnails;
 
 @Controller
@@ -211,6 +212,17 @@ public class HumanController {
 		byte[] buffer = new byte[1024*8];
 		out.write(buffer);
 		out.close();
+	}
+	
+	@GetMapping("/informationUpdate")
+	public ModelAndView informationUpdate(@RequestParam("humanId") String humanId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		HumanDTO humanDTO = humanService.getHumanDetail(humanId);
+		mv.addObject("humanDTO", humanDTO);
+		mv.setViewName("/human/informationUpdate");
+		
+		return mv;
 	}
 	
 	
