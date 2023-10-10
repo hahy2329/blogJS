@@ -15,8 +15,8 @@ public class BlogReplyDAOImpl implements BlogReplyDAO {
 	private SqlSession sqlSession;
 	
 	@Override
-	public void uploadStudyBlogReply(BlogReplyDTO blogReplyDTO) throws Exception {
-		sqlSession.insert("blogReply.uploadStudyReply", blogReplyDTO);
+	public void uploadBlogReply(BlogReplyDTO blogReplyDTO) throws Exception {
+		sqlSession.insert("blogReply.uploadBlogReply", blogReplyDTO);
 
 	}
 

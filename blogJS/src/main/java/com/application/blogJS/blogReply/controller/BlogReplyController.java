@@ -53,7 +53,7 @@ public class BlogReplyController {
 		
 		
 		
-		blogReplyService.uploadStudyBlogReply(blogReplyDTO);
+		blogReplyService.uploadBlogReply(blogReplyDTO);
 		
 		String message = "<script>";
 		message +="alert('정상적으로 완료되었습니다.');";

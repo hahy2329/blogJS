@@ -17,8 +17,8 @@ public class BlogReplyServiceImpl implements BlogReplyService {
 	
 	
 	@Override
-	public void uploadStudyBlogReply(BlogReplyDTO blogReplyDTO) throws Exception {
-		blogReplyDAO.uploadStudyBlogReply(blogReplyDTO);
+	public void uploadBlogReply(BlogReplyDTO blogReplyDTO) throws Exception {
+		blogReplyDAO.uploadBlogReply(blogReplyDTO);
 	
 
 	}
