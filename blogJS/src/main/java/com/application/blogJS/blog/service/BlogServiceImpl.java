@@ -59,8 +59,8 @@ public class BlogServiceImpl implements BlogService {
 
 
 	@Override
-	public List<BlogDTO> getblogDayTimeList() throws Exception {
-		return blogDAO.getblogDayTimeList();
+	public List<BlogDTO> getBlogDayTimeList() throws Exception {
+		return blogDAO.getBlogDayTimeList();
 	}
 
 
@@ -73,8 +73,8 @@ public class BlogServiceImpl implements BlogService {
 
 
 	@Override
-	public List<BlogDTO> getblogTravelList() throws Exception {
-		return blogDAO.getblogTravelList();
+	public List<BlogDTO> getBlogTravelList() throws Exception {
+		return blogDAO.getBlogTravelList();
 	}
 
 
@@ -87,8 +87,8 @@ public class BlogServiceImpl implements BlogService {
 
 
 	@Override
-	public void updateKeywordBlog(BlogDTO blogDTO) throws Exception {
-		blogDAO.updateKeywordBlog(blogDTO);
+	public void updateBlog(BlogDTO blogDTO) throws Exception {
+		blogDAO.updateBlog(blogDTO);
 		
 	}
 

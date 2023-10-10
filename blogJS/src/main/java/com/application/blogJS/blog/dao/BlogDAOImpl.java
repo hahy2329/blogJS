@@ -47,7 +47,7 @@ public class BlogDAOImpl implements BlogDAO {
 	}
 
 	@Override
-	public List<BlogDTO> getblogDayTimeList() throws Exception {
+	public List<BlogDTO> getBlogDayTimeList() throws Exception {
 		return sqlSession.selectList("blog.getblogDayTimeList");
 	}
 
@@ -57,7 +57,7 @@ public class BlogDAOImpl implements BlogDAO {
 	}
 
 	@Override
-	public List<BlogDTO> getblogTravelList() throws Exception {
+	public List<BlogDTO> getBlogTravelList() throws Exception {
 		return sqlSession.selectList("blog.getblogTravelList");
 	}
 
@@ -67,8 +67,8 @@ public class BlogDAOImpl implements BlogDAO {
 	}
 
 	@Override
-	public void updateKeywordBlog(BlogDTO blogDTO) throws Exception {
-		sqlSession.update("blog.updateKeywordBlog", blogDTO);
+	public void updateBlog(BlogDTO blogDTO) throws Exception {
+		sqlSession.update("blog.updateBlog", blogDTO);
 		
 	}
 

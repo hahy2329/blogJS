@@ -174,7 +174,7 @@ public class BlogController {
 	}
 	
 	@GetMapping("/blogDetailPicture1")
-	public void blogStudyPicture1(@RequestParam("picture1") String picture1, HttpServletResponse response) throws Exception{
+	public void blogDetailPicture1(@RequestParam("picture1") String picture1, HttpServletResponse response) throws Exception{
 		
 		OutputStream out = response.getOutputStream();
 		
@@ -188,7 +188,7 @@ public class BlogController {
 	}
 	
 	@GetMapping("/blogDetailPicture2")
-	public void blogStudyPicture2(@RequestParam("picture2") String picture2, HttpServletResponse response) throws Exception{
+	public void blogDetailPicture2(@RequestParam("picture2") String picture2, HttpServletResponse response) throws Exception{
 		
 		OutputStream out = response.getOutputStream();
 		
@@ -203,7 +203,7 @@ public class BlogController {
 	}
 	
 	@GetMapping("/blogDetailPicture3")
-	public void blogStudyPicture3(@RequestParam("picture3") String picture3, HttpServletResponse response) throws Exception{
+	public void blogDetailPicture3(@RequestParam("picture3") String picture3, HttpServletResponse response) throws Exception{
 		
 		OutputStream out = response.getOutputStream();
 		
@@ -219,13 +219,13 @@ public class BlogController {
 		
 	}
 	
-	@GetMapping("/todayKeyword")
-	public ModelAndView todayKeyword() throws Exception{
+	@GetMapping("/blogTodayKeyword")
+	public ModelAndView blogTodayKeyword() throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
 		List<BlogDTO> blogList = blogService.getBlogKeywordList();
 		mv.addObject("blogKeyword", blogList);
-		mv.setViewName("/blog/todayKeyword");
+		mv.setViewName("/blog/blogTodayKeyword");
 		return mv;
 		
 	}
@@ -248,13 +248,13 @@ public class BlogController {
 		
 	}
 	
-	@GetMapping("/dayTime")
-	public ModelAndView dayTime() throws Exception{
+	@GetMapping("/blogDayTime")
+	public ModelAndView blogDayTime() throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
-		List<BlogDTO> blogList = blogService.getblogDayTimeList();
+		List<BlogDTO> blogList = blogService.getBlogDayTimeList();
 		mv.addObject("blogDayTime", blogList);
-		mv.setViewName("/blog/dayTime");
+		mv.setViewName("/blog/blogDayTime");
 		
 		return mv;
 	}
@@ -279,12 +279,12 @@ public class BlogController {
 		
 	}
 	
-	@GetMapping("/travel")
-	public ModelAndView travel() throws Exception{
+	@GetMapping("/blogTravel")
+	public ModelAndView blogTravel() throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
-		List<BlogDTO> blogList = blogService.getblogTravelList();
-		mv.setViewName("/blog/travel");
+		List<BlogDTO> blogList = blogService.getBlogTravelList();
+		mv.setViewName("/blog/blogTravel");
 		mv.addObject("blogTravel", blogList);
 		return mv;
 		
@@ -369,7 +369,7 @@ public class BlogController {
 		blogDTO.setContent(multipartRequest.getParameter("content"));
 		blogDTO.setSort(multipartRequest.getParameter("sort"));
 		
-		blogService.updateKeywordBlog(blogDTO);
+		blogService.updateBlog(blogDTO);
 		
 		String message = "<script>";
 		message +="alert('정상적으로 변경이 완료되었습니다.');";
@@ -445,7 +445,7 @@ public class BlogController {
 		blogDTO.setContent(multipartRequest.getParameter("content"));
 		blogDTO.setSort(multipartRequest.getParameter("sort"));
 		
-		blogService.updateKeywordBlog(blogDTO);
+		blogService.updateBlog(blogDTO);
 		
 		String message = "<script>";
 		message +="alert('정상적으로 변경이 완료되었습니다.');";
@@ -522,7 +522,7 @@ public class BlogController {
 		blogDTO.setContent(multipartRequest.getParameter("content"));
 		blogDTO.setSort(multipartRequest.getParameter("sort"));
 		
-		blogService.updateKeywordBlog(blogDTO);
+		blogService.updateBlog(blogDTO);
 		
 		String message = "<script>";
 		message +="alert('정상적으로 변경이 완료되었습니다.');";
@@ -599,7 +599,7 @@ public class BlogController {
 		blogDTO.setContent(multipartRequest.getParameter("content"));
 		blogDTO.setSort(multipartRequest.getParameter("sort"));
 		
-		blogService.updateKeywordBlog(blogDTO);
+		blogService.updateBlog(blogDTO);
 		
 		String message = "<script>";
 		message +="alert('정상적으로 변경이 완료되었습니다.');";

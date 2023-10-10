@@ -83,21 +83,21 @@
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
-						<a href="${contextPath }/blog/dayTime"><img src="${contextPath }/resources/satner-master/img/services/today.png" alt=""></a>
+						<a href="${contextPath }/blog/blogDayTime"><img src="${contextPath }/resources/satner-master/img/services/today.png" alt=""></a>
 						<h4>소소한 일상</h4>
 						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
-						<a href="${contextPath }/blog/travel"><img src="${contextPath }/resources/satner-master/img/services/travel.png" alt=""></a>
+						<a href="${contextPath }/blog/blogTravel"><img src="${contextPath }/resources/satner-master/img/services/travel.png" alt=""></a>
 						<h4>여행</h4>
 						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
-						<a href="${contextPath}/blog/todayKeyword"><img src="${contextPath }/resources/satner-master/img/services/keyword.png" alt=""></a>
+						<a href="${contextPath}/blog/blogTodayKeyword"><img src="${contextPath }/resources/satner-master/img/services/keyword.png" alt=""></a>
 						<h4>오늘의 키워드</h4>
 						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
 					</div>

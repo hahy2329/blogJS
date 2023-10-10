@@ -177,6 +177,9 @@
                             <input type="hidden" name="birthDt"/>
                             </div>
                         </div>
+                        <div>
+                        	<br><br>
+                        </div>
                         <div class="col-md-12 text-right">
                             <button type="submit" value="submit" class="primary_btn">
                                 <span>개인정보수정</span>
