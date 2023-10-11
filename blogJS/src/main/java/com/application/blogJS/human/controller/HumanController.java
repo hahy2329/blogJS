@@ -225,5 +225,128 @@ public class HumanController {
 		return mv;
 	}
 	
+	@PostMapping("/informationUpdate")
+	public ResponseEntity<Object> informationUpdate(MultipartHttpServletRequest multipartRequest, HttpServletRequest request) throws Exception{
+		
+		Iterator<String> fileList = multipartRequest.getFileNames();
+		String fileName="";
+		if(fileList.hasNext()) {
+			
+			MultipartFile uploadFile = multipartRequest.getFile(fileList.next());
+			if(!uploadFile.getOriginalFilename().isEmpty()) {
+				SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+				fileName = fmt.format(new Date())+"_" + UUID.randomUUID() + "_" + uploadFile.getOriginalFilename();
+				uploadFile.transferTo(new File(FILE_REPO_PATH+fileName));
+						
+				
+			}
+			
+		}
+		
+		
+		HumanDTO humanDTO = new HumanDTO();
+		
+		humanDTO.setHumanId(multipartRequest.getParameter("humanId"));
+		humanDTO.setPasswd(multipartRequest.getParameter("passwd"));
+		humanDTO.setHumanNm(multipartRequest.getParameter("humanNm"));
+		humanDTO.setEmail(multipartRequest.getParameter("email"));
+		humanDTO.setProfile(fileName);
+		humanDTO.setContent(multipartRequest.getParameter("content"));
+		humanDTO.setBirthDt(multipartRequest.getParameter("birthDt"));
+		
+		humanService.informationUpdate(humanDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정 되었습니다.');";
+		message +="location.href='" + request.getContextPath() +"/';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/passwordChange")
+	public ModelAndView passwordChange(@RequestParam("humanId") String humanId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		HumanDTO humanDTO = humanService.getHumanDetail(humanId);
+		mv.addObject("humanDTO", humanDTO);
+		mv.setViewName("/human/passwordChange");
+		
+		return mv;
+		
+	}
+	
+	@PostMapping("/passwordChange")
+	public ResponseEntity<Object> passwordChange(HumanDTO humanDTO, @RequestParam("changePasswd") String changePasswd, HttpServletRequest request) throws Exception{
+		
+		String message="";
+		
+		if(humanService.passwordChange(humanDTO, changePasswd)) {
+			
+			HttpSession session = request.getSession();
+			session.invalidate();
+			
+			message = "<script>";
+			message +="alert('정상적으로 변경 되었습니다.');";
+			message +="location.href='" + request.getContextPath() +"/';";
+			message +="</script>";
+			
+				
+		}
+		else {
+			
+			message ="<script>";
+			message +="alert('비밀번호를 다시 확인해주세요.');";
+			message +="history.go(-1)";
+			message +="</script>";
+			
+		}
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+		
+	}
+	
+	@GetMapping("/humanDelete")
+	public ModelAndView humanDelete(@RequestParam("humanId") String humanId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		HumanDTO humanDTO = humanService.getHumanDetail(humanId);
+		mv.addObject("humanDTO", humanDTO);
+		mv.setViewName("/human/humanDelete");
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/humanDelete")
+	public ResponseEntity<Object> humanDelete(HumanDTO humanDTO, HttpServletRequest request) throws Exception{
+		
+		humanService.humanDelete(humanDTO);
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		String message = "<script>";
+		message +="alert('정상적으로 탈퇴가 되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/';";
+		message +="</script>";
+		
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+	}
+	
+	
 	
 }

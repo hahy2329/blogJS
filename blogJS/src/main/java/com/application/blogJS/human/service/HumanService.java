@@ -10,4 +10,9 @@ public interface HumanService {
 	public boolean loginCheck(HumanDTO humanDTO) throws Exception;
 	public String checkDuplicatedPasswd(String passwd, String humanId) throws Exception;
 	public HumanDTO getHumanDetail(String humanId) throws Exception;
+	public void informationUpdate(HumanDTO humanDTO) throws Exception;
+	public boolean passwordChange(HumanDTO humanDTO, String changePasswd) throws Exception;
+	public void humanDelete(HumanDTO humanDTO) throws Exception; 
+	
+	
 }

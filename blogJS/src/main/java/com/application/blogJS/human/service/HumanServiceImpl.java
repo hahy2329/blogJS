@@ -74,4 +74,36 @@ public class HumanServiceImpl implements HumanService {
 		return humanDAO.getHumanDetail(humanId);
 	}
 
+	@Override
+	public void informationUpdate(HumanDTO humanDTO) throws Exception {
+		humanDAO.informationUpdate(humanDTO);
+		
+	}
+	
+	
+	@Override
+	public boolean passwordChange(HumanDTO humanDTO, String changePasswd) throws Exception {
+		
+		boolean checkPasswd = false;
+		
+		if(bCryptPasswordEncoder.matches(humanDTO.getPasswd(), humanDAO.getEncodePasswd(humanDTO.getHumanId()))){
+			
+			humanDTO.setPasswd(bCryptPasswordEncoder.encode(changePasswd));
+			humanDAO.changePsswd(humanDTO);
+			
+			checkPasswd = true;
+			
+		}
+		
+		return checkPasswd;
+		
+	}
+
+	@Override
+	public void humanDelete(HumanDTO humanDTO) throws Exception {
+		humanDAO.humanDelete(humanDTO);
+		
+	}
+
+
 }

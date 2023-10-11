@@ -81,4 +81,9 @@
 		<put-attribute name="body" value="/WEB-INF/views/blog/blogTravelDelete.jsp"></put-attribute>	
 	</definition>
 	
+	<definition name="/blog/blogStudyDelete" extends="baseLayout">
+		<put-attribute name="title" value="블로그 삭제(개발공부)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/blog/blogStudyDelete.jsp"></put-attribute>
+	</definition>
+	
 </tiles-definitions>

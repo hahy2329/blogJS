@@ -63,7 +63,8 @@
 								 aria-expanded="false">개인정보</a>
 								 <ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="${contextPath }/human/informationUpdate?humanId=${sessionScope.humanId}">개인정보수정</a></li>
-									<li class="nav-item"><a class="nav-link" href="#">비밀번호변경</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/human/passwordChange?humanId=${sessionScope.humanId}">비밀번호변경</a></li>
+									<li class="nav-item"><a class="nav-link" href="${contextPath }/human/humanDelete?humanId=${sessionScope.humanId}">회원탈퇴</a></li>
 								</ul>
 							</li>
 							</c:if>

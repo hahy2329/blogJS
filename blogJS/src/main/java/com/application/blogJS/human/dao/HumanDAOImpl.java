@@ -50,4 +50,33 @@ public class HumanDAOImpl implements HumanDAO {
 		return sqlSession.selectOne("human.getHumanDetail", humanId);
 	}
 
+	@Override
+	public void informationUpdate(HumanDTO humanDTO) throws Exception {
+		sqlSession.update("human.informationUpdate", humanDTO);
+		
+	}
+
+	@Override
+	public String getEncodePasswd(String humanId) throws Exception {
+		
+		return sqlSession.selectOne("human.getEncodePasswd", humanId);
+	}
+
+
+	@Override
+	public void changePsswd(HumanDTO humanDTO) throws Exception {
+		
+		sqlSession.update("human.changePsswd", humanDTO);
+		
+	}
+
+
+	@Override
+	public void humanDelete(HumanDTO humanDTO) throws Exception {
+		sqlSession.delete("human.humanDelete", humanDTO);
+		
+	}
+
+
+
 }

@@ -126,7 +126,7 @@
 	
 	</select>
 	
-	<update id="updateKeywordBlog" parameterType="BlogDTO">
+	<update id="updateBlog" parameterType="BlogDTO">
 		
 		UPDATE
 			STUDYBLOG

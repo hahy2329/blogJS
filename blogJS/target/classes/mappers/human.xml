@@ -78,4 +78,53 @@
 		
 		</select>
 		
+		<update id="informationUpdate" parameterType="HumanDTO">
+			
+			UPDATE
+				HUMAN
+			SET
+				HUMAN_NM = #{humanNm},
+				BIRTH_DT = #{birthDt},
+				PROFILE = #{profile},
+				EMAIL = #{email},
+				CONTENT = #{content}
+				
+			WHERE
+				HUMAN_ID = #{humanId}
+		</update>
+		
+		
+		<select id="getEncodePasswd" parameterType="String" resultType="String">
+			
+			SELECT
+				PASSWD
+			FROM
+				HUMAN
+			WHERE
+				HUMAN_ID = #{humanId}
+		</select>
+		
+		<update id="changePsswd" parameterType="HumanDTO">
+			
+			UPDATE 
+				HUMAN
+			SET
+				PASSWD = #{passwd}
+			WHERE
+				HUMAN_ID = #{humanId}
+		
+		
+		</update>
+		
+		<delete id="humanDelete" parameterType="HumanDTO">
+			
+			DELETE FROM
+				HUMAN
+			WHERE
+				HUMAN_ID = #{humanId}
+		
+		</delete>
+		
+		
+		
 	</mapper>

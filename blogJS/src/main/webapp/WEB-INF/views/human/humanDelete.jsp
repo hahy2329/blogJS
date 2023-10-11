@@ -85,10 +85,10 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>개인정보수정</h2>
+                    <h2>회원탈퇴</h2>
                     <div class="page_link">
                         <a href="${contextPath }/">Home</a>
-                        <a href="#">개인정보수정</a>
+                        <a href="#">회원탈퇴</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="${contextPath }/human/informationUpdate" method="post" enctype="multipart/form-data">
+                    <form class="row contact_form" action="${contextPath }/human/humanDelete" method="post">
                         <div class="col-md-6">
                              <div class="form-group">
                                 <input type="text" class="form-control" minlength="5" maxlength="15" id="humanId" name="humanId" placeholder="아이디를 입력해주세요." value="${humanDTO.humanId }" readonly="readonly">
@@ -113,7 +113,7 @@
                         	<div><!-- 비밀번호 -->
                         		<br>
                             </div>
-                            	<input type="text" id="humanNm" name="humanNm" class="form-control" placeholder="이름을 입력해주세요." value="${humanDTO.humanNm }" required="required">
+                            	<input type="text" id="humanNm" name="humanNm" class="form-control" placeholder="이름을 입력해주세요." value="${humanDTO.humanNm }" readonly="readonly">
                             <div>
                             	<br>
                             </div>
@@ -121,59 +121,17 @@
                             	<br>
                             </div>
                             	<input type="text" class="form-control" placeholder="이미지 파일을 선택해주세요." readonly="readonly" value="${humanDTO.profile }">
-                            	<input type="file" class="form-control" name="profile" value="파일 선택" required="required">	
+                            	<input type="file" class="form-control" name="profile" value="파일 선택" readonly="readonly">	
                             	
                             <div>
                             	<br>
                             </div>
                             	<input type="text" class="form-control" placeholder="자기소개를 간단하게 부탁드립니다." readonly="readonly">
-                                <textarea class="form-control" name="content" rows="1" required="required">${humanDTO.content }</textarea>
+                                <textarea class="form-control" name="content" rows="1" readonly="readonly">${humanDTO.content }</textarea>
                             <div>
                             	<br>
                             </div>  
-                            	<input type="email" name="email" id="email" class="form-control" placeholder="이메일을 입력해주세요." required="required" value="${humanDTO.email }">
-                            </div>
-                            <div>
-                            	<br>
-                            </div>
-                           <div> 	
-                               	<input type="text" class="form-control" value="생년월일을 선택해주세요." readonly="readonly">
-                          	<div>
-                            	<select id="birthY" class="form-control" required="required">
-                            		<c:forEach var="i" begin="0" end="2023">
-                            			<option>${2023-i }</option>
-                            		</c:forEach>
-                            	</select>
-                            </div>	
-                            <div>
-                            	<select id="birthM" class="form-control" required="required">
-                            		<c:forEach var="i" begin="1" end="12">
-                            			<c:choose>
-                            				<c:when test="${i<10 }">
-                            					<option>0${i }</option>
-                            				</c:when>
-                            				<c:otherwise>
-                            					<option>${i }</option>
-                            				</c:otherwise>
-                            			</c:choose>
-                            		</c:forEach>
-                            	</select>
-                            </div>
-                            <div>
-                            	<select id="birthD" class="form-control" required="required">
-                            		<c:forEach var="i" begin="1" end="31">
-                            			<c:choose>
-                            				<c:when test="${i<10 }">
-                            					<option>0${i }</option>
-                            				</c:when>
-                            				<c:otherwise>
-                            					<option>${i }</option>
-                            				</c:otherwise>
-                            			</c:choose>
-                            		</c:forEach>
-                            	</select>
-                            </div>
-                            <input type="hidden" name="birthDt"/>
+                            	<input type="email" name="email" id="email" class="form-control" placeholder="이메일을 입력해주세요." readonly="readonly" value="${humanDTO.email }">
                             </div>
                         </div>
                         <div>
@@ -181,7 +139,7 @@
                         </div>
                         <div class="col-md-12 text-right">
                             <button type="submit" value="submit" class="primary_btn">
-                                <span>개인정보수정</span>
+                                <span>회원 탈퇴</span>
                             </button>
                         </div>
                     </form>

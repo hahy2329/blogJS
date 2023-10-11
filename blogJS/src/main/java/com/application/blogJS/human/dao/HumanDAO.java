@@ -10,4 +10,8 @@ public interface HumanDAO {
 	public String checkEncodePasswd(String humanId) throws Exception;
 	public HumanDTO loginHuman(HumanDTO humanDTO) throws Exception;
 	public HumanDTO getHumanDetail(String humanId) throws Exception;
+	public String getEncodePasswd(String humanId) throws Exception;
+	public void informationUpdate(HumanDTO humanDTO) throws Exception;
+	public void changePsswd(HumanDTO humanDTO) throws Exception;
+	public void humanDelete(HumanDTO humanDTO) throws Exception;
 }

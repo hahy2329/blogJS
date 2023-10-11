@@ -17,4 +17,13 @@
 		<put-attribute name="body" value="/WEB-INF/views/human/informationUpdate.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="/human/passwordChange" extends="baseLayout">
+		<put-attribute name="title" value="비밀번호 변경"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/human/passwordChange.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/human/humanDelete" extends="baseLayout">
+		<put-attribute name="title" value="회원탈퇴"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/human/humanDelete.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>
