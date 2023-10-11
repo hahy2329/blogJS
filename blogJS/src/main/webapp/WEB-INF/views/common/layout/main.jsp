@@ -53,9 +53,8 @@
 							안녕하세요. 저의 블로그에 방문해 주셔서 감사합니다. 저는 서울에 거주하고 있는 백엔드 개발자 입문중인 한주석이라고 합니다.  
 						</p>
 						<p>
-							개발을 하면서 주로 사용하는 스킬은 HTML5, CSS3, Javascript, Jquery, Java, JSP, Spring Framework, Mybatis등이 있으며, 계속해서 스프링을 활용한 여러 프로젝트를 개발중입니다. 글을 읽어주셔서 감사합니다.
+							개발을 하면서 주로 사용하는 스킬은 HTML5, CSS3, Javascript, Jquery, Java, JSP, Spring Framework, Mybatis, Ajax, JSON등이 있으며, 계속해서 스프링을 활용한 여러 프로젝트를 개발중입니다. 글을 읽어주셔서 감사합니다.
 						</p>
-						<a class="primary_btn" href="#"><span>Download CV</span></a>
 					</div>
 				</div>
 			</div>
@@ -78,28 +77,28 @@
 					<div class="feature_item">
 						<a href="${contextPath }/blog/blogStudy"><img src="${contextPath }/resources/satner-master/img/services/shapoo.png" alt=""></a>
 						<h4>개발공부</h4>
-						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+						<p>같이 개발공부 하러 떠나요. GO~</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
 						<a href="${contextPath }/blog/blogDayTime"><img src="${contextPath }/resources/satner-master/img/services/today.png" alt=""></a>
 						<h4>소소한 일상</h4>
-						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+						<p>하루 하루 일상 속 내용들을 담아봤습니다. GO~</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
 						<a href="${contextPath }/blog/blogTravel"><img src="${contextPath }/resources/satner-master/img/services/travel.png" alt=""></a>
 						<h4>여행</h4>
-						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+						<p>여행을 떠나요~ GO~</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
 						<a href="${contextPath}/blog/blogTodayKeyword"><img src="${contextPath }/resources/satner-master/img/services/keyword.png" alt=""></a>
 						<h4>오늘의 키워드</h4>
-						<p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+						<p>개발을 하면서 가장 중요한 개념! 키워드를 알아보러 가요. GO~</p>
 					</div>
 				</div>
 			</div>
