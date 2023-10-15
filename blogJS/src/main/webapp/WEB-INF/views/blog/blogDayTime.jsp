@@ -36,7 +36,7 @@
                         <img src="${contextPath }/resources/satner-master/img/blog/cat-post/cat-post-3.jpg" alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
-                                <a href="${contextPath }/blog/blogDayTime"><h5>소소한 일상</h5></a>
+                                <a href="${contextPath }/blog/blogStudy"><h5>개발공부</h5></a>
                                 <div class="border_line"></div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                         <img src="${contextPath }/resources/satner-master/img/blog/cat-post/cat-post-2.jpg" alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
-                                <a href="${contextPath}/blog/blogTodayKeyword"><h5>오늘 하루 핵심 키워드</h5></a>
+                                <a href="${contextPath}/blog/blogTodayKeyword"><h5>오늘의 키워드</h5></a>
                                 <div class="border_line"></div>
                             </div>
                         </div>

@@ -9,6 +9,9 @@
 			STUDYBLOG
 		WHERE
 			SORT ="DEVELOPMENT"
+		ORDER BY 
+			ENROLL_DT DESC	
+			
 	</select>
 	
 	<insert id="insertBlog" parameterType="BlogDTO">
@@ -63,7 +66,8 @@
 			STUDYBLOG
 		WHERE 
 			SORT='KEYWORD'
-		
+		ORDER BY 
+			ENROLL_DT DESC
 	
 	
 	</select>
@@ -88,6 +92,8 @@
 			STUDYBLOG
 		WHERE
 			SORT = 'DAILYROUTINE'
+		ORDER BY 
+			ENROLL_DT DESC	
 	
 	</select>
 	
@@ -109,6 +115,8 @@
 			STUDYBLOG
 		WHERE
 			SORT = 'TRAVEL'
+		ORDER BY 
+			ENROLL_DT DESC
 			
 	
 	
