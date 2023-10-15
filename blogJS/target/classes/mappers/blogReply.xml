@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="blogReply">
 
-	<insert id="uploadStudyReply" parameterType="BlogReplyDTO">
+	<insert id="uploadBlogReply" parameterType="BlogReplyDTO">
 		
 		INSERT INTO STUDYBLOGREPLY(CONTENT, HUMAN_ID, BLOG_ID)
 		
