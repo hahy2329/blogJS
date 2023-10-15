@@ -62,8 +62,10 @@
 								<div class="short_info">
 									<h4><a href="portfolio-details.html">${portfolioDTO.subject }</a></h4>
 									<p>${portfolioDTO.humanId }, <fmt:formatDate value="${portfolioDTO.makeDt }" pattern="yyyy-MM-dd"/></p>
-									<a href="${contextPath }/portfolio/portfolioUpdate?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>수정하기</span></a>
-                                    <a href="${contextPath }/portfolio/portfolioDelete?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>삭제하기</span></a>
+									<c:if test="${sessionScope.humanId eq portfolioDTO.humanId }">
+										<a href="${contextPath }/portfolio/portfolioUpdate?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>수정하기</span></a>
+                                    	<a href="${contextPath }/portfolio/portfolioDelete?portfolioId=${portfolioDTO.portfolioId}" class="primary_btn"><span>삭제하기</span></a>
+									</c:if>
 								</div>
 							</div>
 						</div>

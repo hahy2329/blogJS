@@ -79,10 +79,10 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>블로그 수정(오늘의 키워드)</h2>
+                    <h2>블로그 삭제(오늘의 키워드)</h2>
                     <div class="page_link">
                         <a href="${contextPath }/">Home</a>
-                        <a href="#">블로그 수정(오늘의 키워드)</a>
+                        <a href="#">블로그 삭제(오늘의 키워드)</a>
                     </div>
                 </div>
             </div>

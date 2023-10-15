@@ -95,8 +95,10 @@
                                     </c:if>
                                     <div class="blog_details">
                                         <a href="${contextPath }/blog/blogTravelDetail?blogId=${blogTravel.blogId}&humanId=${blogTravel.humanId}"><h2>${blogTravel.subject }</h2></a>
-                                        <a href="${contextPath }/blog/blogTravelUpdate?blogId=${blogTravel.blogId}" class="primary_btn"><span>수정하기</span></a>
-                                    	<a href="${contextPath }/blog/blogTravelDelete?blogId=${blogTravel.blogId}" class="primary_btn"><span>삭제하기</span></a>
+                                        <c:if test="${sessionScope.humanId eq blogTravel.humanId}">
+                                        	<a href="${contextPath }/blog/blogTravelUpdate?blogId=${blogTravel.blogId}" class="primary_btn"><span>수정하기</span></a>
+                                    		<a href="${contextPath }/blog/blogTravelDelete?blogId=${blogTravel.blogId}" class="primary_btn"><span>삭제하기</span></a>
+                                    	</c:if>
                                     </div>
                                 </div>
                             </div>
