@@ -149,7 +149,7 @@ public class ApiController {
         urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*한 페이지 결과 수*/
         urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
         urlBuilder.append("&" + URLEncoder.encode("stnId","UTF-8") + "=" + URLEncoder.encode("108", "UTF-8")); /*108 전국, 109 서울, 인천, 경기도 등 (활용가이드 하단 참고자료 참조)*/
-        urlBuilder.append("&" + URLEncoder.encode("tmFc","UTF-8") + "=" + URLEncoder.encode("202309190600", "UTF-8")); /*-일 2회(06:00,18:00)회 생성 되며 발표시각을 입력 YYYYMMDD0600 (1800)-최근 24시간 자료만 제공*/
+        urlBuilder.append("&" + URLEncoder.encode("tmFc","UTF-8") + "=" + URLEncoder.encode("202310160600", "UTF-8")); /*-일 2회(06:00,18:00)회 생성 되며 발표시각을 입력 YYYYMMDD0600 (1800)-최근 24시간 자료만 제공*/
         URL url = new URL(urlBuilder.toString());
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
@@ -194,7 +194,7 @@ public class ApiController {
 			
 			pharm_url.append("http://apis.data.go.kr/1360000/MidFcstInfoService/getMidFcst");
 			pharm_url.append("?serviceKey=6RRCCWB0tUHXuCvJnGg5rBiMZgqAFUZtkQ9QE0CPn7SckD7nu3A4OIzwEnktBAr9j99adkuMsFoOKAIRxIDMwQ%3D%3D");
-			pharm_url.append("&numOfRows=10&pageNo=1&stnId=133&tmFc=202309190600");
+			pharm_url.append("&numOfRows=10&pageNo=1&stnId=108&tmFc=202310160600");
 			
 			
 			//2)웹서버에 접속하기 
@@ -251,7 +251,7 @@ public class ApiController {
 		urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("10", "UTF-8"));
 		urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));
 		urlBuilder.append("&" + URLEncoder.encode("regId", "UTF-8") + "=" + URLEncoder.encode("11B00000","UTF-8"));
-		urlBuilder.append("&" + URLEncoder.encode("tmFc", "UTF-8") + "=" +URLEncoder.encode("202309190600", "UTF-8"));
+		urlBuilder.append("&" + URLEncoder.encode("tmFc", "UTF-8") + "=" +URLEncoder.encode("202310161800", "UTF-8"));
 		
 		URL url = new URL(urlBuilder.toString());
 		HttpURLConnection conn = (HttpURLConnection)url.openConnection();
@@ -304,7 +304,7 @@ public class ApiController {
 			
 			pharm_url.append("https://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst");
 			pharm_url.append("?serviceKey=6RRCCWB0tUHXuCvJnGg5rBiMZgqAFUZtkQ9QE0CPn7SckD7nu3A4OIzwEnktBAr9j99adkuMsFoOKAIRxIDMwQ%3D%3D");
-			pharm_url.append("&numOfRows=10&pageNo=1&regId=11B00000&tmFc=202309190600");
+			pharm_url.append("&numOfRows=10&pageNo=1&regId=11B00000&tmFc=202310161800");
 			
 			//2) 웹서버에 접속하기 
 			URL url = new URL(pharm_url.toString());
