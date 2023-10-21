@@ -351,6 +351,93 @@ public class ApiController {
 		return mv;
 		
 	}
+	
+	@GetMapping("/openAPIDailynecessity01")
+	public ModelAndView openAPIDailynecessity01() throws Exception{
+		
+		
+		ModelAndView mv = new ModelAndView();
+		
+		StringBuilder urlBuilder = new StringBuilder("http://openapi.price.go.kr/openApiImpl/ProductPriceInfoService/getProductInfoSvc.do"); //URL
+		urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=6RRCCWB0tUHXuCvJnGg5rBiMZgqAFUZtkQ9QE0CPn7SckD7nu3A4OIzwEnktBAr9j99adkuMsFoOKAIRxIDMwQ%3D%3D");
+		
+		URL url = new URL(urlBuilder.toString());
+		HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+		conn.setRequestMethod("GET");
+		conn.setRequestProperty("Content-type", "application/json");
+		
+		System.out.println("Response code : " + conn.getResponseCode());
+		BufferedReader rd;
+		if(conn.getResponseCode() >= 200 && conn.getResponseCode()<=300) {
+			rd = new BufferedReader(new InputStreamReader(conn.getInputStream())); //getInputStream은 데이터를 바이트 단위로 읽어와 입력을 받은 뒤, 문자 단위로 데이터를 변환시키는 중개자 역할을 하는 클래스 예) 입력 : abc, 출력 : abc 이렇게~
+		}else {
+			rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		String line;
+		while((line = rd.readLine())!= null){
+			sb.append(line);
+		}
+		
+		rd.close();
+		conn.disconnect();
+		System.out.println(sb.toString());
+		
+		mv.setViewName("/api/openAPIDailynecessity01");
+		return mv;
+	}
+	
+	@GetMapping("/openAPIDailynecessity02")
+	public ModelAndView openAPIDailynecessity02() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		
+		try {
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			
+			StringBuffer pharm_url = new StringBuffer();
+			pharm_url.append("http://openapi.price.go.kr/openApiImpl/ProductPriceInfoService/getProductInfoSvc.do");
+			pharm_url.append("?ServiceKey=6RRCCWB0tUHXuCvJnGg5rBiMZgqAFUZtkQ9QE0CPn7SckD7nu3A4OIzwEnktBAr9j99adkuMsFoOKAIRxIDMwQ%3D%3D");
+			
+			URL url = new URL(pharm_url.toString());
+			
+			BufferedInputStream xmlData = new BufferedInputStream(url.openStream());
+			System.out.println(url.openStream());
+			
+			Document document = builder.parse(xmlData);
+			Element root = document.getDocumentElement();
+			System.out.println(root.getTagName());
+			
+			NodeList list = root.getElementsByTagName("item");
+			System.out.println(list.getLength());
+			for(int i=0; i<list.getLength(); i++) {
+				Node node = list.item(i);
+				NodeList item_childList = node.getChildNodes();
+				for(int j=0; j<item_childList.getLength(); j++) {
+					Node item_child = item_childList.item(j);
+					System.out.println(item_child.getNodeName() + ":" + item_child.getTextContent());
+				}
+				System.out.println();
+			}
+			
+			
+		}catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}catch (SAXException e) {
+			e.printStackTrace();
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		mv.setViewName("/api/openAPIDailynecessity02");
+		return mv;
+		
+	}
+	
+	
 		
 	
 	

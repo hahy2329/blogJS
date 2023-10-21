@@ -37,4 +37,13 @@
 		<put-attribute name="body" value="/WEB-INF/views/api/openAPIPrecipitationTest02.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="/api/openAPIDailynecessity01" extends="baseLayout">
+		<put-attribute name="title" value="한국소비자원_생필품가격정보(XML)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/openAPIDailynecessity01.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/api/openAPIDailynecessity02" extends="baseLayout">
+		<put-attribute name="title" value="한국소비자원_생필품가격정보(파싱)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/openAPIDailynecessity02.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>
