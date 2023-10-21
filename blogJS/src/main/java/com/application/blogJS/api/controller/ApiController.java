@@ -369,7 +369,7 @@ public class ApiController {
 		System.out.println("Response code : " + conn.getResponseCode());
 		BufferedReader rd;
 		if(conn.getResponseCode() >= 200 && conn.getResponseCode()<=300) {
-			rd = new BufferedReader(new InputStreamReader(conn.getInputStream())); //getInputStream은 데이터를 바이트 단위로 읽어와 입력을 받은 뒤, 문자 단위로 데이터를 변환시키는 중개자 역할을 하는 클래스 예) 입력 : abc, 출력 : abc 이렇게~
+			rd = new BufferedReader(new InputStreamReader(conn.getInputStream())); //getInputStream은 데이터를 바이트 단위로 읽어와 입력을 받은 뒤, InputStreamReader가 문자 단위로 데이터를 변환시키는 중개자 역할을 하는 클래스 예) 입력 : abc, 출력 : abc 이렇게~
 		}else {
 			rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
 		}
