@@ -91,7 +91,7 @@
                             <div class="col-md-9">
                                 <div class="blog_post">
                                 	<c:if test="${blogDTO.picture1 ne null }">
-                                    	<img src="${contextPath }/blog/thumbnails?picture1=${blogDTO.picture1}" width="555" height="280" alt="메인사진">
+                                    	<img src="${contextPath }/blog/thumbnails?picture1=${blogDTO.picture1}" width="555" height="500" alt="메인사진">
                                     </c:if>
                                     <div class="blog_details">
                                         <a href="${contextPath }/blog/blogKeywordDetail?blogId=${blogDTO.blogId}&humanId=${blogDTO.humanId}"><h2>${blogDTO.subject }</h2></a>

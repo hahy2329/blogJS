@@ -38,7 +38,7 @@
                        <c:if test="${blogDTO.picture1 ne null }">
 	                        <div class="col-lg-12">
 	                            <div class="feature-img">
-	                                <img class="img-fluid" src="${contextPath }/blog/blogDetailPicture1?picture1=${blogDTO.picture1}" width="750" height="350" alt="메인사진">
+	                                <img class="img-fluid" src="${contextPath }/blog/blogDetailPicture1?picture1=${blogDTO.picture1}" width="750" height="500" alt="메인사진">
 	                            </div>									
 	                        </div>
 	                     </c:if>
